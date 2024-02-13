@@ -1,0 +1,121 @@
+6
+"1080to540.plugin" "1080 to 540" 0 1 0 1 0 1 0 0 0 0
+"720to480.plugin" "720 to 480" 0 1 0 0 0 1 0 0 0 0
+"aging.plugin" "AgingTV" 0 1 0 1 0 1 0 0 0 0
+"audioscope.plugin" "AudioScope" 1 0 0 1 0 1 1 0 0 0
+"background.plugin" "Background" 0 1 0 1 0 1 0 1 0 0
+"bandslide.plugin" "BandSlide" 0 1 0 0 0 1 0 0 1 0
+"bandwipe.plugin" "BandWipe" 0 1 0 0 0 1 0 0 1 0
+"blur.plugin" "Blur" 0 1 0 1 0 1 0 0 0 0
+"brightness.plugin" "Brightness/Contrast" 0 1 0 1 0 1 0 0 0 0
+"brighttheme.plugin" "Bright" 0 0 1 0 0 1 0 0 0 0
+"burn.plugin" "BurningTV" 0 1 0 1 0 1 0 0 0 0
+"cdripper.plugin" "CD Ripper" 1 0 0 0 0 1 1 0 0 0
+"chorus.plugin" "Chorus" 1 0 0 1 0 1 1 1 0 0
+"chromakey.plugin" "Chroma key" 0 1 0 1 0 1 0 0 0 0
+"chromakeyhsv.plugin" "Chroma key (HSV)" 0 1 0 1 0 1 0 0 0 0
+"color3way.plugin" "Color 3 Way" 0 1 0 1 0 1 0 0 0 0
+"colorbalance.plugin" "Color Balance" 0 1 0 1 0 1 0 0 0 0
+"compressor.plugin" "Compressor" 1 0 0 1 0 1 1 0 0 0
+"compressormulti.plugin" "Compressor Multi" 1 0 0 1 0 1 1 0 0 0
+"crossfade.plugin" "Crossfade" 1 0 0 0 0 0 0 0 1 0
+"cubemap.plugin" "Cube Unmap" 0 1 0 1 0 1 0 0 0 0
+"dcoffset.plugin" "DC Offset" 1 0 0 1 0 1 0 0 0 0
+"decimate.plugin" "Decimate" 0 1 0 1 0 1 0 0 0 0
+"deinterlace.plugin" "Deinterlace" 0 1 0 1 0 1 0 0 0 0
+"delayaudio.plugin" "Delay audio" 1 0 0 1 0 1 0 0 0 0
+"delayvideo.plugin" "Delay Video" 0 1 0 1 0 1 0 0 0 0
+"denoise.plugin" "Denoise" 1 0 0 1 0 1 0 0 0 0
+"denoisefft.plugin" "DenoiseFFT" 1 0 0 1 0 1 0 0 0 0
+"denoisevideo.plugin" "Denoise video" 0 1 0 1 0 1 0 0 0 0
+"despike.plugin" "Despike" 1 0 0 1 0 1 0 0 0 0
+"diffkey.plugin" "Difference key" 0 1 0 1 0 1 1 0 0 0
+"dissolve.plugin" "Dissolve" 0 1 0 0 0 0 0 0 1 0
+"dot.plugin" "DotTV" 0 1 0 1 0 1 0 0 0 0
+"downsample.plugin" "Downsample" 0 1 0 1 0 1 0 0 0 0
+"edge.plugin" "Edge" 0 1 0 1 0 1 0 0 0 0
+"fieldframe.plugin" "Fields to frames" 0 1 0 1 0 1 0 0 0 0
+"flanger.plugin" "Flanger" 1 0 0 1 0 1 0 0 0 0
+"flash.plugin" "Flash" 0 1 0 0 0 0 0 0 1 0
+"flip.plugin" "Flip" 0 1 0 1 0 1 0 0 0 0
+"framefield.plugin" "Frames to fields" 0 1 0 1 0 1 0 0 0 0
+"freeverb.plugin" "Freeverb" 1 0 0 1 0 1 1 0 0 0
+"freezeframe.plugin" "Freeze Frame" 0 1 0 1 0 1 0 1 0 0
+"gain.plugin" "Gain" 1 0 0 1 0 1 0 0 0 0
+"gamma.plugin" "Gamma" 0 1 0 1 0 1 0 0 0 0
+"gradient.plugin" "Gradient" 0 1 0 1 0 1 0 1 0 0
+"graphic.plugin" "EQ Graphic" 1 0 0 1 0 1 0 0 0 0
+"histogram.plugin" "Histogram" 0 1 0 1 0 1 0 0 0 0
+"holo.plugin" "HolographicTV" 0 1 0 1 0 1 0 0 0 0
+"huesaturation.plugin" "Hue saturation" 0 1 0 1 0 1 0 0 0 0
+"interpolateaudio.plugin" "Interpolate" 1 0 0 1 0 1 0 0 0 0
+"interpolatepixels.plugin" "Interpolate Bayer" 0 1 0 1 0 1 0 0 0 0
+"interpolatevideo.plugin" "Interpolate Video" 0 1 0 1 0 1 0 0 0 0
+"invertaudio.plugin" "Invert Audio" 1 0 0 1 0 1 0 0 0 0
+"invertvideo.plugin" "Invert Video" 0 1 0 1 0 1 0 0 0 0
+"irissquare.plugin" "IrisSquare" 0 1 0 0 0 1 0 0 1 0
+"ivtc.plugin" "Inverse Telecine" 0 1 0 1 0 1 0 0 0 0
+"lens.plugin" "Lens" 0 1 0 1 0 1 0 0 0 0
+"leveleffect.plugin" "SoundLevel" 1 0 0 1 0 1 0 0 0 0
+"linearblur.plugin" "Linear Blur" 0 1 0 1 0 1 0 0 0 0
+"liveaudio.plugin" "Live Audio" 1 0 0 1 0 1 1 1 0 0
+"livevideo.plugin" "Live Video" 0 1 0 1 0 1 0 1 0 0
+"loopaudio.plugin" "Loop audio" 1 0 0 1 0 1 0 1 0 0
+"loopvideo.plugin" "Loop video" 0 1 0 1 0 1 0 1 0 0
+"motion.plugin" "Motion" 0 1 0 1 0 1 1 0 0 0
+"motion2.plugin" "Motion 2 Point" 0 1 0 1 0 1 1 0 0 0
+"motionblur.plugin" "Motion Blur" 0 1 0 1 0 1 0 0 0 0
+"mpeg2enc.plugin" "/root/hvirtual/bin/mpeg2enc.plugin" 0 0 0 0 0 0 0 0 0 0
+"normalize.plugin" "Normalize" 1 0 0 0 0 1 1 0 0 0
+"oil.plugin" "Oil painting" 0 1 0 1 0 1 0 0 0 0
+"overlay.plugin" "Overlay" 0 1 0 1 0 1 1 1 0 0
+"overlayaudio.plugin" "Overlay" 1 0 0 1 0 1 1 0 0 0
+"parametric.plugin" "EQ Parametric" 1 0 0 1 0 1 0 0 0 0
+"perspective.plugin" "Perspective" 0 1 0 1 0 1 0 0 0 0
+"photoscale.plugin" "Auto Scale" 0 1 0 1 0 1 0 0 0 0
+"pitch.plugin" "Pitch shift" 1 0 0 1 0 1 0 0 0 0
+"polar.plugin" "Polar" 0 1 0 1 0 1 0 0 0 0
+"posterize.plugin" "Posterize" 0 1 0 1 0 1 0 0 0 0
+"radialblur.plugin" "Radial Blur" 0 1 0 1 0 1 0 0 0 0
+"reframe.plugin" "Reframe" 0 1 0 0 0 1 0 0 0 0
+"reframert.plugin" "ReframeRT" 0 1 0 1 0 1 0 1 0 0
+"removegaps.plugin" "Remove Gaps" 1 0 0 1 0 1 0 0 0 0
+"resample.plugin" "Resample" 1 0 0 0 0 1 0 0 0 0
+"resamplert.plugin" "ResampleRT" 1 0 0 1 0 1 0 1 0 0
+"reverb.plugin" "Reverb" 1 0 0 1 0 1 1 1 0 0
+"reverseaudio.plugin" "Reverse audio" 1 0 0 1 0 1 0 0 0 0
+"reversevideo.plugin" "Reverse video" 0 1 0 1 0 1 0 0 0 0
+"rgb601.plugin" "RGB - 601" 0 1 0 1 0 1 0 0 0 0
+"rotate.plugin" "Rotate" 0 1 0 1 0 1 0 0 0 0
+"scale.plugin" "Scale" 0 1 0 1 0 1 0 0 0 0
+"seltempavg.plugin" "Selective Temporal Averaging" 0 1 0 1 0 1 0 0 0 0
+"shapewipe.plugin" "Shape Wipe" 0 1 0 0 0 1 0 0 1 0
+"sharpen.plugin" "Sharpen" 0 1 0 1 0 1 0 0 0 0
+"shiftinterlace.plugin" "ShiftInterlace" 0 1 0 1 0 1 0 0 0 0
+"slide.plugin" "Slide" 0 1 0 0 0 1 0 0 1 0
+"spectrogram.plugin" "Spectrogram" 1 0 0 1 0 1 0 0 0 0
+"spherecam.plugin" "Sphere Cam" 0 1 0 1 0 1 0 0 0 0
+"spheretranslate.plugin" "Sphere Translate" 0 1 0 1 0 1 0 0 0 0
+"suv.plugin" "S.U.V." 0 0 1 0 0 1 0 0 0 0
+"swapchannels.plugin" "Swap channels" 0 1 0 1 0 1 0 1 0 0
+"swapframes.plugin" "Swap Frames" 0 1 0 1 0 1 0 0 0 0
+"swatch.plugin" "Color Swatch" 0 1 0 1 0 1 0 1 0 0
+"synthesizer.plugin" "Synthesizer" 1 0 0 1 0 1 0 1 0 0
+"threshold.plugin" "Threshold" 0 1 0 1 0 1 0 0 0 0
+"timeavg.plugin" "Time Average" 0 1 0 1 0 1 0 0 0 0
+"timefront.plugin" "TimeFront" 0 1 0 1 0 1 1 1 0 0
+"timelapsehelper.plugin" "Timelapse Helper" 0 1 0 1 0 1 0 0 0 0
+"timestretch.plugin" "Time stretch" 1 0 0 0 0 1 0 0 0 0
+"timestretchrt.plugin" "Time Stretch RT" 1 0 0 1 0 1 0 1 0 0
+"titler.plugin" "Title" 0 1 0 1 0 1 0 1 0 0
+"translate.plugin" "Translate" 0 1 0 1 0 1 0 0 0 0
+"tremolo.plugin" "Tremolo" 1 0 0 1 0 1 0 0 0 0
+"unsharp.plugin" "Unsharp" 0 1 0 1 0 1 0 0 0 0
+"videoscope.plugin" "VideoScope" 0 1 0 1 0 1 0 0 0 0
+"vocoder.plugin" "Vocoder" 1 0 0 1 0 1 1 0 0 0
+"wave.plugin" "Wave" 0 1 0 1 0 1 0 0 0 0
+"whirl.plugin" "Whirl" 0 1 0 1 0 1 0 0 0 0
+"wipe.plugin" "Wipe" 0 1 0 0 0 1 0 0 1 0
+"yuv.plugin" "YUV" 0 1 0 1 0 1 0 0 0 0
+"zoom.plugin" "Zoom" 0 1 0 0 0 1 0 0 1 0
+"zoomblur.plugin" "Zoom Blur" 0 1 0 1 0 1 0 0 0 0
