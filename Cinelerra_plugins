@@ -14,6 +14,7 @@
 "chorus.plugin" "Chorus" 1 0 0 1 0 1 1 1 0 0
 "chromakey.plugin" "Chroma key" 0 1 0 1 0 1 0 0 0 0
 "chromakeyhsv.plugin" "Chroma key (HSV)" 0 1 0 1 0 1 0 0 0 0
+"clipaudio.plugin" "Clip" 1 0 0 1 0 1 0 0 0 0
 "color3way.plugin" "Color 3 Way" 0 1 0 1 0 1 0 0 0 0
 "colorbalance.plugin" "Color Balance" 0 1 0 1 0 1 0 0 0 0
 "compressor.plugin" "Compressor" 1 0 0 1 0 1 1 0 0 0
