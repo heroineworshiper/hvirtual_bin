@@ -98,7 +98,7 @@
 "spherecam.plugin" "Sphere Cam" 0 1 0 1 0 1 0 0 0 0
 "spheretranslate.plugin" "Sphere Translate" 0 1 0 1 0 1 0 0 0 0
 "suv.plugin" "S.U.V." 0 0 1 0 0 1 0 0 0 0
-"swapchannels.plugin" "Swap channels" 0 1 0 1 0 1 0 1 0 0
+"swapchannels.plugin" "Swap channels" 0 1 0 1 0 1 1 1 0 0
 "swapframes.plugin" "Swap Frames" 0 1 0 1 0 1 0 0 0 0
 "swatch.plugin" "Color Swatch" 0 1 0 1 0 1 0 1 0 0
 "synthesizer.plugin" "Synthesizer" 1 0 0 1 0 1 0 1 0 0
