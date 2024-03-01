@@ -34,6 +34,7 @@
 "dissolve.plugin" "Dissolve" 0 1 0 0 0 0 0 0 1 0
 "dot.plugin" "DotTV" 0 1 0 1 0 1 0 0 0 0
 "downsample.plugin" "Downsample" 0 1 0 1 0 1 0 0 0 0
+"dropout.plugin" "Dropout" 1 0 0 0 0 1 0 0 1 0
 "edge.plugin" "Edge" 0 1 0 1 0 1 0 0 0 0
 "fieldframe.plugin" "Fields to frames" 0 1 0 1 0 1 0 0 0 0
 "flanger.plugin" "Flanger" 1 0 0 1 0 1 0 0 0 0
