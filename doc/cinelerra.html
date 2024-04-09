@@ -180,9 +180,9 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <li><a name="toc-VIEWER-1" href="#VIEWER">6.1 VIEWER</a></li>
     <li><a name="toc-COMPOSITOR-1" href="#COMPOSITOR">6.2 COMPOSITOR</a>
     <ul class="no-bullet">
-      <li><a name="toc-PROTECT-VIDEO-1" href="#PROTECT-VIDEO">6.2.1 PROTECT VIDEO</a></li>
-      <li><a name="toc-MAGNIFYING-GLASS-1" href="#MAGNIFYING-GLASS">6.2.2 MAGNIFYING GLASS</a></li>
-      <li><a name="toc-MASKS-TOOL-1" href="#MASKS-TOOL">6.2.3 MASKS TOOL</a></li>
+      <li><a name="toc-MAGNIFYING-GLASS-1" href="#MAGNIFYING-GLASS">6.2.1 MAGNIFYING GLASS</a></li>
+      <li><a name="toc-MASKS-TOOL-1" href="#MASKS-TOOL">6.2.2 MASKS TOOL</a></li>
+      <li><a name="toc-RULER-1" href="#RULER">6.2.3 RULER</a></li>
       <li><a name="toc-CAMERA-1" href="#CAMERA">6.2.4 CAMERA</a></li>
       <li><a name="toc-PROJECTOR-1" href="#PROJECTOR">6.2.5 PROJECTOR</a></li>
       <li><a name="toc-CROP-TOOL-1" href="#CROP-TOOL">6.2.6 CROP TOOL</a></li>
@@ -281,15 +281,18 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
   </ul></li>
   <li><a name="toc-KEYFRAMES-1" href="#KEYFRAMES">13 KEYFRAMES</a>
   <ul class="no-bullet">
-    <li><a name="toc-CURVE-KEYFRAMES-1" href="#CURVE-KEYFRAMES">13.1 CURVE KEYFRAMES</a></li>
-    <li><a name="toc-CHANGING-BEZIER-_0026-LINEAR-MODE-1" href="#CHANGING-BEZIER-_0026-LINEAR-MODE">13.2 CHANGING BEZIER &amp; LINEAR MODE</a></li>
-    <li><a name="toc-SNAPPING-TO-NEIGHBOR-KEYFRAMES-1" href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES">13.3 SNAPPING TO NEIGHBOR KEYFRAMES</a></li>
+    <li><a name="toc-DISPLAYING-KEYFRAMES-1" href="#DISPLAYING-KEYFRAMES">13.1 DISPLAYING KEYFRAMES</a></li>
+    <li><a name="toc-DEFAULT-KEYFRAMES-1" href="#DEFAULT-KEYFRAMES">13.2 DEFAULT KEYFRAMES</a></li>
+    <li><a name="toc-CURVE-KEYFRAMES-1" href="#CURVE-KEYFRAMES">13.3 CURVE KEYFRAMES</a></li>
     <li><a name="toc-NAVIGATING-CURVE-KEYFRAMES-1" href="#NAVIGATING-CURVE-KEYFRAMES">13.4 NAVIGATING CURVE KEYFRAMES</a></li>
-    <li><a name="toc-TOGGLE-KEYFRAMES-1" href="#TOGGLE-KEYFRAMES">13.5 TOGGLE KEYFRAMES</a></li>
-    <li><a name="toc-AUTOMATIC-KEYFRAMES-1" href="#AUTOMATIC-KEYFRAMES">13.6 AUTOMATIC KEYFRAMES</a></li>
-    <li><a name="toc-COMPOSITOR-KEYFRAMES-1" href="#COMPOSITOR-KEYFRAMES">13.7 COMPOSITOR KEYFRAMES</a></li>
-    <li><a name="toc-EDITING-KEYFRAMES-1" href="#EDITING-KEYFRAMES">13.8 EDITING KEYFRAMES</a></li>
-    <li><a name="toc-KEYFRAME-SPANNING-1" href="#KEYFRAME-SPANNING">13.9 KEYFRAME SPANNING</a></li>
+    <li><a name="toc-SELECTING-BEZIER-_0026-LINEAR-MODE-1" href="#SELECTING-BEZIER-_0026-LINEAR-MODE">13.5 SELECTING BEZIER &amp; LINEAR MODE</a></li>
+    <li><a name="toc-SNAPPING-TO-NEIGHBOR-KEYFRAMES-1" href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES">13.6 SNAPPING TO NEIGHBOR KEYFRAMES</a></li>
+    <li><a name="toc-MUTE-KEYFRAMES-1" href="#MUTE-KEYFRAMES">13.7 MUTE KEYFRAMES</a></li>
+    <li><a name="toc-AUTOMATIC-KEYFRAMES-1" href="#AUTOMATIC-KEYFRAMES">13.8 AUTOMATIC KEYFRAMES</a></li>
+    <li><a name="toc-CAMERA_002fPROJECTOR-KEYFRAMES-1" href="#CAMERA_002fPROJECTOR-KEYFRAMES">13.9 CAMERA/PROJECTOR KEYFRAMES</a></li>
+    <li><a name="toc-MASK-KEYFRAMES-1" href="#MASK-KEYFRAMES">13.10 MASK KEYFRAMES</a></li>
+    <li><a name="toc-EDITING-KEYFRAMES-1" href="#EDITING-KEYFRAMES">13.11 EDITING KEYFRAMES</a></li>
+    <li><a name="toc-KEYFRAME-SPANNING-1" href="#KEYFRAME-SPANNING">13.12 KEYFRAME SPANNING</a></li>
   </ul></li>
   <li><a name="toc-CAPTURING-MEDIA-1" href="#CAPTURING-MEDIA">14 CAPTURING MEDIA</a>
   <ul class="no-bullet">
@@ -2192,46 +2195,63 @@ for most compositing operations or operations that affect the
 appearance of the timeline output.  Operations done in the Compositor
 affect the timeline but don&rsquo;t affect clips.
 </p>
-<p>The video output has several navigation functions.  The video output
-size is either locked to the window size or unlocked with scrollbars
-for navigation.  The video output can be zoomed in and out and panned. 
-Navigating the video output this way doesn&rsquo;t affect the rendered
-output, it just changes the point of view in the compositor window.
+<p>The video output has several navigation functions. 
 </p>
-<p>If it is unlocked from the window size, middle clicking and dragging
-anywhere in the video pans the point of view.
+<p>The video output size is either locked to the window size or unlocked
+with scrollbars for navigation.  The video output can be zoomed in and
+out and panned.  Navigating the video output this way doesn&rsquo;t affect the
+rendered output, it just changes the point of view in the compositor
+window.
 </p>
-<p>Hitting the + and - keys zooms in and out of the video output.
+<p><b>VIDEO CONTEXT MENU</b>
 </p>
-<p>Underneath the video output are copies of many of the functions
-available in the main window.  In addition there is a
-<img src="cwindow_zoom.png" alt="cwindow_zoom"> zoom menu and a <img src="cwindow_light.png" alt="cwindow_light"> tally light.
-</p>
-<p>The zoom menu jumps to all the possible zoom settings and, through the
-<b>Auto</b> option, locks the video to the window size.  The zoom menu
-does not affect the window size.
-</p>
-<p>The tally light turns red when rendering is happening.  This is useful
-for knowing if the output is current.
-</p>
+<img src="cwindow_context.png" alt="cwindow_context">
+
 <p>Right clicking anywhere in the video output brings up a menu with all
-the zoom levels and some other options.  In this particular case the
-zoom levels resize the entire window and not just the video.  
+the zoom levels and some other options.  Selecting a percentage here
+resizes the window.  If the video size is locked to the window size, the
+video changes size.  If the video size is unlocked from the window size,
+the video stays the same size.
+</p>
+<p>Selecting <b>auto</b> locks the video to the window size.
 </p>
 <p>The <b>reset camera</b> and <b>reset projector</b> options center the camera
 and projector See <a href="#COMPOSITING">COMPOSITING</a>.
 </p>
 <p>The <b>Hide controls</b> option hides everything except the video.
 </p>
+<p>If video is unlocked from the window size, middle clicking and dragging
+anywhere in the video pans the point of view.
+</p>
+<p>Hitting the + and - keys unlocks the video size from the window size &amp;
+zooms in and out of the video output.
+</p>
+<p>Underneath the video output are copies of many of the functions
+available in the main window.  In addition there is a
+<img src="cwindow_zoom.png" alt="cwindow_zoom"> zoom menu and a <img src="cwindow_light.png" alt="cwindow_light"> tally light.
+</p>
+<p>Selecting a percentage in the zoom menu unlocks the video size from the
+window size.  Selecting <b>Auto</b> locks the video size to the window
+size.
+</p>
+<p>The zoom menu does not affect the window size.
+</p>
+<p>The tally light turns red when rendering is happening.  This is useful
+for knowing if the output is current.
+</p>
+<img src="cwindow_tools.png" alt="cwindow_tools">
+
 <p>On the left of the video output is a toolbar specific to the compositor
-window.  Here are the functions in the toolbar:
+window.  Select a tool to enable it.  Select it again to disable it.  To
+protect the video from changes, be sure all the tools are deselected. 
+Here are the functions in the toolbar:
 </p>
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#PROTECT-VIDEO" accesskey="1">PROTECT VIDEO</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><th colspan="3" align="left" valign="top"></th></tr><tr><td align="left" valign="top">&bull; <a href="#MAGNIFYING-GLASS" accesskey="1">MAGNIFYING GLASS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#MAGNIFYING-GLASS" accesskey="2">MAGNIFYING GLASS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#MASKS-TOOL" accesskey="2">MASKS TOOL</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#MASKS-TOOL" accesskey="3">MASKS TOOL</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#RULER" accesskey="3">RULER</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#CAMERA" accesskey="4">CAMERA</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -2243,29 +2263,15 @@ window.  Here are the functions in the toolbar:
 </td></tr>
 </table>
 
-<hr>
-<a name="PROTECT-VIDEO"></a>
-<div class="header">
-<p>
-Next: <a href="#MAGNIFYING-GLASS" accesskey="n" rel="next">MAGNIFYING GLASS</a>, Up: <a href="#COMPOSITOR" accesskey="u" rel="up">COMPOSITOR</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
-</div>
-<a name="PROTECT-VIDEO-1"></a>
-<h4 class="subsection">6.2.1 PROTECT VIDEO</h4>
 
-<img src="protect.png" alt="protect">
-
-<p>This disables changes to the compositor output from clicks in it.  It
-is an extra layer on top of the track arming toggle to prevent
-unwanted changes.
-</p>
 <hr>
 <a name="MAGNIFYING-GLASS"></a>
 <div class="header">
 <p>
-Next: <a href="#MASKS-TOOL" accesskey="n" rel="next">MASKS TOOL</a>, Previous: <a href="#PROTECT-VIDEO" accesskey="p" rel="prev">PROTECT VIDEO</a>, Up: <a href="#COMPOSITOR" accesskey="u" rel="up">COMPOSITOR</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#MASKS-TOOL" accesskey="n" rel="next">MASKS TOOL</a>, Up: <a href="#COMPOSITOR" accesskey="u" rel="up">COMPOSITOR</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="MAGNIFYING-GLASS-1"></a>
-<h4 class="subsection">6.2.2 MAGNIFYING GLASS</h4>
+<h4 class="subsection">6.2.1 MAGNIFYING GLASS</h4>
 
 <img src="magnify.png" alt="magnify">
 
@@ -2285,21 +2291,39 @@ creates scrollbars for navigation.
 <a name="MASKS-TOOL"></a>
 <div class="header">
 <p>
-Next: <a href="#CAMERA" accesskey="n" rel="next">CAMERA</a>, Previous: <a href="#MAGNIFYING-GLASS" accesskey="p" rel="prev">MAGNIFYING GLASS</a>, Up: <a href="#COMPOSITOR" accesskey="u" rel="up">COMPOSITOR</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#RULER" accesskey="n" rel="next">RULER</a>, Previous: <a href="#MAGNIFYING-GLASS" accesskey="p" rel="prev">MAGNIFYING GLASS</a>, Up: <a href="#COMPOSITOR" accesskey="u" rel="up">COMPOSITOR</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="MASKS-TOOL-1"></a>
-<h4 class="subsection">6.2.3 MASKS TOOL</h4>
+<h4 class="subsection">6.2.2 MASKS TOOL</h4>
 
 <img src="mask.png" alt="mask">
 
-<p>This brings up the mask editing tool See <a href="#MASKS">MASKS</a>.  Enable the
-<img src="toolwindow.png" alt="toolwindow"> tool window to see options for this tool.
+<p>This brings up the mask editing tool See <a href="#MASKS">MASKS</a>.  
+</p>
+
+
+<hr>
+<a name="RULER"></a>
+<div class="header">
+<p>
+Next: <a href="#CAMERA" accesskey="n" rel="next">CAMERA</a>, Previous: <a href="#MASKS-TOOL" accesskey="p" rel="prev">MASKS TOOL</a>, Up: <a href="#COMPOSITOR" accesskey="u" rel="up">COMPOSITOR</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="RULER-1"></a>
+<h4 class="subsection">6.2.3 RULER</h4>
+
+<p>The ruler shows pixel coordinates for the cursor &amp; a line.  Click drag
+in the video output to draw a line to measure.  Click without dragging
+to hide the ruler line.
+</p>
+<p><b>Always draw it</b> Causes the ruler line to be drawn in all the other
+tools.  This allows the ruler to be used to align camera &amp; projector
+movements.
 </p>
 <hr>
 <a name="CAMERA"></a>
 <div class="header">
 <p>
-Next: <a href="#PROJECTOR" accesskey="n" rel="next">PROJECTOR</a>, Previous: <a href="#MASKS-TOOL" accesskey="p" rel="prev">MASKS TOOL</a>, Up: <a href="#COMPOSITOR" accesskey="u" rel="up">COMPOSITOR</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#PROJECTOR" accesskey="n" rel="next">PROJECTOR</a>, Previous: <a href="#RULER" accesskey="p" rel="prev">RULER</a>, Up: <a href="#COMPOSITOR" accesskey="u" rel="up">COMPOSITOR</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="CAMERA-1"></a>
 <h4 class="subsection">6.2.4 CAMERA</h4>
@@ -2307,9 +2331,9 @@ Next: <a href="#PROJECTOR" accesskey="n" rel="next">PROJECTOR</a>, Previous: <a 
 
 <img src="camera.png" alt="camera">
 
-<p>This brings up the camera editing tool See <a href="#THE-CAMERA-AND-PROJECTOR">THE CAMERA AND PROJECTOR</a>.  Enable the <img src="toolwindow.png" alt="toolwindow"> tool window to see options
-for this tool.
+<p>This brings up the camera editing tool See <a href="#THE-CAMERA-AND-PROJECTOR">THE CAMERA AND PROJECTOR</a>.
 </p>
+
 <hr>
 <a name="PROJECTOR"></a>
 <div class="header">
@@ -2321,9 +2345,9 @@ Next: <a href="#CROP-TOOL" accesskey="n" rel="next">CROP TOOL</a>, Previous: <a 
 
 <img src="projector.png" alt="projector">
 
-<p>This brings up the projector editing tool See <a href="#THE-CAMERA-AND-PROJECTOR">THE CAMERA AND PROJECTOR</a>.  Enable the <img src="toolwindow.png" alt="toolwindow"> tool window to see options
-for this tool.
+<p>This brings up the projector editing tool See <a href="#THE-CAMERA-AND-PROJECTOR">THE CAMERA AND PROJECTOR</a>.
 </p>
+
 <hr>
 <a name="CROP-TOOL"></a>
 <div class="header">
@@ -2335,9 +2359,9 @@ Next: <a href="#EYEDROPPER" accesskey="n" rel="next">EYEDROPPER</a>, Previous: <
 
 <img src="crop.png" alt="crop">
 
-<p>This brings up the cropping tool See <a href="#CROPPING">CROPPING</a>.  The
-<img src="toolwindow.png" alt="toolwindow"> tool window must be enabled to use this tool.
+<p>This brings up the cropping tool See <a href="#CROPPING">CROPPING</a>.
 </p>
+
 <hr>
 <a name="EYEDROPPER"></a>
 <div class="header">
@@ -2350,14 +2374,23 @@ Previous: <a href="#CROP-TOOL" accesskey="p" rel="prev">CROP TOOL</a>, Up: <a hr
 <img src="eyedrop.png" alt="eyedrop">
 
 <p>This brings up the eyedropper.  The eyedropper detects whatever color
-is under it and stores it in a temporary area.  Enabling the
-<img src="toolwindow.png" alt="toolwindow"> tool info shows the currently selected color.  Click
-anywhere in the video output to select the color at that point.
+is under it and stores it.
 </p>
-<p>The eyedropper not only lets you see areas which are clipped, but its
-value can be applied to many effects.  Different effects handle the
-eyedropper differently.
+
+<p>Click anywhere in the video output to select the color at that point.
 </p>
+<p><b>radius</b> Determines the size of the area that the eyedropper scans. 
+The average of the area is used.
+</p>
+<p><b>use maximum</b> Uses the maximum values from the scanned area instead of
+the average.
+</p>
+<p>The eyedropper value can be applied to many effects.  Different effects
+handle the eyedropper differently.  They usually have an option called
+<b>use color picker</b> to use the last scanned eyedropper color.
+</p>
+
+
 
 
 
@@ -5345,11 +5378,9 @@ and zooms.
 </p>
 <br>
 <br>
-<img src="compositing_pipeline.png" alt="compositing_pipeline">
-<br>
-<br>
-<p><b>Visual representation of the compositing pipeline</b>.
-</p>
+<div align="center"><A HREF="compositing_pipeline.png"><IMG SRC="compositing_pipeline_s.png"></A>
+</div><div align="center"><b>Visual representation of the compositing pipeline</b>.
+</div>
 <p>When editing the camera and projector in the compositing window, the
 first track with <b>record</b> enabled is the track affected.  Even if
 the track is completely transparent, it&rsquo;s still the affected track.  If
@@ -5404,6 +5435,8 @@ types are also defined for easy access.  A popular justification
 operation is upper left projection after image reduction.  This is used
 when reducing the size of video with aspect ratio adjustment.
 </p>
+<p><b>THE TRANSLATION EFFECT</b>
+</p>
 <p>The translation effect allows simultaneous aspect ratio conversion and
 reduction but is easier to use if the reduced video is put in the upper
 left of the temporary instead of in the center.  The track size is set
@@ -5439,16 +5472,21 @@ Next: <a href="#CROPPING" accesskey="n" rel="next">CROPPING</a>, Previous: <a hr
 <a name="MASKS-1"></a>
 <h3 class="section">12.2 MASKS</h3>
 
-<p>Masks select a region of the video for either displaying or hiding. 
-Masks are also used in conjunction with another effect to isolate the
+<p>Masks define a region of the video to either set opaque or transparent.
+</p>
+<p>Another thing the mask tool does is draw paths.  Paths are lines while
+masks are areas.  Paths can be simple line drawings or outlines.
+</p>
+<p>Masks can be used in conjunction with another effect to isolate the
 effect to a certain region of the frame.  A copy of one video track may
 be delayed slightly and unmasked in locations where the one copy has
-interference but the other copy doesn&rsquo;t.  Color correction may be
-needed in one section of a frame but not another.  A mask can be
-applied to just a section of the color corrected track while the
-vanilla track shows through.  Removal of boom microphones, airplanes,
-and housewives are other mask uses.
+interference but the other copy doesn&rsquo;t.  Color correction may be needed
+in one section of a frame but not another.  A mask can be applied to
+just a section of the color corrected track while the vanilla track
+shows through.  Removal of boom microphones, airplanes, and housewives
+are other mask uses.
 </p>
+
 <p>The order of the compositing pipeline affects what can be done with
 masks.  Mainly, masks are performed on the temporary after effects and
 before the projector.  This means multiple tracks can be bounced to a
@@ -5457,74 +5495,89 @@ masked track and projected with the same mask.
 <p>Our compositing pipeline graph now has a masking stage.  There are 8
 possible masks per track.  Each mask is defined separately, although
 they each perform the same operation, whether it&rsquo;s addition or
-subtraction.
+subtraction, or a path.
 </p>
 <br>
 <br>
-<img src="compositing_pipeline2.png" alt="compositing_pipeline2">
-<br>
-<br>
-<p><b>Compositing pipeline with masks</b>
-</p>
+<div align="center"><A HREF="compositing_pipeline2.png"><IMG SRC="compositing_pipeline2_s.png"></A>
+</div><div align="center"><b>Compositing pipeline with masks</b>
+</div>
 <p>To define a mask, go into the Compositor window and enable the
-<img src="mask.png" alt="mask"> <b>mask</b> toggle.  Now go over the video and
-click-drag.  Click-drag again in another part of the image to create
-each new point of the mask.  While it isn&rsquo;t the conventional bezier
-curve behavior, this masking interface performs in realtime what the
-effect of the mask is going to be.  Creating each point of the mask
-expands a rubber band curve.  
+<img src="mask.png" alt="mask"> <b>mask</b> toggle.  
 </p>
-<p>Once points are defined, they can be moved by <b>ctrl-dragging</b> in
-the vicinity of the corner.  This; however, doesn&rsquo;t smooth out the
-curve.  The in-out points of the bezier curve are accessed by
-<b>shift-dragging</b> in the vicinity of the corner.  Then
-<b>shift-dragging</b> near the in or out point causes the point to
-move.
+<p>Now go over the video and click to create a starting point for the
+mask.  Click again in another part of the image to create a new point of
+the polygon.  Every click creates a new point for a mask.  The polygon
+is automatically closed.
+</p>
+<p>Knowing which point is the 1st point is essential for animating masks,
+so the 1st point is always drawn filled in while other points are drawn
+as an outline.  The current point being edited is enlarged.
+</p>
+<p>Once points are defined, they can be moved by <b>ctrl-dragging</b> in the
+vicinity of the corner.  This; however, doesn&rsquo;t smooth out the curve. 
+The lines are linear by default.  To get curves, <b>shift-drag</b> on a
+point to create control points.  Then <b>shift-dragging</b> near a control
+point causes the control point to move.
 </p>
 <p>Finally, once you have a mask, the mask can be translated in one piece
 by <b>alt-dragging</b> the mask.  Mask editing in Cinelerra is
 identical to how The Gimp edits masks except in this case the effect of
 the mask is always on.
 </p>
+<div align="center"><A HREF="mask2.png"><IMG SRC="mask2_s.png"></A>
+</div><div align="center">Different types of mask points
+</div>
+<p><b>Mask tool window</b>
+</p>
 <p>The masks have many more parameters which couldn&rsquo;t be represented with
 video overlays.  These are represented in the tool window for masks. 
-Selecting the <img src="toolwindow.png" alt="toolwindow"> question mark when the <img src="mask.png" alt="mask">
-mask toggle is highlighted brings up the mask options.
 </p>
-<p>The <b>mode</b> of the mask determines if the mask removes data or
-makes data visible.  If the mode is subtractive, the mask causes video
-to disappear.  If the mode is additive, the mask causes video to appear
-and everything outside the mask to disappear.
+
+<p><b>MODE</b> determines if the mask removes data or makes data visible, if
+it&rsquo;s a path or a closed polygon.  If the mode is subtractive, the mask
+causes video to disappear.  If the mode is additive, the mask causes
+video to appear and everything outside the mask to disappear.
 </p>
-<p>The <b>value</b> of the mask determines how extreme the addition or
-subtraction is.  In the subtractive mode, higher values subtract more
-alpha.  In the additive mode, higher values make the region in the mask
-brighter while the region outside the mask is always hidden.
+<p><b>VALUE</b> determines how extreme the addition or subtraction is.  In the
+subtractive mode, higher values subtract more alpha.  In the additive
+mode, higher values make the region in the mask brighter while the
+region outside the mask is always hidden.
 </p>
-<p>The mask number determines which one of the 8 possible masks we&rsquo;re
-editing.  Each track has 8 possible masks.  When you click-drag in the
-compositor window, you&rsquo;re only editing one of the masks.  Change the
-value of <b>mask number</b> to cause another mask to be edited.  The
-previous mask is still active but only the curve overlay for the
-currently selected mask is visible.
+<p><b>MASK NUMBER</b> The mask number determines which one of the 8 possible
+masks we&rsquo;re editing.  Each track has 8 possible masks.  When you
+click-drag in the compositor window, you&rsquo;re only editing one of the
+masks.  Change the value of <b>mask number</b> to cause another mask to be
+edited.  The previous mask is still active but only the curve overlay
+for the currently selected mask is visible.
 </p>
 <p>When multiple masks are used, their effects are ORed together.  Every
-mask in a single track uses the same value and mode.
+mask in a single track uses the same value, mode, feather, radius.
 </p>
-<p>The edges of a mask are hard by default but this rarely is desired. 
+<p><b>FEATHER</b> The edges of a mask are hard by default but this rarely is desired. 
 The <b>feather</b> parameter determines how many pixels to feather the
 mask.  This creates softer edges but takes longer to render.
 </p>
-<p>Finally, there are parameters which affect one point on the current
-mask instead of the whole mask.  These are <b>Delete, x, y</b>.  The
-active point is defined as the last point dragged in the compositor
-window.  Any point can be activated merely by <b>ctrl-clicking</b> near
-it without moving the pointer.  Once a point is activated,
-<b>Delete</b> deletes it and <b>x, y</b> allow repositioning by numeric
-entry.
+<p><b>RADIUS</b> Only applies to paths &amp; determines the width of the path. 
+Feather is still applied to the edges of the path.
 </p>
-
-
+<p>Finally, there are parameters for editing one point on the current mask
+instead of the whole mask.
+</p>
+<p><b>EDITING POINT</b> Selects the active point for editing.  The points are
+all numbered from the 1st one created.  The active point is drawn
+enlarged in the compositor window.
+</p>
+<p><b>X, Y</b> Shows the position of the selected point.  Enter text to
+reposition it.
+</p>
+<p><b>DELETE POINT</b> Deletes the selected point
+</p>
+<p><b>MAKE LINEAR</b> This deletes the bezier control points to make the lines
+linear.
+</p>
+<p>Notes about animating masks are in the keyframe section.  See <a href="#MASK-KEYFRAMES">MASK KEYFRAMES</a>
+</p>
 
 <hr>
 <a name="CROPPING"></a>
@@ -5669,140 +5722,134 @@ Next: <a href="#CAPTURING-MEDIA" accesskey="n" rel="next">CAPTURING MEDIA</a>, P
 <h2 class="chapter">13 KEYFRAMES</h2>
 
 
-<p>When you change the fade, camera, projector, or other parameters for a
-track, they stay by default the same for the entire durection of the
-timeline.   Setting static parameters isn&rsquo;t very useful sometimes. 
-Normally you need to move the camera around over time or change mask
-positions.  Masks need to follow objects.  We create dymanic changes by
-defining keyframes.  A keyframe is a certain point in time when the
-settings for one operation change.  In Cinelerra, there are keyframes
-for almost every compositing parameter and effect parameter.
+<p>The fade, mute, mode, pan, mask, speed, camera, projector, transition,
+or effect data for a track is all stored in keyframes.  Keyframes come
+in many forms: curves, toggles, modes, masks, and so on.  How to handle
+the different types of keyframes is described here.
 </p>
-<p>Whenever you adjust any parameter, the value is stored in a keyframe. 
-If the value is stored in a keyframe, why doesn&rsquo;t it always change? 
-The keyframe it is stored in by default is known as the <b>default
-keyframe</b>.  The default keyframe applies to the entire duration if no
-other keyframes are present.  The default keyframe is not drawn
-anywhere because it always exists.  The only way change occurs over
-time is if non-default keyframes are created.
-</p>
-<p>Display keyframes for any parameter by using the <b>view</b> menu.  A
-faster way to toggle multiple keyframe types is to bring up
-<b>window-&gt;overlays</b>.  This window allows toggling of every parameter
-in the view menu.  When keyframes are selected, they are drawn on the
-timeline over the tracks they apply to.
-</p>
-<p>Keyframes come in many forms: curves, toggles, modes, and so on. 
-How to handle the different types of keyframes is described here.
-</p>
+
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#CURVE-KEYFRAMES" accesskey="1">CURVE KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using rubber band curves
+<tr><td align="left" valign="top">&bull; <a href="#DISPLAYING-KEYFRAMES" accesskey="1">DISPLAYING KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#CHANGING-BEZIER-_0026-LINEAR-MODE" accesskey="2">CHANGING BEZIER &amp; LINEAR MODE</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Change curves from linear to curved
+<tr><td align="left" valign="top">&bull; <a href="#DEFAULT-KEYFRAMES" accesskey="2">DEFAULT KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES" accesskey="3">SNAPPING TO NEIGHBOR KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#CURVE-KEYFRAMES" accesskey="3">CURVE KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using rubber band curves
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#NAVIGATING-CURVE-KEYFRAMES" accesskey="4">NAVIGATING CURVE KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#TOGGLE-KEYFRAMES" accesskey="5">TOGGLE KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#SELECTING-BEZIER-_0026-LINEAR-MODE" accesskey="5">SELECTING BEZIER &amp; LINEAR MODE</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Change curves from linear to curved
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#AUTOMATIC-KEYFRAMES" accesskey="6">AUTOMATIC KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES" accesskey="6">SNAPPING TO NEIGHBOR KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#COMPOSITOR-KEYFRAMES" accesskey="7">COMPOSITOR KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#MUTE-KEYFRAMES" accesskey="7">MUTE KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#EDITING-KEYFRAMES" accesskey="8">EDITING KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Moving keyframes around
+<tr><td align="left" valign="top">&bull; <a href="#AUTOMATIC-KEYFRAMES" accesskey="8">AUTOMATIC KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#KEYFRAME-SPANNING" accesskey="9">KEYFRAME SPANNING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to change 1 parameter in many keyframes simultaneously
+<tr><td align="left" valign="top">&bull; <a href="#CAMERA_002fPROJECTOR-KEYFRAMES" accesskey="9">CAMERA/PROJECTOR KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#MASK-KEYFRAMES">MASK KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#EDITING-KEYFRAMES">EDITING KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Moving keyframes around
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#KEYFRAME-SPANNING">KEYFRAME SPANNING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to change 1 parameter in many keyframes simultaneously
 </td></tr>
 </table>
 
+
+<hr>
+<a name="DISPLAYING-KEYFRAMES"></a>
+<div class="header">
+<p>
+Next: <a href="#DEFAULT-KEYFRAMES" accesskey="n" rel="next">DEFAULT KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="DISPLAYING-KEYFRAMES-1"></a>
+<h3 class="section">13.1 DISPLAYING KEYFRAMES</h3>
+
+<p>Display keyframes on the timeline for any parameter by using the
+<b>view</b> menu &amp; selecting the type of keyframe.  When keyframes are
+selected, they are drawn on the timeline over the tracks they apply to.
+</p>
+<p>A faster way to toggle multiple keyframe types is to bring up
+<b>window-&gt;overlays</b>.  This window allows toggling of every parameter in
+the view menu in a persistent window.  Click drag in this window to set
+multiple check boxes at once.
+</p>
+<p>The <b>keyframes-&gt;paste</b> operations only affect data types which are
+currently visible &amp; in recordable tracks.  Use the visible status &amp; the
+track record status to determine what keyframes are edited by the menu
+operations.
+</p>
+
+<hr>
+<a name="DEFAULT-KEYFRAMES"></a>
+<div class="header">
+<p>
+Next: <a href="#CURVE-KEYFRAMES" accesskey="n" rel="next">CURVE KEYFRAMES</a>, Previous: <a href="#DISPLAYING-KEYFRAMES" accesskey="p" rel="prev">DISPLAYING KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="DEFAULT-KEYFRAMES-1"></a>
+<h3 class="section">13.2 DEFAULT KEYFRAMES</h3>
+
+<p>Controls are constant for the entire duration of the timeline when no
+keyframes have been created.  The values are stored in a special type of
+keyframe called the default keyframe when they&rsquo;re constant.  The default
+keyframe isn&rsquo;t drawn on the timeline but it can be copied to the
+clipboard by going to <b>keyframes-&gt;copy default keyframe</b>.  This menu
+option copies all the default keyframes for all the data types in every
+track marked as recordable.  Paste the clipboard into a text editor to
+see the values of all the default keyframes.
+</p>
+<p>The default keyframe can also be overwritten by the clipboard contents. 
+Edit a <b>VALUE</b> in the text editor, copy the complete contents of the
+text editor &amp; go to <b>keyframes-&gt;paste default keyframe</b> to overwrite
+the timeline value with the value from the text editor.
+</p>
+<p>It should be noted <b>keyframes-&gt;paste default keyframe</b> only affects
+data types which are currently viewable in the <b>View</b> menu, regardless
+of if their values are in the clipboard.
+</p>
+<p>If <b>view-&gt;fade</b> is enabled, hit <b>ALT F</b>, then right click on the
+rubber band curve to get the keyframe context menu.  <b>Edit default
+keyframe</b> allows editing the default fade keyframe in a window.  Another
+set of copy &amp; paste options in the context menu provide clipboard
+operations for the default keyframe of just the 1 data type.
+</p>
+<p>Setting constant parameters isn&rsquo;t very useful sometimes.  Change values
+over time by creating non default keyframes.
+</p>
 
 
 <hr>
 <a name="CURVE-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#CHANGING-BEZIER-_0026-LINEAR-MODE" accesskey="n" rel="next">CHANGING BEZIER &amp; LINEAR MODE</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#NAVIGATING-CURVE-KEYFRAMES" accesskey="n" rel="next">NAVIGATING CURVE KEYFRAMES</a>, Previous: <a href="#DEFAULT-KEYFRAMES" accesskey="p" rel="prev">DEFAULT KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="CURVE-KEYFRAMES-1"></a>
-<h3 class="section">13.1 CURVE KEYFRAMES</h3>
+<h3 class="section">13.3 CURVE KEYFRAMES</h3>
 
-<p>Many parameters are stored in rubber band curves.  Go to <b>view-&gt;fade</b> or
-<b>view-&gt;...zoom</b> to show curves on the timeline for those parameters. 
+<p>Fade, Speed, Camera, Projector data is stored in rubber band curves.  Go
+to <b>view-&gt;fade</b> to show rubber band curves on the timeline for fade. 
 In either arrow editing mode or i-beam editing mode, move the cursor
-over the curves in the timeline until it changes shape.  Then merely by
-clicking and dragging on the curve you can create a keyframe at the
-position.
+over the curves in the timeline until it changes into an arrow.  Then
+merely by left clicking and dragging on the curve you can create a
+keyframe at the position.
 </p>
-<p>After the keyframe is created, click drag on it again to reposition
-it.  When you click-drag a second keyframe on the curve, it creates a
-smooth ramp.
+<p>After the keyframe is created, click drag on it again to reposition it. 
+When you create a second keyframe on the curve, it creates a smooth
+ramp.
 </p>
-<hr>
-<a name="CHANGING-BEZIER-_0026-LINEAR-MODE"></a>
-<div class="header">
-<p>
-Next: <a href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES" accesskey="n" rel="next">SNAPPING TO NEIGHBOR KEYFRAMES</a>, Previous: <a href="#CURVE-KEYFRAMES" accesskey="p" rel="prev">CURVE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
-</div>
-<a name="CHANGING-BEZIER-_0026-LINEAR-MODE-1"></a>
-<h3 class="section">13.2 CHANGING BEZIER &amp; LINEAR MODE</h3>
-
-<p>The curve keyframes have bezier and linear modes.  In linear mode, the
-keyframe looks like a square and the lines emanating from it are
-straight.  In bezier mode, the keyframe is rounded and has 2 control
-lines in addition to the rubber band curve lines.
-</p>
-<p>These are keyframes in linear mode.
-</p>
-<img src="linear.png" alt="linear">
-
-<p>These are keyframes in bezier mode.
-</p>
-<img src="bezier.png" alt="bezier">
-
-<p>Change the mode of an existing keyframe by right clicking on it to bring
-up the context menu and selecting <b>make linear</b> or <b>make bezier</b>.
+<p>Right click on a curve keyframe &amp; select <b>Edit keyframe</b> in the
+context menu to enter text values for it.  It can also be changed
+between bezier &amp; linear in this editor.
 </p>
 
-<p>Change the mode of several keyframes by highlighting the entire region of the
-timeline and selecting <b>Keyframes-&gt;change to linear</b> or
-<b>Keyframes-&gt;change to bezier</b>.
-</p>
-<p>When keyframes are created, they can be linear or bezier by default. 
-Change the default mode by checking or unchecking <b>Keyframes-&gt;create
-bezier</b>.
-</p>
-
-<p>For bezier keyframes, <b>ctrl-dragging</b> on the control lines of a
-keyframe changes the value of either the input control or the output
-control.  Without <b>ctrl</b> the cursor only affects the central
-keyframe.  This affects the sharpness of the curve.  The input and
-output controls can only be moved vertically.
-</p>
-<p>If the control lines aren&rsquo;t visible, <b>ctrl-drag</b> on the left or right
-of the keyframe.
-</p>
-<hr>
-<a name="SNAPPING-TO-NEIGHBOR-KEYFRAMES"></a>
-<div class="header">
-<p>
-Next: <a href="#NAVIGATING-CURVE-KEYFRAMES" accesskey="n" rel="next">NAVIGATING CURVE KEYFRAMES</a>, Previous: <a href="#CHANGING-BEZIER-_0026-LINEAR-MODE" accesskey="p" rel="prev">CHANGING BEZIER &amp; LINEAR MODE</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
-</div>
-<a name="SNAPPING-TO-NEIGHBOR-KEYFRAMES-1"></a>
-<h3 class="section">13.3 SNAPPING TO NEIGHBOR KEYFRAMES</h3>
-
-<p><b>shift-drag</b> on a curve keyframe to make the keyframe snap to the
-value of either the next or previous keyframe, depending on which
-exists.  This lets you set a constant curve value without having to copy
-the next or previous keyframe.
-</p>
 
 
 <hr>
 <a name="NAVIGATING-CURVE-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#TOGGLE-KEYFRAMES" accesskey="n" rel="next">TOGGLE KEYFRAMES</a>, Previous: <a href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES" accesskey="p" rel="prev">SNAPPING TO NEIGHBOR KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#SELECTING-BEZIER-_0026-LINEAR-MODE" accesskey="n" rel="next">SELECTING BEZIER &amp; LINEAR MODE</a>, Previous: <a href="#CURVE-KEYFRAMES" accesskey="p" rel="prev">CURVE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="NAVIGATING-CURVE-KEYFRAMES-1"></a>
 <h3 class="section">13.4 NAVIGATING CURVE KEYFRAMES</h3>
@@ -5813,30 +5860,94 @@ variability.  This is done by 2 tools: the automation fit button
 <img src="fitautos.png" alt="fitautos"> and automation zoom menu <img src="autozoom.png" alt="autozoom">.
 </p>
 <p>The automation fit button scales and offsets the vertical range so the
-selected curve area appears in the timeline.  If a region of the
-timeline is highlighted by the cursor, only that region is scaled. 
-In/out points don&rsquo;t affect the zoomed region.  <b>Alt-f</b> also performs
-automation fitting.
+selected curves fit in the timeline.  The selected curves are defined by
+the armed tracks, the visible keyframe types, &amp; the highlighed region. 
+If a region of the timeline is highlighted by the cursor, only that
+region is scaled.  If a region is not highlighted, the entire project is
+scaled.  In/out points don&rsquo;t affect the zoomed region.  <b>Alt-f</b> also
+performs automation fitting.
 </p>
-<p>The automation zoom menu manually changes the vertical scaling of the
-curves in multiples of 2.  Click on its tumbler to change the zoom. 
-<b>Alt-Up and Alt-Dn</b> change the automation zoom from the keyboard.
+<p>The automation zoom tumbler manually changes the vertical scaling of the
+curves by multiples of 2.  <b>Alt-Up and Alt-Dn</b> change the automation
+zoom from the keyboard.
 </p>
 
 <hr>
-<a name="TOGGLE-KEYFRAMES"></a>
+<a name="SELECTING-BEZIER-_0026-LINEAR-MODE"></a>
 <div class="header">
 <p>
-Next: <a href="#AUTOMATIC-KEYFRAMES" accesskey="n" rel="next">AUTOMATIC KEYFRAMES</a>, Previous: <a href="#NAVIGATING-CURVE-KEYFRAMES" accesskey="p" rel="prev">NAVIGATING CURVE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES" accesskey="n" rel="next">SNAPPING TO NEIGHBOR KEYFRAMES</a>, Previous: <a href="#NAVIGATING-CURVE-KEYFRAMES" accesskey="p" rel="prev">NAVIGATING CURVE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
-<a name="TOGGLE-KEYFRAMES-1"></a>
-<h3 class="section">13.5 TOGGLE KEYFRAMES</h3>
+<a name="SELECTING-BEZIER-_0026-LINEAR-MODE-1"></a>
+<h3 class="section">13.5 SELECTING BEZIER &amp; LINEAR MODE</h3>
+
+<p>The curve keyframes have linear, locked bezier, &amp; unlocked bezier
+modes.  In linear mode, the keyframe looks like a square and the curves
+emanating from it are straight.  In bezier modes, the keyframe is
+rounded and has 2 control lines in addition to the rubber band curve
+lines.  In locked bezier mode, the control lines are mirrors &amp; the curve
+is straight when it passes through the keyframe.  In unlocked bezier
+mode, the control lines have different angles &amp; the curve bends when it
+passes through the keyframe.
+</p>
+<p>To select the mode for a single keyframe, right click on it to bring up
+the keyframe menu.  Select <b>linear, locked bezier, or unlocked
+bezier</b>.
+</p>
+<p>To select the mode of multiple keyframes, highlight a region of the
+timeline, then go to 1 of the <b>Keyframes-&gt;change to</b> options.  These
+options change all the keyframes displayed in the View menu, in the
+highlighted area.
+</p>
+<p>For bezier keyframes, <b>ctrl-dragging</b> on the control lines of a
+keyframe changes the value of either the input control or the output
+control.  Without <b>ctrl</b> the cursor only affects the central
+keyframe.  This affects the sharpness of the curve.  The input and
+output controls can only be moved vertically.
+</p>
+<p>If the control lines aren&rsquo;t visible, <b>ctrl-drag</b> on the left or right
+of the keyframe.
+</p>
+<div align="center"><A HREF="linear.png"><IMG SRC="linear_s.png"></A>
+</div><div align="center">Linear keyframes
+</div>
+
+<div align="center"><A HREF="locked_bezier.png"><IMG SRC="locked_bezier_s.png"></A>
+</div><div align="center">Locked bezier keyframes
+</div>
+<div align="center"><A HREF="unlocked_bezier.png"><IMG SRC="unlocked_bezier_s.png"></A>
+</div><div align="center">Unlocked bezier keyframes
+</div>
+
+<hr>
+<a name="SNAPPING-TO-NEIGHBOR-KEYFRAMES"></a>
+<div class="header">
+<p>
+Next: <a href="#MUTE-KEYFRAMES" accesskey="n" rel="next">MUTE KEYFRAMES</a>, Previous: <a href="#SELECTING-BEZIER-_0026-LINEAR-MODE" accesskey="p" rel="prev">SELECTING BEZIER &amp; LINEAR MODE</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="SNAPPING-TO-NEIGHBOR-KEYFRAMES-1"></a>
+<h3 class="section">13.6 SNAPPING TO NEIGHBOR KEYFRAMES</h3>
+
+<p><b>shift-drag</b> on a curve keyframe to make the keyframe snap to the
+value of either the next or previous keyframe, depending on which
+exists.  This lets you set a constant curve value without having to copy
+the next or previous keyframe.
+</p>
+
+
+<hr>
+<a name="MUTE-KEYFRAMES"></a>
+<div class="header">
+<p>
+Next: <a href="#AUTOMATIC-KEYFRAMES" accesskey="n" rel="next">AUTOMATIC KEYFRAMES</a>, Previous: <a href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES" accesskey="p" rel="prev">SNAPPING TO NEIGHBOR KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="MUTE-KEYFRAMES-1"></a>
+<h3 class="section">13.7 MUTE KEYFRAMES</h3>
 
 <p>Mute is the only toggle keyframe.  Mute keyframes determine where the
 track is processed but not rendered to the output.  Click-drag on these
-curves to create a keyframe.  Unlike curves, the toggle keyframe has
-only two values: on or off.  Ctrl and shift do nothing on toggle
-keyframes.
+curves to create a keyframe.  Unlike curves, the mute keyframe has only
+two values: on or off.  Ctrl and shift do nothing on toggle keyframes.
 </p>
 
 
@@ -5847,23 +5958,22 @@ keyframes.
 <a name="AUTOMATIC-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#COMPOSITOR-KEYFRAMES" accesskey="n" rel="next">COMPOSITOR KEYFRAMES</a>, Previous: <a href="#TOGGLE-KEYFRAMES" accesskey="p" rel="prev">TOGGLE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#CAMERA_002fPROJECTOR-KEYFRAMES" accesskey="n" rel="next">CAMERA/PROJECTOR KEYFRAMES</a>, Previous: <a href="#MUTE-KEYFRAMES" accesskey="p" rel="prev">MUTE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="AUTOMATIC-KEYFRAMES-1"></a>
-<h3 class="section">13.6 AUTOMATIC KEYFRAMES</h3>
+<h3 class="section">13.8 AUTOMATIC KEYFRAMES</h3>
 
 <p>You may have noticed when a few fade curves are set up, moving the
-insertion point around the curves causes the faders to reflect the
-curve value under the insertion point.  This isn&rsquo;t just to look cool. 
-The faders themselves can set keyframes in automatic keyframe mode. 
+insertion point around the curves causes the faders to reflect the curve
+value under the insertion point.  This isn&rsquo;t just to look cool.  The
+faders themselves can create keyframes in automatic keyframe mode. 
 Automatic keyframe mode is usually more useful than dragging curves.
 </p>
-<p>Enable automatic keyframe mode by enabling the automatic keyframe
-toggle <img src="autokeyframe.png" alt="autokeyframe">.  In automatic keyframe mode, every time
-you tweek a keyframeable parameter it creates a keyframe on the
-timeline.  Since automatic keyframes affect many parameters, it&rsquo;s best
-enabled just before you need a keyframe and disabled immediately
-thereafter.
+<p>Enable automatic keyframe mode by enabling the automatic keyframe toggle
+<img src="autokeyframe.png" alt="autokeyframe">.  In automatic keyframe mode, every time you tweek
+a fader it creates a keyframe on the timeline.  Since automatic
+keyframes affect many parameters, it&rsquo;s best enabled just before you need
+a keyframe and disabled immediately thereafter.
 </p>
 <p>It&rsquo;s useful to go into the <b>View</b> menu and make the desired
 parameter visible before performing a change.  The location where the
@@ -5871,105 +5981,117 @@ automatic keyframe is generated is under the insertion point.  If the
 timeline is playing back during a tweek, several automatic keyframes
 will be generated as you change the parameter.
 </p>
-<p>When automatic keyframe mode is disabled, a similarly strange thing
-happens.  Adjusting a parameter adjusts the keyframe immediately
-preceeding the insertion point.  If two fade keyframes exist and the
-insertion point is between them, changing the fader changes the first
-keyframe.
+<p>When automatic keyframe mode is disabled, adjusting a parameter adjusts
+the keyframe immediately preceeding the insertion point.  If two fade
+keyframes exist and the insertion point is between them, changing the
+fader changes the first keyframe.
 </p>
 <p>There are many parameters which can only be keyframed in automatic
 keyframe mode.  These are parameters for which curves would take up too
 much space on the track or which can&rsquo;t be represented easily by a
 curve.
 </p>
-<p>Effects are only keyframable in automatic mode because of the number of
-parameters in each individual effect.  
+<p><b>Effects, masks, pan,</b> are only keyframable in automatic mode because 
+the number of parameters are different in each individual effect or
+because they require too many data points to draw on the timeline.  
 </p>
-<p>Camera and projector translation can only be keyframed in automatic
-keyframe mode while camera and projector zoom can be keyframed with
-curves.  It is here that we conclude the discussion of compositing,
-since compositing is highly dependant on the ability to change over
-time.
+
+
+
+<hr>
+<a name="CAMERA_002fPROJECTOR-KEYFRAMES"></a>
+<div class="header">
+<p>
+Next: <a href="#MASK-KEYFRAMES" accesskey="n" rel="next">MASK KEYFRAMES</a>, Previous: <a href="#AUTOMATIC-KEYFRAMES" accesskey="p" rel="prev">AUTOMATIC KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="CAMERA_002fPROJECTOR-KEYFRAMES-1"></a>
+<h3 class="section">13.9 CAMERA/PROJECTOR KEYFRAMES</h3>
+
+<p>Camera and projector automation is represented by X, Y, Z curves.  It is
+usually cumbersome to adjust camera &amp; projector with the curves so the
+compositor window allows direct entry of keyframes by dragging the
+image.  With a video track loaded, move the insertion point to the
+beginning of the track and enable automatic keyframe mode <img src="autokeyframe.png" alt="autokeyframe">.
+</p>
+<p>Edits in the compositor window only affect the 1st recordable track.
+</p>
+<p>Enable the projector tool in the compositor window.  Drag the video
+output to create keyframes for X &amp; Y translation.  Shift drag to zoom &amp;
+create a keyframe on the Z curve.  Clicking the justification buttons in
+the projector tool similarly create keyframes.  Selecting <b>reset
+projector</b> in the video output&rsquo;s context menu generates centered
+keyframes for X Y &amp; Z.
+</p>
+<p>Do <b>ALT F</b> in the timeline window to make the keyframe curves visible
+on the track.
+</p>
+<p>Move the insertion point to to another time on the timeline.  Move the
+projection again in the compositor window to create more keyframes. 
+Once all the desired keyframes are created, disable automatic keyframe
+mode.
+</p>
+<p>Now when scrubbing around between times on the timeline, the video
+projection will interpolate between the keyframes.
+</p>
+<p>If automatic keyframes are off, dragging the video output in the
+compositor window adjusts the previous keyframe.  If the insertion point
+is between keyframes, it won&rsquo;t appear to track the drag operation
+because the position at the insertion point is interpolated between 2
+keyframes.
+</p>
+<p>The camera &amp; projector tools perform the same operations on keyframes.
+</p>
+<p><b>BEZIER CURVES FOR CAMERA/PROJECTOR</b>
+</p>
+<p>By default, the motion paths created by camera &amp; projector are a
+straight line, but they can be converted to bezier curves via the
+keyframe menus.
 </p>
 
 
 <hr>
-<a name="COMPOSITOR-KEYFRAMES"></a>
+<a name="MASK-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#EDITING-KEYFRAMES" accesskey="n" rel="next">EDITING KEYFRAMES</a>, Previous: <a href="#AUTOMATIC-KEYFRAMES" accesskey="p" rel="prev">AUTOMATIC KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#EDITING-KEYFRAMES" accesskey="n" rel="next">EDITING KEYFRAMES</a>, Previous: <a href="#CAMERA_002fPROJECTOR-KEYFRAMES" accesskey="p" rel="prev">CAMERA/PROJECTOR KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
-<a name="COMPOSITOR-KEYFRAMES-1"></a>
-<h3 class="section">13.7 COMPOSITOR KEYFRAMES</h3>
+<a name="MASK-KEYFRAMES-1"></a>
+<h3 class="section">13.10 MASK KEYFRAMES</h3>
 
-<p>Camera and projector translation is represented by two parameters: x
-and y.  Therefore it is cumbersome to adjust with curves.  Cinelerra
-solves this problem by relying on automatic keyframes.  With a video
-track loaded, move the insertion point to the beginning of the track
-and enable automatic keyframe mode.
+<p>Mask keyframes can only be set by editing a mask in the compositor with
+auto keyframes <img src="autokeyframe.png" alt="autokeyframe"> enabled.
 </p>
-<p>Move the projector slightly in the compositor window to create a
-keyframe.  Then go forward several seconds.  Move the projector a long
-distance to create another keyframe and emphasize motion.  This creates
-a second projector box in the compositor, with a line joining the two
-boxes.  The joining line is the motion path.  If you create more
-keyframes, more boxes are created.  Once all the desired keyframes are
-created, disable automatic keyframe mode.
+<p>The main trick with mask keyframes is the polygons are interpolated
+between the keyframes by interpolating all the points with the same
+number.  Point 0 is interpolated with point 0.  Point 1 is interpolated
+with point 1.  Point 0 is differentiated from the other points to help
+match the points in the different keyframes.
 </p>
-<p>Now when scrubbing around with the compositor window&rsquo;s slider, the
-video projection moves over time.  At any point between two keyframes,
-the motion path is read for all time before the insertion point and
-green for all time after the insertion point.  It&rsquo;s debatable if this
-is a very useful feature but it makes you feel good to know what
-keyframe is going to be affected by the next projector tweek.
+<p>Feather &amp; radius are interpolated between keyframes but the Mode is
+whatever the previous keyframe has.
 </p>
-<p>Click-drag when automatic keyframes are off to adjust the preceeding
-keyframe.  If you&rsquo;re halfway between two keyframes, the first projector
-box is adjusted while the second one stays the same.  Furthermore, the
-video doesn&rsquo;t appear to move in step with the first keyframe.  This is
-because, halfway between two keyframes the projector translation is
-interpolated.  In order to set the second keyframe you&rsquo;ll need to scrub
-after the second keyframe.
+<p>If the number of points changes between keyframes, the results are
+undefined.
 </p>
-<p>By default the motion path is a straight line, but it can be curved
-with control points.  <b>Ctrl-drag</b> to set either the in or out
-control point of the preceeding keyframe.  Once again, we depart from
-The Gimp because <b>shift</b> is already used for zoom.  After the in
-or out control points are extrapolated from the keyframe,
-<b>Ctrl-dragging</b> anywhere in the video adjusts the nearest control
-point.  A control point can be out of view entirely yet still
-controllable.
-</p>
-<p>When editing the camera translation, the behavior of the camera boxes
-is slightly different.  Camera automation is normally used for still
-photo panning.  The current camera box doesn&rsquo;t move during a drag, but
-if multiple keyframes are set, every camera box except the current
-keyframe appears to move.  This is because the camera display shows
-every other camera position relative to the current one.
-</p>
-<p>The situation becomes more intuitive if you bend the motion path
-between two keyframes and scrub between the two keyframes.  The
-division between red and green, the current position between the
-keyframes, is always centered while the camera boxes move.
-</p>
-
-
-
-
 
 <hr>
 <a name="EDITING-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#KEYFRAME-SPANNING" accesskey="n" rel="next">KEYFRAME SPANNING</a>, Previous: <a href="#COMPOSITOR-KEYFRAMES" accesskey="p" rel="prev">COMPOSITOR KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#KEYFRAME-SPANNING" accesskey="n" rel="next">KEYFRAME SPANNING</a>, Previous: <a href="#MASK-KEYFRAMES" accesskey="p" rel="prev">MASK KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="EDITING-KEYFRAMES-1"></a>
-<h3 class="section">13.8 EDITING KEYFRAMES</h3>
+<h3 class="section">13.11 EDITING KEYFRAMES</h3>
 
-<p>Keyframes can be shifted around and moved between tracks on the
-timeline using similar cut and paste operations to editing media.  Only
-the keyframes selected in the <b>view</b> menu are affected by keyframe
-editing operations, however.
+
+<p><b>THE KEYFRAME MENU</b>
+</p>
+<p>Keyframes can be shifted around and moved between tracks on the timeline
+using the same cut and paste metaphore as editing media.  The
+<b>keyframe</b> menu performs clipboard operations on multiple keyframes at
+the same time, as defined by what tracks are armed &amp; what data types are
+visible.  Only the keyframes selected in the <b>view</b> menu are affected
+by keyframe editing operations.
 </p>
 <p>The most popular keyframe editing operation is replication of some
 curve from one track to the other, to make a stereo pair.  The first
@@ -5983,16 +6105,7 @@ go to <b>keyframes-&gt;paste keyframes</b> to paste the clipboard.
 <p>The media editing commands are mapped to the keyframe editing commands
 by using the <b>shift</b> key instead of just the keyboard shortcut.  
 </p>
-<p>This leads to the most complicated part of keyframe editing, the
-default keyframe.  Remember that when no keyframes are set at all,
-there is still a default keyframe which stores a global parameter for
-the entire duration.  The default keyframe isn&rsquo;t drawn because it
-always exists.  What if the default keyframe is a good value which you
-want to transpose between other non-default keyframes?  The
-<b>keyframes-&gt;copy default keyframe</b> and <b>keyframes-&gt;paste
-default keyframe</b> allow conversion of the default keyframe to a
-non-default keyframe.
-</p>
+
 <p><b>Keyframes-&gt;copy default keyframe</b> copies the default keyframe to
 the clipboard, no matter what region of the timeline is selected.  The
 <b>keyframes-&gt;paste keyframes</b> function may then be used to paste
@@ -6009,8 +6122,32 @@ selecting a region and calling <b>keyframes-&gt;clear keyframes</b>.
 Merely click-drag a keyframe before its preceeding keyframe or after
 its following keyframe on the track.
 </p>
-
-
+<p><b>KEYFRAME CONTEXT MENU</b>
+</p>
+<p>Right clicking on a keyframe or a rubber band curve provides a context
+menu with the same operations as the keyframe menu.  The difference is
+the context menu affects just 1 keyframe at a time.  This can be faster
+than arming tracks &amp; selecting data types to show in the view menu.
+</p>
+<p>The context menu provides an additional <b>Edit keyframe</b> operation to
+type in the values of a curve keyframe.
+</p>
+<p><b>EDITING KEYFRAMES IN A TEXT EDITOR</b>
+</p>
+<p>Select <b>copy keyframe</b> or <b>copy default keyframe</b> in the context menu
+to copy a single keyframe to the clipboard.  Paste it in a text editor. 
+Copy it back to the timeline with <b>paste keyframe</b> or <b>paste default
+keyframe</b> in the context menu.
+</p>
+<p><b>MOVING KEYFRAMES BETWEEN AUDIO &amp; VIDEO TRACKS</b>
+</p>
+<p>Normally, keyframes from audio tracks can&rsquo;t be pasted into video tracks
+&amp; vice versa.  Enabling <b>Settings-&gt;Interchangeable audio &amp; video
+keyframes</b> allows keyrfames copied from a track type to be pasted in
+another track type.  The only factor determining the destination is what
+track is armed.  The only real use for this is copying a speed curve to
+all the tracks.
+</p>
 <hr>
 <a name="KEYFRAME-SPANNING"></a>
 <div class="header">
@@ -6018,7 +6155,7 @@ its following keyframe on the track.
 Previous: <a href="#EDITING-KEYFRAMES" accesskey="p" rel="prev">EDITING KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="KEYFRAME-SPANNING-1"></a>
-<h3 class="section">13.9 KEYFRAME SPANNING</h3>
+<h3 class="section">13.12 KEYFRAME SPANNING</h3>
 
 
 
@@ -6087,7 +6224,7 @@ imported into the timeline and quit.
 
 </li></ul>
 
-<img src="recording.png" alt="recording">
+<A HREF="recording.png"><IMG SRC="recording_s.png"></A>
 <br>
 <br>
 <p><b>Recording window areas</b>
@@ -7707,7 +7844,7 @@ work well for compressed sources.  A popular softening technique is to
 use a maximum slope and chain a blur effect below the chroma key effect
 to blur just the alpha.
 </p>
-<div align="center"><A HREF="chromakey.png"><IMG SRC="chromakeys.png"></A>
+<div align="center"><A HREF="chromakey.png"><IMG SRC="chromakey_s.png"></A>
 </div><div align="center">Use the color swatch to visualize the effect of the chromakey.
 </div>
 
@@ -7728,7 +7865,7 @@ swatch to 100 for easiest visualization.  In Chroma Key HSV, set the
 alpha offset to 0, min brightness to 0, max brightness to 100 for
 easiest visualization.
 </p>
-<div align="center"><A HREF="chromakeyhsv1.png"><IMG SRC="chromakeyhsv1s.png"></A>
+<div align="center"><A HREF="chromakeyhsv1.png"><IMG SRC="chromakeyhsv1_s.png"></A>
 </div><div align="center">Chromakey HSV test project
 </div>
 <p>To visualize how much of the source is being taken out, set the color
@@ -7761,20 +7898,20 @@ brightness range cuts off the wedge as you slide around the color swatch
 brightness value.  For the best experience when experimenting, set min &amp;
 max brightness to 0 &amp; 100.
 </p>
-<div align="center"><A HREF="chromakeyhsv2.png"><IMG SRC="chromakeyhsv2s.png"></A>
+<div align="center"><A HREF="chromakeyhsv2.png"><IMG SRC="chromakeyhsv2_s.png"></A>
 </div><div align="center">Effect of brightness range
 </div>
 
 <p><b>Saturation start</b> determines the radius of the point of the wedge
 when the color swatch is in <b>constant brightness</b>.
 </p>
-<div align="center"><A HREF="chromakeyhsv3.png"><IMG SRC="chromakeyhsv3s.png"></A>
+<div align="center"><A HREF="chromakeyhsv3.png"><IMG SRC="chromakeyhsv3_s.png"></A>
 </div><div align="center">Effect of saturation start
 </div>
 <p><b>Saturation line</b> is an additional radius which is taken out of the
 wedge.
 </p>
-<div align="center"><A HREF="chromakeyhsv4.png"><IMG SRC="chromakeyhsv4s.png"></A>
+<div align="center"><A HREF="chromakeyhsv4.png"><IMG SRC="chromakeyhsv4_s.png"></A>
 </div><div align="center">Effect of saturation line
 </div>
 <p><b>MASK TWEEKING</b>
@@ -7783,7 +7920,7 @@ wedge.
 </p>
 <p><b>Out slope</b> adds transparent area to the wedge using a gradient
 </p>
-<div align="center"><A HREF="chromakeyhsv5.png"><IMG SRC="chromakeyhsv5s.png"></A>
+<div align="center"><A HREF="chromakeyhsv5.png"><IMG SRC="chromakeyhsv5_s.png"></A>
 </div><div align="center">Effect of slopes
 </div>
 <p><b>Alpha offset</b> When greater than 0, this fills in the wedge with a
@@ -7804,7 +7941,7 @@ color swatch should be in constant brightness.  Saturation start should
 be greater than 0.  Increasing spill saturation rewinds from the wedge
 point &amp; begins replacing colors from the rewound point.
 </p>
-<div align="center"><A HREF="chromakeyhsv6.png"><IMG SRC="chromakeyhsv6s.png"></A>
+<div align="center"><A HREF="chromakeyhsv6.png"><IMG SRC="chromakeyhsv6_s.png"></A>
 </div><div align="center">Effect of spill saturation
 </div>
 <p><b>Spill angle</b> An angle added to the hue tolerance to make the wedge
@@ -7812,7 +7949,7 @@ wider.  Inside this angle, a constant hue is copied from the neighboring
 part of the color swatch to the area where the spill light would be. 
 Increase the spill angle to copy hue from farther away from the wedge.
 </p>
-<div align="center"><A HREF="chromakeyhsv8.png"><IMG SRC="chromakeyhsv8s.png"></A>
+<div align="center"><A HREF="chromakeyhsv8.png"><IMG SRC="chromakeyhsv8_s.png"></A>
 </div><div align="center">Effect of spill angle.  By increasing the angle, the yellow &amp; cyan are copied to the wedge area.
 </div>
 <p><b>Desaturate only</b> Instead of copying the neighboring hue in the color
@@ -7820,7 +7957,7 @@ swatch, this takes all the color out, yielding white where the spill
 light would be.  This was the behavior of chromakey HSV when it was 1st
 ported to Cinelerra but is not the Avid behavior.
 </p>
-<div align="center"><A HREF="chromakeyhsv7.png"><IMG SRC="chromakeyhsv7s.png"></A>
+<div align="center"><A HREF="chromakeyhsv7.png"><IMG SRC="chromakeyhsv7_s.png"></A>
 </div><div align="center">Effect of desaturation
 </div>
 
