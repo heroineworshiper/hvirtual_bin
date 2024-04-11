@@ -21,6 +21,7 @@
 "compressormulti.plugin" "Compressor Multi" 1 0 0 1 0 1 1 0 0 0
 "crossfade.plugin" "Crossfade" 1 0 0 0 0 0 0 0 1 0
 "cubemap.plugin" "Cube Unmap" 0 1 0 1 0 1 0 0 0 0
+"curves.plugin" "Curves" 0 1 0 1 0 1 0 0 0 0
 "dcoffset.plugin" "DC Offset" 1 0 0 1 0 1 0 0 0 0
 "decimate.plugin" "Decimate" 0 1 0 1 0 1 0 0 0 0
 "deinterlace.plugin" "Deinterlace" 0 1 0 1 0 1 0 0 0 0
