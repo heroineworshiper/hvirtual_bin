@@ -291,8 +291,9 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <li><a name="toc-AUTOMATIC-KEYFRAMES-1" href="#AUTOMATIC-KEYFRAMES">13.8 AUTOMATIC KEYFRAMES</a></li>
     <li><a name="toc-CAMERA_002fPROJECTOR-KEYFRAMES-1" href="#CAMERA_002fPROJECTOR-KEYFRAMES">13.9 CAMERA/PROJECTOR KEYFRAMES</a></li>
     <li><a name="toc-MASK-KEYFRAMES-1" href="#MASK-KEYFRAMES">13.10 MASK KEYFRAMES</a></li>
-    <li><a name="toc-EDITING-KEYFRAMES-1" href="#EDITING-KEYFRAMES">13.11 EDITING KEYFRAMES</a></li>
-    <li><a name="toc-KEYFRAME-SPANNING-1" href="#KEYFRAME-SPANNING">13.12 KEYFRAME SPANNING</a></li>
+    <li><a name="toc-EFFECT-KEYFRAMES-1" href="#EFFECT-KEYFRAMES">13.11 EFFECT KEYFRAMES</a></li>
+    <li><a name="toc-EDITING-KEYFRAMES-1" href="#EDITING-KEYFRAMES">13.12 EDITING KEYFRAMES</a></li>
+    <li><a name="toc-KEYFRAME-SPANNING-1" href="#KEYFRAME-SPANNING">13.13 KEYFRAME SPANNING</a></li>
   </ul></li>
   <li><a name="toc-CAPTURING-MEDIA-1" href="#CAPTURING-MEDIA">14 CAPTURING MEDIA</a>
   <ul class="no-bullet">
@@ -445,17 +446,31 @@ Next: <a href="#INSTALLATION" accesskey="n" rel="next">INSTALLATION</a>, Previou
 <a name="ABOUT-CINELERRA-1"></a>
 <h2 class="chapter">2 ABOUT CINELERRA</h2>
 
-<p><b>BROADCAST 1.0</b>
+<p>It&rsquo;s important to remember where it came from to differentiate what&rsquo;s
+really needed from bloat.
 </p>
-<p>In 1996 our first editor came out: Broadcast 1.0.  It was just a window
-with a waveform in it, it could cut and paste stereo audio waveforms on
-a UNIX box, except unlike other audio editors it could handle files up
-to 2 gigabytes with only 64 megs of RAM.  That was a feature normally
-only accessible to the highest end professional audio houses.
+<p><b>BOBCAST/BROADCAST 1.0</b>
+</p>
+<A HREF="bobcast5.png"><IMG SRC="bobcast5_s.png"></A>
+
+<p>The 1st attempt at editing media was written in 1996.  It just loaded a
+single WAV file or edit list from the command line &amp; shifted bits of it
+around in a single window.  Then it could render a new wav file or save
+the edit list.  It used bare X11 calls &amp; no toolkit.
+</p>
+<p>The typical source in those days was 1 file containing a complete
+recording session.  Editing just needed to move bits of the 1 file
+around.
+</p>
+<p>Its big magic tricks wer handling files up to 2 gigabytes with only 64
+megs of RAM &amp; non destructive editing.  That was a feature normally only
+accessible to the highest end professional audio houses in those days.
 </p>
 
-<p><b>BROADCAST 2.0</b>
+<p><b>BROADCAST 2.1</b>
 </p>
+<A HREF="broadcast21.png"><IMG SRC="broadcast21_s.png"></A>
+
 <p>In 1997 Broadcast 1.0 was replaced by Broadcast 2.0.  This time the
 window had a menubar, patchbay, console, and transport control. 
 Broadcast 2.0 still only handled audio but this time it handled
@@ -468,6 +483,8 @@ unavailable on most audio programs.
 </p>
 <p><b>BROADCAST 2000</b>
 </p>
+<A HREF="broadcast.png"><IMG SRC="broadcast_s.png"></A>
+
 <p>But Broadcast 2.0 still didn&rsquo;t handle video and it wasn&rsquo;t very graceful
 at audio either.  In 1999 video broke into the story with Broadcast
 2000.  This iteration of the Broadcast series could do wonders with
@@ -4644,7 +4661,9 @@ applied using the same procedure.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#LADSPA-EFFECTS" accesskey="4">LADSPA EFFECTS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#EFFECT-PRESETS" accesskey="5">EFFECT PRESETS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#EFFECT-KEYFRAMES" accesskey="5">EFFECT KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#EFFECT-PRESETS" accesskey="6">EFFECT PRESETS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
@@ -5080,8 +5099,6 @@ signify that they are Plugins for Linux Audio Developers.
 environment variable to the location of your LADSPA plugins or putting
 them in the <b>/usr/lib/cinelerra</b> directory.
 </p>
-
-
 
 
 <hr>
@@ -5754,6 +5771,8 @@ the different types of keyframes is described here.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#MASK-KEYFRAMES">MASK KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#EFFECT-KEYFRAMES">EFFECT KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#EDITING-KEYFRAMES">EDITING KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Moving keyframes around
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#KEYFRAME-SPANNING">KEYFRAME SPANNING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to change 1 parameter in many keyframes simultaneously
@@ -6058,7 +6077,7 @@ keyframe menus.
 <a name="MASK-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#EDITING-KEYFRAMES" accesskey="n" rel="next">EDITING KEYFRAMES</a>, Previous: <a href="#CAMERA_002fPROJECTOR-KEYFRAMES" accesskey="p" rel="prev">CAMERA/PROJECTOR KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#EFFECT-KEYFRAMES" accesskey="n" rel="next">EFFECT KEYFRAMES</a>, Previous: <a href="#CAMERA_002fPROJECTOR-KEYFRAMES" accesskey="p" rel="prev">CAMERA/PROJECTOR KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="MASK-KEYFRAMES-1"></a>
 <h3 class="section">13.10 MASK KEYFRAMES</h3>
@@ -6078,15 +6097,67 @@ whatever the previous keyframe has.
 <p>If the number of points changes between keyframes, the results are
 undefined.
 </p>
+<hr>
+<a name="EFFECT-KEYFRAMES"></a>
+<div class="header">
+<p>
+Next: <a href="#EDITING-KEYFRAMES" accesskey="n" rel="next">EDITING KEYFRAMES</a>, Previous: <a href="#MASK-KEYFRAMES" accesskey="p" rel="prev">MASK KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="EFFECT-KEYFRAMES-1"></a>
+<h3 class="section">13.11 EFFECT KEYFRAMES</h3>
 
+<p>Effects have a default keyframe which applies to their entire duration &amp;
+optionally normal keyframes at points in time.  Effect keyframes can be
+created by right clicking on the effect, copying the default keyframe &amp;
+pasting it as a normal keyframe.  They are also created by enabling
+<img src="autokeyframe.png" alt="autokeyframe"> auto keyframes &amp; changing a parameter in the effect
+GUI.  Right click on an effect keyframe to get a context menu for it. 
+This allows copying single keyframes &amp; pasting them as the default
+keyframe or new keyframes.  Clipboard operations with multiple keyframes
+are done in the <b>Keyframes</b> menu.
+</p>
+<p>To simultaneously change the same parameter in multiple keyframes,
+See <a href="#KEYFRAME-SPANNING">KEYFRAME SPANNING</a>.
+</p>
+<p>Some effect parameters don&rsquo;t create keyframes, like whether to plot a
+histogram, the size of the GUI window, &quot;copy to all&quot; in 3 way color. 
+These are saved as defaults.
+</p>
+<p>Whether a parameter isn&rsquo;t keyframed, changes instantly or is
+interpolated is done on a case by case basis, but is loosely correlated
+with the type of parameter.  The easiest way to find out what is being
+interpolated is to create 2 keyframes &amp; scrub between them with the GUI
+open.  The GUI should automatically update to show the current values.
+</p>
+<p><b>Linear parameters which don&rsquo;t affect memory usage or time</b> are
+interpolated.  Brightness, histogram points, color curve points, pitch
+shift amount, translation points, perspective points, scale values are
+interpolated.
+</p>
+<p><b>Toggles</b> always copy the current keyframe value.
+</p>
+<p><b>Time altering parameters</b> are always instant.  Resample, reframe, or
+the reference frame in a motion tracker are instant because they affect
+time.
+</p>
+<p><b>Memory altering parameters</b> are always instant.  The number of frames
+in a time average is an example that changes memory usage.
+</p>
+<p><b>Very slow effects</b> are usually instant.  All the parameters in motion
+effects are instant because they&rsquo;re slow.
+</p>
+<p><b>Needs based on experience</b> Some parameters have never needed
+interpolation, like the position of a reference block in Motion or the
+number of reflections in Reverb.
+</p>
 <hr>
 <a name="EDITING-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#KEYFRAME-SPANNING" accesskey="n" rel="next">KEYFRAME SPANNING</a>, Previous: <a href="#MASK-KEYFRAMES" accesskey="p" rel="prev">MASK KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#KEYFRAME-SPANNING" accesskey="n" rel="next">KEYFRAME SPANNING</a>, Previous: <a href="#EFFECT-KEYFRAMES" accesskey="p" rel="prev">EFFECT KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="EDITING-KEYFRAMES-1"></a>
-<h3 class="section">13.11 EDITING KEYFRAMES</h3>
+<h3 class="section">13.12 EDITING KEYFRAMES</h3>
 
 
 <p><b>THE KEYFRAME MENU</b>
@@ -6160,18 +6231,20 @@ all the tracks.
 Previous: <a href="#EDITING-KEYFRAMES" accesskey="p" rel="prev">EDITING KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="KEYFRAME-SPANNING-1"></a>
-<h3 class="section">13.12 KEYFRAME SPANNING</h3>
+<h3 class="section">13.13 KEYFRAME SPANNING</h3>
 
 
 
 <p>To change a single parameter in multiple keyframes without changing the
-other parameters, highlight a region on the timeline and adjust the
-parameter.  Instead of a new keyframe being created, the existing
-keyframes are modified and only the changed parameter is modified.
+other parameters, highlight a region on the timeline which spans
+multiple keyframes and adjust the parameter.  Instead of a new keyframe
+being created, the existing keyframes in the span are modified and only
+the changed parameter is modified.
 </p>
 <p>It doesn&rsquo;t matter if <img src="autokeyframe.png" alt="autokeyframe"> auto keyframe is enabled.  It
 only works when the keyframe stores multiple parameters.  Only mask and
-effect keyframes do this.  Other types of keyframes are generated as usual.
+effect keyframes do this.  Other types of keyframes are generated as
+usual.
 </p>
 
 
@@ -9569,19 +9642,21 @@ Next: <a href="#MAKING-TITLES-LOOK-GOOD" accesskey="n" rel="next">MAKING TITLES 
 <a name="ADDING-FONTS-TO-THE-TITLER-1"></a>
 <h4 class="subsection">18.27.1 ADDING FONTS TO THE TITLER</h4>
 
-<p>The X Window system originally didn&rsquo;t have a suitable font renderer for
-video.  It also is restricted to the current bit depth.  It doesn&rsquo;t
-have a convenient way to know which fonts work with the suitable font
-renderer in the desired bit depth.  The easiest way we&rsquo;ve found to
-support fonts in the titler is to have a directory for them at
-<b>/usr/lib/cinelerra/fonts</b>.
+<p>Cinelerra uses libfreetype for drawing titles.  It has a few
+limitations: it can&rsquo;t automatically use the fonts installed in the X
+server.  It can&rsquo;t automatically determine the files to use for normal,
+italic, bold.  Some distributions began putting all their fonts in
+/usr/share/fonts but different programs still have their own directories
+to guarantee they work.
 </p>
-<p>The titler supports mainly <b>TTF</b>, true type fonts.  It supports
-others but TTF are the most reliable.  To add true type fonts, copy the
-<b>.TTF</b> files to the <b>/usr/lib/cinelerra/fonts</b> directory.  In that
-directory run <b>ttmkfdir &amp;&amp; mv fonts.scale fonts.dir</b> and restart
+<p>The easiest way to support fonts has been to put the .ttf files in
+<b>cinelerra/fonts</b>.  Then run <b>ttmkfdir &gt; fonts.dir</b> and restart
 Cinelerra.  The new fonts should appear.  The usage of ttmkfdir changes
 frequently so this technique might not work.
+</p>
+<p>The titler supports whatever ttmkfdir &amp; freetype support, mainly
+<b>TTF</b>, true type fonts.  Other font formats like OTF are best
+converted to TTF.  It&rsquo;s not the biggest limitation of the titler.
 </p>
 
 
