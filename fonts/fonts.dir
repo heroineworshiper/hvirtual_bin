@@ -1,4 +1,4 @@
-784
+754
 courbd.ttf -monotype-Courier New-bold-r-normal--0-0-0-0-m-0-ascii-0
 courbd.ttf -monotype-Courier New-bold-r-normal--0-0-0-0-m-0-koi8-ru
 courbd.ttf -monotype-Courier New-bold-r-normal--0-0-0-0-m-0-koi8-r
@@ -121,10 +121,6 @@ arialbd.ttf -monotype-Arial-bold-r-normal--0-0-0-0-p-0-iso8859-3
 arialbd.ttf -monotype-Arial-bold-r-normal--0-0-0-0-p-0-iso8859-2
 arialbd.ttf -monotype-Arial-bold-r-normal--0-0-0-0-p-0-iso8859-1
 Action Man.ttf -misc-Action Man-medium-r-normal--0-0-0-0-p-0-ascii-0
-Bangers.ttf -misc-Bangers-medium-r-normal--0-0-0-0-p-0-ascii-0
-Bangers.ttf -misc-Bangers-medium-r-normal--0-0-0-0-p-0-fcd8859-15
-Bangers.ttf -misc-Bangers-medium-r-normal--0-0-0-0-p-0-iso8859-15
-Bangers.ttf -misc-Bangers-medium-r-normal--0-0-0-0-p-0-iso8859-1
 Action Man Italic.ttf -misc-Action Man-medium-i-normal--0-0-0-0-p-0-ascii-0
 Old Republic.ttf -macromedia-Old Republic-medium-r-normal--0-0-0-0-p-0-ascii-0
 trebucbd.ttf -microsoft-Trebuchet MS-bold-r-normal--0-0-0-0-p-0-ascii-0
@@ -355,17 +351,6 @@ LinLibertine_RZIah.ttf -misc-Linux Libertine-semi bold-i-normal--0-0-0-0-p-0-iso
 LinLibertine_RZIah.ttf -misc-Linux Libertine-semi bold-i-normal--0-0-0-0-p-0-iso8859-3
 LinLibertine_RZIah.ttf -misc-Linux Libertine-semi bold-i-normal--0-0-0-0-p-0-iso8859-2
 LinLibertine_RZIah.ttf -misc-Linux Libertine-semi bold-i-normal--0-0-0-0-p-0-iso8859-1
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-ascii-0
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-fcd8859-15
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-15
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-10
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-9
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-7
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-5
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-4
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-3
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-2
-Roboto-Regular.ttf -misc-Roboto-medium-r-normal--0-0-0-0-p-0-iso8859-1
 Telegraphic.ttf -macromedia-Telegraphic-medium-r-normal--0-0-0-0-p-0-ascii-0
 Sci Fied Bold.ttf -macromedia-Sci Fied-bold-r-normal--0-0-0-0-p-0-ascii-0
 VeraMoBI.ttf -Bitstream-Bitstream Vera Sans Mono-bold-i-normal--0-0-0-0-m-0-ascii-0
@@ -737,21 +722,6 @@ verdanaz.ttf -microsoft-Verdana-bold-i-normal--0-0-0-0-p-0-iso8859-4
 verdanaz.ttf -microsoft-Verdana-bold-i-normal--0-0-0-0-p-0-iso8859-3
 verdanaz.ttf -microsoft-Verdana-bold-i-normal--0-0-0-0-p-0-iso8859-2
 verdanaz.ttf -microsoft-Verdana-bold-i-normal--0-0-0-0-p-0-iso8859-1
-lw3.ttf -misc-Lightworks Symbols 3-medium-r-normal--0-0-0-0-p-0-ascii-0
-lw3.ttf -misc-Lightworks Symbols 3-medium-r-normal--0-0-0-0-p-0-fcd8859-15
-lw3.ttf -misc-Lightworks Symbols 3-medium-r-normal--0-0-0-0-p-0-iso8859-15
-lw3.ttf -misc-Lightworks Symbols 3-medium-r-normal--0-0-0-0-p-0-iso8859-1
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-ascii-0
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-fcd8859-15
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-15
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-10
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-9
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-7
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-5
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-4
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-3
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-2
-Roboto-Medium.ttf -misc-Roboto Medium-medium-r-normal--0-0-0-0-p-0-iso8859-1
 symbol.ttf -monotype-Symbol-medium-r-normal--0-0-0-0-p-0-microsoft-symbol
 ariali.ttf -monotype-Arial-medium-i-normal--0-0-0-0-p-0-ascii-0
 ariali.ttf -monotype-Arial-medium-i-normal--0-0-0-0-p-0-koi8-ru
