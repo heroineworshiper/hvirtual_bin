@@ -255,6 +255,7 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <li><a name="toc-DRAG-AND-DROP-EDITING-1" href="#DRAG-AND-DROP-EDITING">9.8 DRAG AND DROP EDITING</a></li>
     <li><a name="toc-CUT-AND-PASTE-EDITING-1" href="#CUT-AND-PASTE-EDITING">9.9 CUT AND PASTE EDITING</a></li>
     <li><a name="toc-TRIMMING-1" href="#TRIMMING">9.10 TRIMMING</a></li>
+    <li><a name="toc-THE-EDIT-INFO-DIALOG-1" href="#THE-EDIT-INFO-DIALOG">9.11 THE EDIT INFO DIALOG</a></li>
   </ul></li>
   <li><a name="toc-USING-EFFECTS-1" href="#USING-EFFECTS">10 USING EFFECTS</a>
   <ul class="no-bullet">
@@ -4149,6 +4150,8 @@ attribute.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#TRIMMING">TRIMMING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Changing in and out points
 </td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#THE-EDIT-INFO-DIALOG">THE EDIT INFO DIALOG</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Hacking the EDL fields
+</td></tr>
 </table>
 
 
@@ -4671,7 +4674,7 @@ edit.  This either results in the edit expanding or shrinking.
 <a name="TRIMMING"></a>
 <div class="header">
 <p>
-Previous: <a href="#CUT-AND-PASTE-EDITING" accesskey="p" rel="prev">CUT AND PASTE EDITING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#THE-EDIT-INFO-DIALOG" accesskey="n" rel="next">THE EDIT INFO DIALOG</a>, Previous: <a href="#CUT-AND-PASTE-EDITING" accesskey="p" rel="prev">CUT AND PASTE EDITING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TRIMMING-1"></a>
 <h3 class="section">9.10 TRIMMING</h3>
@@ -4685,10 +4688,17 @@ dragging operation affects the beginning of the edit.  If the cursor is
 an expand right, the dragging operation affects the end of the edit.
 </p>
 <p>When you click on an edit boundary to start dragging, the mouse button
-number determines which dragging behavior is going to be followed.  3
-possible behaviors are bound to mouse buttons in the interface
-preferences. See <a href="#INTERFACE">INTERFACE</a>.
+number determines which dragging behavior is going to be followed.  
 </p>
+
+<ul>
+<li> Left button: Drag all the edits after the insertion point
+
+</li><li> Middle button: Drag only 1 edit
+
+</li><li> Right button: Drag the source positions only
+</li></ul>
+
 <p>The effect of each drag operation not only depends on the behavior
 button but whether the beginning or end of the edit is being dragged.
 When you release the mouse button, the trimming operation is performed.
@@ -4722,6 +4732,47 @@ source start.
 as the cursor when the drag operation begins are affected.  Unarm
 tracks to prevent edits from getting affected.
 </p>
+
+
+
+<hr>
+<a name="THE-EDIT-INFO-DIALOG"></a>
+<div class="header">
+<p>
+Previous: <a href="#TRIMMING" accesskey="p" rel="prev">TRIMMING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="THE-EDIT-INFO-DIALOG-1"></a>
+<h3 class="section">9.11 THE EDIT INFO DIALOG</h3>
+
+<p>Right click on an edit -&gt; edit info... to get the edit info dialog for
+the edit.  This provides the raw fields in the edit in text form.
+</p>
+<p>The biggest use of this has been fixing synchronization problems.  Edit 
+positions can be copied here.  Changes here can be undone but redo may
+not work if the changes corrupted the EDL.
+</p>
+<ul>
+<li> PATH: The source asset of an edit can be swapped here for another
+asset already in the project but the filenames can&rsquo;t be edited.  Only
+the <b>Asset info</b> dialog can do that.  This box also has an option to
+change the edit to silence.
+
+</li><li> SOURCE START, PROJECT START, LENGTH: Numerical representations of
+the edit&rsquo;s position on the timeline &amp; in the asset can be edited here. 
+
+<p>The values are in units of the project sample rate or frame rate.
+</p>
+<p>This method doesn&rsquo;t protect against corrupting the EDL.  The main use is
+copying the values to another edit in another edit info dialog so the 2
+edits are synchronized.
+</p>
+
+
+
+</li></ul>
+
+
+
 
 
 
