@@ -5453,12 +5453,20 @@ Previous: <a href="#LADSPA-EFFECTS" accesskey="p" rel="prev">LADSPA EFFECTS</a>,
 <p>Save and recall all the settings for an effect by using the <b>presets</b>
 window.  Bring up the effect context menu by right clicking on the
 effect on the timeline.  Go to <b>Presets...</b> to bring up the window. 
-Save all the settings to a preset by entering a title in <b>Preset
-title</b> and clicking <b>save</b>.  Recall the settings in a preset by
-highlighting it and clicking <b>Apply</b>.  Delete a preset by highlighting
-it and clicking <b>Delete</b>.
+Save the current keyframe to a preset by entering a title in <b>Preset
+title</b> and clicking <b>save</b>.  Highlight an existing preset &amp; click
+<b>save</b> to overwrite it.
 </p>
-
+<p>Recall the settings in a preset by highlighting it and clicking
+<b>Load</b>.  Load will create a keyframe if <img src="autokeyframe.png" alt="autokeyframe"> auto
+keyframes are enabled.  Delete a preset by highlighting it and clicking
+<b>Delete</b>.
+</p>
+<p>Double clicking a preset also loads it.  OK in the preset window causes
+the highlighted preset to be loaded.
+</p>
+<p>Factory presets have a *.  These may not be overwritten.  
+</p>
 
 <hr>
 <a name="SETTING-PROJECT-ATTRIBUTES"></a>
