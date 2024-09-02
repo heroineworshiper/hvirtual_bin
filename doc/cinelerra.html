@@ -254,15 +254,24 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <li><a name="toc-MANIPULATING-TRACKS-1" href="#MANIPULATING-TRACKS">9.6 MANIPULATING TRACKS</a></li>
     <li><a name="toc-TWO-SCREEN-EDITING-1" href="#TWO-SCREEN-EDITING">9.7 TWO SCREEN EDITING</a></li>
     <li><a name="toc-DRAG-AND-DROP-EDITING-1" href="#DRAG-AND-DROP-EDITING">9.8 DRAG AND DROP EDITING</a></li>
-    <li><a name="toc-CUT-AND-PASTE-EDITING-1" href="#CUT-AND-PASTE-EDITING">9.9 CUT AND PASTE EDITING</a></li>
-    <li><a name="toc-TRIMMING-1" href="#TRIMMING">9.10 TRIMMING</a></li>
-    <li><a name="toc-THE-EDIT-INFO-DIALOG-1" href="#THE-EDIT-INFO-DIALOG">9.11 THE EDIT INFO DIALOG</a></li>
-    <li><a name="toc-EDIT-MENU-TOOLS-1" href="#EDIT-MENU-TOOLS">9.12 EDIT MENU TOOLS</a>
+    <li><a name="toc-DRAGGING-EDITS-1" href="#DRAGGING-EDITS">9.9 DRAGGING EDITS</a>
     <ul class="no-bullet">
-      <li><a name="toc-Edit-Length" href="#Edit-Length">9.12.1 Edit Length</a></li>
-      <li><a name="toc-Align-Edits" href="#Align-Edits">9.12.2 Align Edits</a></li>
-      <li><a name="toc-Reverse-Edits" href="#Reverse-Edits">9.12.3 Reverse Edits</a></li>
-      <li><a name="toc-Shuffle-Edits" href="#Shuffle-Edits">9.12.4 Shuffle Edits</a></li>
+      <li><a name="toc-FREE-DRAGGING" href="#FREE-DRAGGING">9.9.1 FREE DRAGGING</a></li>
+      <li><a name="toc-INSERT-_0026-OVERWRITE-WHILE-FREE-DRAGGING" href="#INSERT-_0026-OVERWRITE-WHILE-FREE-DRAGGING">9.9.2 INSERT &amp; OVERWRITE WHILE FREE DRAGGING</a></li>
+    </ul></li>
+    <li><a name="toc-SPLITTING-_0026-JOINING-EDITS-1" href="#SPLITTING-_0026-JOINING-EDITS">9.10 SPLITTING &amp; JOINING EDITS</a></li>
+    <li><a name="toc-CUT-AND-PASTE-EDITING-1" href="#CUT-AND-PASTE-EDITING">9.11 CUT AND PASTE EDITING</a>
+    <ul class="no-bullet">
+      <li><a name="toc-PASTING-SILENCE" href="#PASTING-SILENCE">9.11.1 PASTING SILENCE</a></li>
+    </ul></li>
+    <li><a name="toc-TRIMMING-1" href="#TRIMMING">9.12 TRIMMING</a></li>
+    <li><a name="toc-THE-EDIT-INFO-DIALOG-1" href="#THE-EDIT-INFO-DIALOG">9.13 THE EDIT INFO DIALOG</a></li>
+    <li><a name="toc-EDIT-MENU-TOOLS-1" href="#EDIT-MENU-TOOLS">9.14 EDIT MENU TOOLS</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Edit-Length" href="#Edit-Length">9.14.1 Edit Length</a></li>
+      <li><a name="toc-Align-Edits" href="#Align-Edits">9.14.2 Align Edits</a></li>
+      <li><a name="toc-Reverse-Edits" href="#Reverse-Edits">9.14.3 Reverse Edits</a></li>
+      <li><a name="toc-Shuffle-Edits" href="#Shuffle-Edits">9.14.4 Shuffle Edits</a></li>
     </ul></li>
   </ul></li>
   <li><a name="toc-USING-EFFECTS-1" href="#USING-EFFECTS">10 USING EFFECTS</a>
@@ -4174,7 +4183,11 @@ attribute.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#DRAG-AND-DROP-EDITING" accesskey="8">DRAG AND DROP EDITING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Dragging objects to edit
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#CUT-AND-PASTE-EDITING" accesskey="9">CUT AND PASTE EDITING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Editing media like text
+<tr><td align="left" valign="top">&bull; <a href="#DRAGGING-EDITS" accesskey="9">DRAGGING EDITS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Moving edits by dragging
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#SPLITTING-_0026-JOINING-EDITS">SPLITTING &amp; JOINING EDITS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Create more edits for dragging
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#CUT-AND-PASTE-EDITING">CUT AND PASTE EDITING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Editing media like text
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#TRIMMING">TRIMMING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Changing in and out points
 </td></tr>
@@ -4571,7 +4584,7 @@ and splicing.
 <a name="DRAG-AND-DROP-EDITING"></a>
 <div class="header">
 <p>
-Next: <a href="#CUT-AND-PASTE-EDITING" accesskey="n" rel="next">CUT AND PASTE EDITING</a>, Previous: <a href="#TWO-SCREEN-EDITING" accesskey="p" rel="prev">TWO SCREEN EDITING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#DRAGGING-EDITS" accesskey="n" rel="next">DRAGGING EDITS</a>, Previous: <a href="#TWO-SCREEN-EDITING" accesskey="p" rel="prev">TWO SCREEN EDITING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="DRAG-AND-DROP-EDITING-1"></a>
 <h3 class="section">9.8 DRAG AND DROP EDITING</h3>
@@ -4623,22 +4636,69 @@ files one at a time.
 <p>In addition to dragging media files, if you create clips and open the
 <b>clip</b> folder you can drag clips on the timeline.
 </p>
+<hr>
+<a name="DRAGGING-EDITS"></a>
+<div class="header">
+<p>
+Next: <a href="#SPLITTING-_0026-JOINING-EDITS" accesskey="n" rel="next">SPLITTING &amp; JOINING EDITS</a>, Previous: <a href="#DRAG-AND-DROP-EDITING" accesskey="p" rel="prev">DRAG AND DROP EDITING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="DRAGGING-EDITS-1"></a>
+<h3 class="section">9.9 DRAGGING EDITS</h3>
+
+
 <p>In the timeline there is further dragging functionality.  To enable the
 dragging functionality of the timeline, select the arrow toggle
-<img src="arrow.png" alt="arrow">.  Move over an edit and drag it.  If more than one
-track is armed, Cinelerra will drag any edits which start on the same
-position as the edit the cursur is currently over.  During a dragging
-operation the edit snaps to the nearest boundary.
+<img src="arrow.png" alt="arrow">.  Move over an edit and drag it.  If more than one track
+is armed, Cinelerra will drag all the edits which start on the same
+position as the edit the cursur is currently over.  During this type of
+dragging operation the destination snaps to the nearest boundary.  The
+edit is always inserted at the boundary while shifting the later edits
+right.
 </p>
-<p>Dragging edits around the timeline allows you to sort music playlists,
-sort movie scenes, and give better NAB demos but not much else.
+<p>Dragging edits to different boundaries allows you to sort music
+playlists, sort movie scenes, and give better NAB demos but not much
+else.
+</p>
+<a name="FREE-DRAGGING"></a>
+<h4 class="subsection">9.9.1 FREE DRAGGING</h4>
+
+<p>Hold CTRL while dragging to enter free dragging mode.  In this mode, the
+destination of the edit is any arbitrary position instead of a boundary
+between 2 edits.   Free dragging is useful for moving a lone edit on a
+silent track a few frames.  It can reposition an edit after the end of a
+track without pasting silence.
+</p>
+<p>Free dragging can be entered in I beam <img src="ibeam.png" alt="ibeam"> or arrow
+<img src="arrow.png" alt="arrow"> mode by holding CTRL 1st, then pressing the button.
+</p>
+<a name="INSERT-_0026-OVERWRITE-WHILE-FREE-DRAGGING"></a>
+<h4 class="subsection">9.9.2 INSERT &amp; OVERWRITE WHILE FREE DRAGGING</h4>
+
+<p>Free dragging with the left button causes an insert at the destination. 
+Free dragging with the right button causes an overwrite at the
+destination.  The destination edits are not shifted right in an
+overwrite.
 </p>
 
 
+<hr>
+<a name="SPLITTING-_0026-JOINING-EDITS"></a>
+<div class="header">
+<p>
+Next: <a href="#CUT-AND-PASTE-EDITING" accesskey="n" rel="next">CUT AND PASTE EDITING</a>, Previous: <a href="#DRAGGING-EDITS" accesskey="p" rel="prev">DRAGGING EDITS</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="SPLITTING-_0026-JOINING-EDITS-1"></a>
+<h3 class="section">9.10 SPLITTING &amp; JOINING EDITS</h3>
 
-
-
-
+<p>Because dragging in the timeline only moves whole edits, an extra step
+is required to move part of an edit.  Use the <b>razor</b> button
+<img src="razor.png" alt="razor"> to split an edit at the cursor position.  It requires a
+single point to be selected rather than a region.
+</p>
+<p>To join 2 edits created by a razor operation, press <b>delete</b> or
+<b>edit-&gt;clear</b> when the cursor is on top of the boundary.  The edit
+ending &amp; start must be contiguous for them to join.
+</p>
 
 
 
@@ -4647,10 +4707,10 @@ sort movie scenes, and give better NAB demos but not much else.
 <a name="CUT-AND-PASTE-EDITING"></a>
 <div class="header">
 <p>
-Next: <a href="#TRIMMING" accesskey="n" rel="next">TRIMMING</a>, Previous: <a href="#DRAG-AND-DROP-EDITING" accesskey="p" rel="prev">DRAG AND DROP EDITING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#TRIMMING" accesskey="n" rel="next">TRIMMING</a>, Previous: <a href="#SPLITTING-_0026-JOINING-EDITS" accesskey="p" rel="prev">SPLITTING &amp; JOINING EDITS</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="CUT-AND-PASTE-EDITING-1"></a>
-<h3 class="section">9.9 CUT AND PASTE EDITING</h3>
+<h3 class="section">9.11 CUT AND PASTE EDITING</h3>
 
 <p>This is the traditional method of editing in audio editors.  In the
 case of Cinelerra, you either need to start a second copy of Cinelerra
@@ -4697,7 +4757,17 @@ the first edit and the end of this one edit is the end of the second
 edit.  This either results in the edit expanding or shrinking.
 </p>
 
+<a name="PASTING-SILENCE"></a>
+<h4 class="subsection">9.11.1 PASTING SILENCE</h4>
 
+<p>A key concept in Cinelerra is pasting silence.  To move media right
+without pasting something on the left, you have to select a region on
+the left side of the edit, then go to <b>edit-&gt;paste silence</b>.  Then the
+media is shifted right with silence in front of it.  To adjust the
+position of the media, the silence region is then trimmed or cut to
+adjust its length.  The silence region has edit boundaries just like a
+normal edit for trimming.
+</p>
 
 
 <hr>
@@ -4707,7 +4777,7 @@ edit.  This either results in the edit expanding or shrinking.
 Next: <a href="#THE-EDIT-INFO-DIALOG" accesskey="n" rel="next">THE EDIT INFO DIALOG</a>, Previous: <a href="#CUT-AND-PASTE-EDITING" accesskey="p" rel="prev">CUT AND PASTE EDITING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TRIMMING-1"></a>
-<h3 class="section">9.10 TRIMMING</h3>
+<h3 class="section">9.12 TRIMMING</h3>
 
 <p>With some edits on the timeline it&rsquo;s possible to do trimming.  By
 trimming you shrink or grow the edit boundaries by dragging them.  In
@@ -4772,7 +4842,7 @@ tracks to prevent edits from getting affected.
 Next: <a href="#EDIT-MENU-TOOLS" accesskey="n" rel="next">EDIT MENU TOOLS</a>, Previous: <a href="#TRIMMING" accesskey="p" rel="prev">TRIMMING</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="THE-EDIT-INFO-DIALOG-1"></a>
-<h3 class="section">9.11 THE EDIT INFO DIALOG</h3>
+<h3 class="section">9.13 THE EDIT INFO DIALOG</h3>
 
 <p>Right click on an edit -&gt; edit info... to get the edit info dialog for
 the edit.  This provides the raw fields in the edit in text form.
@@ -4810,11 +4880,11 @@ edits are synchronized.
 Previous: <a href="#THE-EDIT-INFO-DIALOG" accesskey="p" rel="prev">THE EDIT INFO DIALOG</a>, Up: <a href="#EDITING" accesskey="u" rel="up">EDITING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="EDIT-MENU-TOOLS-1"></a>
-<h3 class="section">9.12 EDIT MENU TOOLS</h3>
+<h3 class="section">9.14 EDIT MENU TOOLS</h3>
 
 
 <a name="Edit-Length"></a>
-<h4 class="subsection">9.12.1 Edit Length</h4>
+<h4 class="subsection">9.14.1 Edit Length</h4>
 
 <p>This is commonly used for making slide shows.  When still photos are
 loaded from the load dialog in new concatenate mode, they&rsquo;re inserted in
@@ -4835,7 +4905,7 @@ Pressing OK will change all of the selected edits (in armed tracks) to
 the specified length.
 </p>
 <a name="Align-Edits"></a>
-<h4 class="subsection">9.12.2 Align Edits</h4>
+<h4 class="subsection">9.14.2 Align Edits</h4>
 
 <p>Cinelerra doesn&rsquo;t have a concept of locked audio &amp; video tracks or a
 track type consisting of combined audio &amp; video.  It makes some things
@@ -4959,7 +5029,7 @@ is going to be needed.
 </p>
 
 <a name="Reverse-Edits"></a>
-<h4 class="subsection">9.12.3 Reverse Edits</h4>
+<h4 class="subsection">9.14.3 Reverse Edits</h4>
 
 <p>This reverses the order of the selected edits &amp; is commonly used for
 music playlists, slide shows.  Highlight completely the edit areas you
@@ -4967,7 +5037,7 @@ would like reversed and then go to Edit -&gt; Reverse Edits.
 </p>
 
 <a name="Shuffle-Edits"></a>
-<h4 class="subsection">9.12.4 Shuffle Edits</h4>
+<h4 class="subsection">9.14.4 Shuffle Edits</h4>
 
 <p>This randomizes the order of the selected edits &amp; is commonly used for
 music playlists, slide shows.  Highlight completely the edit areas you
