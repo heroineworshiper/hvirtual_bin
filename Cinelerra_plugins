@@ -65,6 +65,7 @@
 "livevideo.plugin" "Live Video" 0 1 0 1 0 1 0 0 0 0
 "loopaudio.plugin" "Loop audio" 1 0 0 1 0 1 0 0 0 0
 "loopvideo.plugin" "Loop video" 0 1 0 1 0 1 0 0 0 0
+"lut.plugin" "LUT" 0 1 0 1 0 1 0 0 0 0
 "motion.plugin" "Motion" 0 1 0 1 0 1 1 0 0 0
 "motion2.plugin" "Motion 2 Point" 0 1 0 1 0 1 1 0 0 0
 "motionblur.plugin" "Motion Blur" 0 1 0 1 0 1 0 0 0 0
