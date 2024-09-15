@@ -10100,14 +10100,14 @@ Without <b>loop</b> the text scrolls off and never reappears.
 <p>The speed of the animation is determined by <b>speed</b>  Set it higher to
 speed up the animation.
 </p>
-<p><b>Drop shadow</b> draws a black copy of the text to the bottom right of
+<p><b>DROP SHADOW</b> draws a black copy of the text to the bottom right of
 the original text.  Useful when drawing text over changing video to
 keep the border always visible.
 </p>
 <p>In addition to the scrolling, <b>Fade in/Fade out</b> are a second type of
 animation.  If the fade seconds are 0, no fading is done.
 </p>
-<p><b>Outline</b> draws an outline on the characters if it&rsquo;s greater than 0. 
+<p><b>OUTLINE</b> draws an outline on the characters if it&rsquo;s greater than 0. 
 Set the outline size by changing the number.  Set the outline color with
 the <b>OUTLINE COLOR</b> button.  If no outline is visible, make sure the
 alpha in <b>OUTLINE COLOR</b> is nonzero.  To get pure outline characters,
@@ -10118,8 +10118,15 @@ only practical color.
 </p>
 <p><b>OUTLINE COLOR</b> picks the color to draw the text outline in.
 </p>
-<p><b>Stamp timecode</b> replaces the text with the current position on the
+<p><b>STAMP TIMECODE</b> replaces the text with the current position on the
 timeline in seconds and frames.
+</p>
+<p><b>USE SUBTITLE FILE</b> causes it to read the text from a .srt subtitle
+file.  Because subtitles normally don&rsquo;t show long enough, it has a hack
+which causes it to not hide the subtitle until the next one is due.
+</p>
+<p>Because they don&rsquo;t time out, it&rsquo;s best to draw the subtitles below the
+video instead of on top of it.
 </p>
 <p><b>SECRETS OF THE TITLER</b>
 </p><table class="menu" border="0" cellspacing="0">
