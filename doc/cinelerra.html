@@ -1394,29 +1394,63 @@ Previous: <a href="#AUDIO-OUT" accesskey="p" rel="prev">AUDIO OUT</a>, Up: <a hr
 <a name="VIDEO-OUT-1"></a>
 <h4 class="subsection">4.4.2 VIDEO OUT</h4>
 
-<p>These determine how video gets from the timeline to your eyes.
+<p>These determine how video gets from the timeline to the screen.
 </p>
 <ul>
-<li> PLAY EVERY FRAME
+<li> <b>PLAY EVERY FRAME</b>
 
 <p>Causes every frame of video to be displayed even if it means falling
-behind the audio.  This should always be on unless you use mostly
-uncompressed codecs.  Most compressed codecs don&rsquo;t support frame
-dropping anymore.
+behind the audio.  This is normally used for previewing motion effects
+which depend on temporal information.  If they skip any frames, they
+don&rsquo;t give an accurate motion estimate.
 </p>
+</li></ul>
 
+<p>The next 2 options are optimizations for straight editing without
+compositing.  These break most compositing.
+</p>
+<ul>
+<li> <b>DISABLE MUTED VIDEO TRACKS</b>
 
+<p>Muted tracks are not rendered, regardless of dependencies.
+</p>
+</li><li> <b>PLAY ONLY 1 VIDEO TRACK</b>
 
-</li><li> 
-SCALING EQUATION
+<p>Only the 1st track with data is rendered, regardless of dependencies.
+</p>
+</li></ul>
 
-<p>When video playback involves any kind of scaling or translation, this
-algorithm is used.  This doesn&rsquo;t affect any other operation besides
-scaling.  When using OpenGL, it always scales using linear
+<p>Because of nested EDLs &amp; random access plugins, projects have to
+normally render all the playable tracks to catch all the compositing
+scenarios.  It can be extremely slow if you&rsquo;re not doing compositing.
+</p>
+<p>If both options are selected, the project can select between 2 tracks by
+toggling just the top mute curve.  This is useful for non destructive
+multicam editing.
+</p>
+<p>If only <b>DISABLE MUTED VIDEO TRACKS</b> is selected, projects can elect
+to disable tracks by just using their mute curves while keeping the
+option always selected.
+</p>
+<p>If only <b>PLAY ONLY 1 VIDEO TRACK</b> is selected, users can select the
+playable track by stacking edits instead of manipulating mute curves. 
+This only plays the top track with an edit or plugin at the position.
+</p>
+<p>Full compositing is rarely used enough that these options will probably
+be on most of the time.  The trick with using mute keyframes instead of
+play keyframes is the play patch can be used to solo the track without
+changing the project.
+</p>
+<ul>
+<li> <b>CPU SCALING QUALITY</b>
+
+<p>When video playback involves any kind of scaling or translation in the
+CPU, this algorithm is used.  This doesn&rsquo;t affect any other operation
+besides scaling.  When using OpenGL, it always scales using linear
 interpolation.
 </p>
 <ul>
-<li> LOW QUALITY
+<li> <b>LOW</b>
 
 <p>This uses nearest neighbor interpolation when scaling in software. 
 Produces jagged edges and uneven motion but it can extract higher
@@ -1424,8 +1458,7 @@ resolution when downscaling video in a multiple of pixels.  A common
 trick is downscaling 4k to 2k using LOW QUALITY.
 </p>
 
-</li><li> 
-HIGH QUALITY
+</li><li> <b>HIGH</b>
 
 <p>This applies higher quality interpolation than linear when scaling in
 software but results in softer images when scaling a multiple of
@@ -1449,6 +1482,11 @@ away, it&rsquo;s been an artifact.
 </li><li> 
 DVD SUBTITLE TO DISPLAY
 
+<p>The recommended way to view subtitles is to extract them with programs
+like mkvextract, subtomov, &amp; the titler.  This option has largely become
+an artifact.  You&rsquo;re not supposed to watch pirated movies in Cinelerra &amp;
+enhance their crummy quality with it anyway.
+</p>
 <p>DVD IFO files usually contain subtitle tracks.  These must be decoded
 with by the MPEG decoder.  Select <b>Enable subtitles</b> to enable
 subtitle decoding.  There are usually multiple subtitle tracks starting
