@@ -159,9 +159,9 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     </ul></li>
     <li><a name="toc-RECORDING-1" href="#RECORDING">4.5 RECORDING</a>
     <ul class="no-bullet">
-      <li><a name="toc-FILE-FORMAT-1" href="#FILE-FORMAT">4.5.1 FILE FORMAT</a></li>
+      <li><a name="toc-VIDEO-IN-1" href="#VIDEO-IN">4.5.1 VIDEO IN</a></li>
       <li><a name="toc-AUDIO-IN-1" href="#AUDIO-IN">4.5.2 AUDIO IN</a></li>
-      <li><a name="toc-VIDEO-IN-1" href="#VIDEO-IN">4.5.3 VIDEO IN</a></li>
+      <li><a name="toc-FILE-FORMAT-1" href="#FILE-FORMAT">4.5.3 FILE FORMAT</a></li>
     </ul></li>
     <li><a name="toc-PERFORMANCE-1" href="#PERFORMANCE">4.6 PERFORMANCE</a>
     <ul class="no-bullet">
@@ -1558,57 +1558,153 @@ Next: <a href="#PERFORMANCE" accesskey="n" rel="next">PERFORMANCE</a>, Previous:
 <h3 class="section">4.5 RECORDING</h3>
 
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#FILE-FORMAT" accesskey="1">FILE FORMAT</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#VIDEO-IN" accesskey="1">VIDEO IN</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#AUDIO-IN" accesskey="2">AUDIO IN</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#VIDEO-IN" accesskey="3">VIDEO IN</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#FILE-FORMAT" accesskey="3">FILE FORMAT</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
-
-
-<p>The parameters here affect what happens when you go to
-<b>File-&gt;Record...</b>.  The intention was to make <b>File-&gt;Record...</b> go
-as fast as possible into the record monitoring window, without a
-lengthy dialog to configure the file format.  Instead the file format
-for recording is set here and it is applied to all recordings.  Also
-set here is the hardware for recording, since the hardware determines
-the supported file format in most cases.
+<p>Recording depends on an encoding format for the output file &amp; an input
+format from the hardware.  For audio, all the input formats can write to
+all the file formats.  For video, only specific combinations are
+supported.  It is best to work from the top down, since setting certain
+video drivers causes it to force certain file formats.
+</p>
+<p>The parameters here affect what happens in <b>File-&gt;Record...</b>.  The
+intention was to make <b>File-&gt;Record...</b> go as fast as possible into
+the record monitoring window, without a lengthy dialog to configure the
+file format.  Instead, the file format for recording is set here and it
+is applied to all recordings.  The input &amp; file format format are set in
+the same place since they depend on each other.
+</p>
+<p>The filename is set in the record window since it can be different for
+every recording.  It must be set before starting recording &amp; it doesn&rsquo;t
+check for an overwrite.
 </p>
 
+
 <hr>
-<a name="FILE-FORMAT"></a>
+<a name="VIDEO-IN"></a>
 <div class="header">
 <p>
 Next: <a href="#AUDIO-IN" accesskey="n" rel="next">AUDIO IN</a>, Up: <a href="#RECORDING" accesskey="u" rel="up">RECORDING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
-<a name="FILE-FORMAT-1"></a>
-<h4 class="subsection">4.5.1 FILE FORMAT</h4>
+<a name="VIDEO-IN-1"></a>
+<h4 class="subsection">4.5.1 VIDEO IN</h4>
 
-<p>This determines the output file format for recordings.  It depends
-heavily on the type of driver used.  The interface is the same as the
-rendering interface.  The <b>Record audio tracks</b> toggle must be
-enabled to record audio.  The <b>Record video tracks</b> toggle must be
-enabled to record video.  The wrench button left of each toggle opens a
-configuration dialog to set the codec corresponding to audio and
-video.  The audio and video is wrapped in a wrapper defined by the
-<b>File Format</b> menu.  Different wrappers may record audio only, video
-only, or both.
+<p>These determine how frames are injested in <b>File-&gt;record</b> &amp; in the
+<b>live video</b> effect.
 </p>
-<p>Some video drivers can only record to a certain wrapper.  DV, for
-example, can only record to Quicktime with DV as the video compression.
-If the video driver is changed, the file format may be updated to give
-the supported output.  If you change the file format to an unsupported
-format, it may not work with the video driver.
+<ul>
+<li> 
+<b>RECORD DRIVER</b>
+
+<p>There was once a plan to share the video recording
+driver with the audio recording driver if the audio and video were
+multiplexed in the same stream like DVB, but no use case for this
+happened.  It takes variable parameters depending on the driver.  The
+parameters have the same meaning as they do for playback.
 </p>
+<p>Most webcams &amp; USB dongles today use Video4Linux2.  For capturing the
+screen, you&rsquo;ll use Screencap.
+</p>
+</li><li> <b>VIDEO4LINUX2 DEVICE PATH</b>
+
+<p>For video4linux2, this is usually /dev/video0 or 1 of the /dev/video
+files.  
+</p>
+</li><li> <b>VIDEO4LINUX2 CODEC</b>
+
+<p>This is the input format read from video4linux2.  It has to be matched
+to the file format &amp; the hardware.  To record video, the file format
+must obviously support video 1st.  Then, the compression setting for the
+file has to be what the hardware codec supports.
+</p>
+<p>Webcams, HDMI to USB, analog to USB generally support YUYV &amp; MJPG 1
+field.  To record YUYV, the file format has to be <b>command line</b> &amp; the
+compression preset needs to have <b>YUV 422</b>.
+</p>
+<p>To record MJPG 1 field, the file format has to be Quicktime &amp; the
+compression has to be JPEG.
+</p>
+<p>Keychain cams generally only support MJPG 1 field.
+</p>
+<p>For video4linux2, the frames to buffer in device normally needs to be 4.
+</p>
+</li><li> <b>SCREENCAPTURE</b>
+
+<p>Screencap only takes a Display as a parameter.  This can be left blank
+to record the local display.
+</p>
+<p>For best results with screencap, the file format should be <b>command
+line</b> &amp; the compression preset should have <b>YUV 444</b>.
+</p>
+</li><li> <b>FRAMES TO RECORD TO DISK AT A TIME</b>
+
+<p>Frames are recorded in a pipeline.  First frames are buffered in the
+device.  Then they&rsquo;re read into a larger buffer for writing to disk. 
+The disk writing is done in a different thread as the device reading. 
+For certain codecs the disk writing uses multiple processors.  This
+value determines how many frames are written to disk at a time.
+</p>
+
+
+</li><li> 
+<b>FRAMES TO BUFFER IN DEVICE</b>
+
+<p>The number of frames to store in the device before reading.  This
+determines how much latency there can be in the system before frames are
+dropped.  It normally has to be 4.
+</p>
+</li><li> <b>USE SOFTWARE FOR POSITIONING INFORMATION</b>
+
+<p>Video uses audio for synchronization but most soundcards don&rsquo;t give accurate position
+information.  This calculates an estimation of audio position in
+software instead of the hardware for synchronization.
+</p>
+</li><li> 
+<b>SYNC DRIVES AUTOMATICALLY</b>
+
+<p>For high bitrate recording the drives may be fast enough to store the
+data but Linux may wait several minutes and stall as it writes several
+minutes of data at a time.  This forces Linux to flush its buffers
+every second instead of every few minutes and produce slightly better
+realtime behavior.
+</p>
+</li><li> 
+<b>SIZE OF CAPTURED FRAME</b>
+
+<p>This is the size of the frames recorded.  It is independant of the
+project frame size because most video devices only record a fixed frame
+size.  If the frame size given here isn&rsquo;t supported by the device it
+might crash Cinelerra.
+</p>
+<p>The aspect ratio for the recording monitor is currently assuming only
+square pixels.
+</p>
+<p>In the past, it has been determined by the setting for <b>auto aspect</b>
+in <b>Settings-&gt;set format</b>.  If auto aspect was enabled, the recording
+monitor showed square pixels.  If auto aspect was disabled, the
+recording monitor stretched the captured frame to the aspect ratio in
+<b>Settings-&gt;set format</b>.  The problem with this was it was easier to
+detect recording anomalies with square pixels while watching video from
+the timeline was easier with stretched pixels.
+</p>
+</li><li> <b>FRAME RATE FOR RECORDING</b>
+
+<p>The frame rate recorded is different from the project settings.  This
+sets the recorded frame rate.
+</p>
+</li></ul>
 
 
 <hr>
 <a name="AUDIO-IN"></a>
 <div class="header">
 <p>
-Next: <a href="#VIDEO-IN" accesskey="n" rel="next">VIDEO IN</a>, Previous: <a href="#FILE-FORMAT" accesskey="p" rel="prev">FILE FORMAT</a>, Up: <a href="#RECORDING" accesskey="u" rel="up">RECORDING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#FILE-FORMAT" accesskey="n" rel="next">FILE FORMAT</a>, Previous: <a href="#VIDEO-IN" accesskey="p" rel="prev">VIDEO IN</a>, Up: <a href="#RECORDING" accesskey="u" rel="up">RECORDING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="AUDIO-IN-1"></a>
 <h4 class="subsection">4.5.2 AUDIO IN</h4>
@@ -1663,82 +1759,32 @@ supports.
 </p>
 </li></ul>
 
+
 <hr>
-<a name="VIDEO-IN"></a>
+<a name="FILE-FORMAT"></a>
 <div class="header">
 <p>
 Previous: <a href="#AUDIO-IN" accesskey="p" rel="prev">AUDIO IN</a>, Up: <a href="#RECORDING" accesskey="u" rel="up">RECORDING</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
-<a name="VIDEO-IN-1"></a>
-<h4 class="subsection">4.5.3 VIDEO IN</h4>
+<a name="FILE-FORMAT-1"></a>
+<h4 class="subsection">4.5.3 FILE FORMAT</h4>
 
-<p>These determine what happens when you record video.
+<p>This determines the output file format for recordings.  It depends
+heavily on the type of driver used.  The interface is the same as the
+rendering interface.  The <b>Record audio tracks</b> toggle must be
+enabled to record audio.  The <b>Record video tracks</b> toggle must be
+enabled to record video.  The wrench button left of each toggle opens a
+configuration dialog to set the codec corresponding to audio and
+video.  The audio and video is wrapped in a wrapper defined by the
+<b>File Format</b> menu.  Different wrappers may record audio only, video
+only, or both.
 </p>
-<ul>
-<li> 
-RECORD DRIVER
-
-<p>This is used for recording video in the Record window.  It may be
-shared with the Record Driver for audio if the audio and video are
-wrapped in the same stream.  It takes variable parameters depending on
-the driver.  The parameters have the same meaning as they do for
-playback.
+<p>Some video drivers can only record to a certain wrapper.  DV, for
+example, can only record to Quicktime with DV as the video compression.
+If the video driver is changed, the file format may be updated to give
+the supported output.  If you change the file format to an unsupported
+format, it may not work with the video driver.
 </p>
-</li><li> 
-FRAMES TO RECORD TO DISK AT A TIME
-
-<p>Frames are recorded in a pipeline.  First frames are buffered in the
-device.  Then they&rsquo;re read into a larger buffer for writing to disk. 
-The disk writing is done in a different thread as the device reading. 
-For certain codecs the disk writing uses multiple processors.  This
-value determines how many frames are written to disk at a time.
-</p>
-</li><li> 
-FRAMES TO BUFFER IN DEVICE
-
-<p>The number of frames to store in the device before reading.  This
-determines how much latency there can be in the system before frames
-are dropped.
-</p>
-</li><li> USE SOFTWARE FOR POSITIONING INFORMATION
-
-<p>Video uses audio for
-</p>
-
-<p>synchronization but most soundcards don&rsquo;t give accurate position
-information.  This calculates an estimation of audio position in
-software instead of the hardware for synchronization.
-</p>
-</li><li> 
-SYNC DRIVES AUTOMATICALLY
-
-<p>For high bitrate recording the drives may be fast enough to store the
-data but Linux may wait several minutes and stall as it writes several
-minutes of data at a time.  This forces Linux to flush its buffers
-every second instead of every few minutes and produce slightly better
-realtime behavior.
-</p>
-</li><li> 
-SIZE OF CAPTURED FRAME
-
-<p>This is the size of the frames recorded.  It is independant of the
-project frame size because most video devices only record a fixed frame
-size.  If the frame size given here isn&rsquo;t supported by the device it
-might crash Cinelerra.
-</p>
-<p>The aspect ratio for the recording monitor is determined by the setting
-for <b>auto aspect</b> in <b>Settings-&gt;set format</b>.  If auto aspect is
-enabled, the recording monitor shows square pixels.  If auto aspect is
-disabled, the recording monitor stretches the captured frame to the
-aspect ratio in <b>Settings-&gt;set format</b>.
-</p>
-</li><li> FRAME RATE FOR RECORDING
-
-<p>The frame rate recorded is different from the project settings.  This
-sets the recorded frame rate.
-</p>
-</li></ul>
-
 
 
 
