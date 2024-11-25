@@ -1624,7 +1624,8 @@ file has to be what the hardware codec supports.
 </p>
 <p>Webcams, HDMI to USB, analog to USB generally support YUYV &amp; MJPG 1
 field.  To record YUYV, the file format has to be <b>command line</b> &amp; the
-compression preset needs to have <b>YUV 422</b>.
+compression preset needs to have <b>YUV 422</b>.  YUYV produces higher
+quality but lower framerates when resolution is above 720x480.
 </p>
 <p>To record MJPG 1 field, the file format has to be Quicktime &amp; the
 compression has to be JPEG.
