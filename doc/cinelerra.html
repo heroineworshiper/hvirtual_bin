@@ -258,6 +258,7 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <ul class="no-bullet">
       <li><a name="toc-FREE-DRAGGING" href="#FREE-DRAGGING">9.9.1 FREE DRAGGING</a></li>
       <li><a name="toc-INSERT-_0026-OVERWRITE-WHILE-FREE-DRAGGING" href="#INSERT-_0026-OVERWRITE-WHILE-FREE-DRAGGING">9.9.2 INSERT &amp; OVERWRITE WHILE FREE DRAGGING</a></li>
+      <li><a name="toc-FREE-DRAGGING-INSIDE-A-SINGLE-TRACK" href="#FREE-DRAGGING-INSIDE-A-SINGLE-TRACK">9.9.3 FREE DRAGGING INSIDE A SINGLE TRACK</a></li>
     </ul></li>
     <li><a name="toc-SPLITTING-_0026-JOINING-EDITS-1" href="#SPLITTING-_0026-JOINING-EDITS">9.10 SPLITTING &amp; JOINING EDITS</a></li>
     <li><a name="toc-CUT-AND-PASTE-EDITING-1" href="#CUT-AND-PASTE-EDITING">9.11 CUT AND PASTE EDITING</a>
@@ -4761,28 +4762,41 @@ implemented for dragging effects.
 </p>
 <p>In this mode, the destination of the edit is any arbitrary position
 instead of a boundary between 2 edits.   Free dragging is most useful
-for moving a lone edit on a silent track a few frames.  It can
-reposition an edit after the end of a track without pasting silence.
+for moving a lone edit on a silent track or repositioning a single edit
+without affecting any edits after it.
+</p>
+<p>An asset in the resource window can be free dragged into the timeline by
+1st left click dragging, then pressing CTRL to enter free dragging
+mode.  Pressing CTRL in the resource window before dragging causes it to
+select multiple items.
 </p>
 
 <a name="INSERT-_0026-OVERWRITE-WHILE-FREE-DRAGGING"></a>
 <h4 class="subsection">9.9.2 INSERT &amp; OVERWRITE WHILE FREE DRAGGING</h4>
 
-<p>The behavior of free dragging is different when dragging to a different
-track &amp; dragging to the same track.  When dragging to a different track,
-there is an option to insert or overwrite the destination.
+<p>The behavior of free dragging is different when dragging with the left
+button or the right button.
 </p>
-<p>Free dragging with the left button causes an insert at the destination. 
-Free dragging with the right button causes an overwrite at the
-destination.  The destination edits are not shifted right in an
-overwrite.
+<p>Free dragging with the left button causes an insert at the destination &amp;
+shifts the neighbors at the source position left to replace the source
+edit.  Free dragging with the right button overwrites the existing edits
+at the destination &amp; leaves a gap where the source position was.
 </p>
-<p>When free dragging to the same track, the only behavior is a shift of
-the source edit left or right.  When shifting left, the material to the
-left is cleared.  When shifting right, silence is pasted to the left. 
-The edit on the left can be extended right by middle mouse button
-dragging the edit&rsquo;s right boundary.  All the edits after the edit being
-dragged follow the drag movement.
+<p>Only left button dragging is supported when the source is in the
+resource window.  The right button activates a context menu.
+</p>
+<a name="FREE-DRAGGING-INSIDE-A-SINGLE-TRACK"></a>
+<h4 class="subsection">9.9.3 FREE DRAGGING INSIDE A SINGLE TRACK</h4>
+
+<p>When free dragging to the same track, the behavior of left button insert
+mode is different because no material is added to the destination track
+or taken out of the source track.  The only behavior is a shift of the
+source edit left or right.  When shifting left, the neighboring material
+on the left is moved to the right.  When shifting right, the neighboring
+material on the right is moved to the left.
+</p>
+<p>Right button overwrite mode in a single track behaves the same as going
+to a different track.
 </p>
 
 
