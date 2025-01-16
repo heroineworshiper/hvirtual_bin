@@ -404,15 +404,16 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <li><a name="toc-RESAMPLE-1" href="#RESAMPLE">18.25 RESAMPLE</a></li>
     <li><a name="toc-REVERSE-VIDEO_002fAUDIO-1" href="#REVERSE-VIDEO_002fAUDIO">18.26 REVERSE VIDEO/AUDIO</a></li>
     <li><a name="toc-SWAP-FRAMES-1" href="#SWAP-FRAMES">18.27 SWAP FRAMES</a></li>
-    <li><a name="toc-THRESHOLD-1" href="#THRESHOLD">18.28 THRESHOLD</a></li>
-    <li><a name="toc-TIME-AVERAGE-1" href="#TIME-AVERAGE">18.29 TIME AVERAGE</a></li>
-    <li><a name="toc-TIME-FRONT-1" href="#TIME-FRONT">18.30 TIME FRONT</a></li>
-    <li><a name="toc-TITLER-1" href="#TITLER">18.31 TITLER</a>
+    <li><a name="toc-SWAP-FRAMES-2" href="#SWAP-CHANNELS">18.28 SWAP FRAMES</a></li>
+    <li><a name="toc-THRESHOLD-1" href="#THRESHOLD">18.29 THRESHOLD</a></li>
+    <li><a name="toc-TIME-AVERAGE-1" href="#TIME-AVERAGE">18.30 TIME AVERAGE</a></li>
+    <li><a name="toc-TIME-FRONT-1" href="#TIME-FRONT">18.31 TIME FRONT</a></li>
+    <li><a name="toc-TITLER-1" href="#TITLER">18.32 TITLER</a>
     <ul class="no-bullet">
-      <li><a name="toc-ADDING-FONTS-TO-THE-TITLER-1" href="#ADDING-FONTS-TO-THE-TITLER">18.31.1 ADDING FONTS TO THE TITLER</a></li>
-      <li><a name="toc-MAKING-TITLES-LOOK-GOOD-1" href="#MAKING-TITLES-LOOK-GOOD">18.31.2 MAKING TITLES LOOK GOOD</a></li>
+      <li><a name="toc-ADDING-FONTS-TO-THE-TITLER-1" href="#ADDING-FONTS-TO-THE-TITLER">18.32.1 ADDING FONTS TO THE TITLER</a></li>
+      <li><a name="toc-MAKING-TITLES-LOOK-GOOD-1" href="#MAKING-TITLES-LOOK-GOOD">18.32.2 MAKING TITLES LOOK GOOD</a></li>
     </ul></li>
-    <li><a name="toc-VIDEO-SCOPE-1" href="#VIDEO-SCOPE">18.32 VIDEO SCOPE</a></li>
+    <li><a name="toc-VIDEO-SCOPE-1" href="#VIDEO-SCOPE">18.33 VIDEO SCOPE</a></li>
   </ul></li>
   <li><a name="toc-PLUGIN-AUTHORING-1" href="#PLUGIN-AUTHORING">19 PLUGIN AUTHORING</a>
   <ul class="no-bullet">
@@ -8355,6 +8356,8 @@ utilize fully by mere experimentation.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#SWAP-FRAMES">SWAP FRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Fixing temporal field order
 </td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#SWAP-CHANNELS">SWAP CHANNELS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Route color channels to different channels &amp; tracks
+</td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#THRESHOLD">THRESHOLD</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to get monochrome out of a region of the image.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#TIME-AVERAGE">TIME AVERAGE</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to stack images.
@@ -10069,7 +10072,7 @@ timeline doesn&rsquo;t reflect the actual reversed output.
 <a name="SWAP-FRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#THRESHOLD" accesskey="n" rel="next">THRESHOLD</a>, Previous: <a href="#REVERSE-VIDEO_002fAUDIO" accesskey="p" rel="prev">REVERSE VIDEO/AUDIO</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#SWAP-CHANNELS" accesskey="n" rel="next">SWAP CHANNELS</a>, Previous: <a href="#REVERSE-VIDEO_002fAUDIO" accesskey="p" rel="prev">REVERSE VIDEO/AUDIO</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="SWAP-FRAMES-1"></a>
 <h3 class="section">18.27 SWAP FRAMES</h3>
@@ -10084,9 +10087,30 @@ order, which is what <b>SWAP FRAMES</b> can correct.
 
 
 
+<hr>
+<a name="SWAP-CHANNELS"></a>
+<div class="header">
+<p>
+Next: <a href="#THRESHOLD" accesskey="n" rel="next">THRESHOLD</a>, Previous: <a href="#SWAP-FRAMES" accesskey="p" rel="prev">SWAP FRAMES</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="SWAP-FRAMES-2"></a>
+<h3 class="section">18.28 SWAP FRAMES</h3>
 
-
-
+<p>In RGB colorspaces, this sends the user specified R, G, B channel in the
+source channel column to the destination channel in the destination
+column.  In YUV colorspaces, the RGB selection corresponds to Y, U, V
+channels.  The alpha is always a discrete channel but not present unless
+the project has an alpha.
+</p>
+<p>If swap channels is shared between multiple tracks, the source track is
+selected by the source buffer.  Source buffer 0 is the top track. 
+Higher numbered source buffers are the lower tracks in the timeline.
+</p>
+<p>The same output is copied to all the shared tracks so some projects can
+perform different processing on each output track.  The alpha in 2
+overlapping tracks will accumulate, so you must mute the lower tracks to
+avoid this.
+</p>
 
 
 
@@ -10095,10 +10119,10 @@ order, which is what <b>SWAP FRAMES</b> can correct.
 <a name="THRESHOLD"></a>
 <div class="header">
 <p>
-Next: <a href="#TIME-AVERAGE" accesskey="n" rel="next">TIME AVERAGE</a>, Previous: <a href="#SWAP-FRAMES" accesskey="p" rel="prev">SWAP FRAMES</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#TIME-AVERAGE" accesskey="n" rel="next">TIME AVERAGE</a>, Previous: <a href="#SWAP-CHANNELS" accesskey="p" rel="prev">SWAP CHANNELS</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="THRESHOLD-1"></a>
-<h3 class="section">18.28 THRESHOLD</h3>
+<h3 class="section">18.29 THRESHOLD</h3>
 
 <p>Threshold converts the image to pure luminance.  Then luminance values
 below and above the threshold range are converted to black and
@@ -10126,7 +10150,7 @@ displayed.
 Next: <a href="#TIME-FRONT" accesskey="n" rel="next">TIME FRONT</a>, Previous: <a href="#THRESHOLD" accesskey="p" rel="prev">THRESHOLD</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TIME-AVERAGE-1"></a>
-<h3 class="section">18.29 TIME AVERAGE</h3>
+<h3 class="section">18.30 TIME AVERAGE</h3>
 
 <p>Time average is one effect which has many uses besides creating nifty
 trail patterns of moving objects.  It&rsquo;s main use is reducing noise in
@@ -10204,7 +10228,7 @@ darker than the background.
 Next: <a href="#TITLER" accesskey="n" rel="next">TITLER</a>, Previous: <a href="#TIME-AVERAGE" accesskey="p" rel="prev">TIME AVERAGE</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TIME-FRONT-1"></a>
-<h3 class="section">18.30 TIME FRONT</h3>
+<h3 class="section">18.31 TIME FRONT</h3>
 
 <p>This takes each pixel from different frames in a history buffer.  The
 selection of what frame in the history goes to each pixel is determined
@@ -10245,7 +10269,7 @@ taken from the history buffer for each pixel.
 Next: <a href="#VIDEO-SCOPE" accesskey="n" rel="next">VIDEO SCOPE</a>, Previous: <a href="#TIME-FRONT" accesskey="p" rel="prev">TIME FRONT</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TITLER-1"></a>
-<h3 class="section">18.31 TITLER</h3>
+<h3 class="section">18.32 TITLER</h3>
 
 <p>While it is possible to add text to movies by importing still images
 from The Gimp and compositing them, the Titler allows you to add text
@@ -10314,7 +10338,7 @@ video instead of on top of it.
 Next: <a href="#MAKING-TITLES-LOOK-GOOD" accesskey="n" rel="next">MAKING TITLES LOOK GOOD</a>, Up: <a href="#TITLER" accesskey="u" rel="up">TITLER</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="ADDING-FONTS-TO-THE-TITLER-1"></a>
-<h4 class="subsection">18.31.1 ADDING FONTS TO THE TITLER</h4>
+<h4 class="subsection">18.32.1 ADDING FONTS TO THE TITLER</h4>
 
 <p>Cinelerra uses libfreetype for drawing titles.  It has a few
 limitations: it can&rsquo;t automatically use the fonts installed in the X
@@ -10341,7 +10365,7 @@ converted to TTF.  It&rsquo;s not the biggest limitation of the titler.
 Previous: <a href="#ADDING-FONTS-TO-THE-TITLER" accesskey="p" rel="prev">ADDING FONTS TO THE TITLER</a>, Up: <a href="#TITLER" accesskey="u" rel="up">TITLER</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="MAKING-TITLES-LOOK-GOOD-1"></a>
-<h4 class="subsection">18.31.2 MAKING TITLES LOOK GOOD</h4>
+<h4 class="subsection">18.32.2 MAKING TITLES LOOK GOOD</h4>
 
 <p>No-one else is going to tell you this, but to make good looking titles,
 ignore most of the features of the titler.  The best settings are:
@@ -10385,7 +10409,7 @@ story, they would be reading a book instead of watching video.
 Previous: <a href="#TITLER" accesskey="p" rel="prev">TITLER</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="VIDEO-SCOPE-1"></a>
-<h3 class="section">18.32 VIDEO SCOPE</h3>
+<h3 class="section">18.33 VIDEO SCOPE</h3>
 
 <p>The video scope plots two views of the image.  One view plots the
 intensity of each pixel against horizontal position.  They call this
