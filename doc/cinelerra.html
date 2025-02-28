@@ -5951,9 +5951,29 @@ and zooms.
 </p>
 <br>
 <br>
-<div align="center"><A HREF="compositing_pipeline.png"><IMG SRC="compositing_pipeline_s.png"></A>
+<div align="center"><A HREF="compositing_pipeline3.png"><IMG SRC="compositing_pipeline3_s.png"></A>
 </div><div align="center"><b>Visual representation of the compositing pipeline</b>.
 </div>
+<p>The compositing journey begins by shifting the playback position by the
+nudge value specified in the patchbay.  All operations in the pipeline
+are shifted by this amount.
+</p>
+<p>Then, if the speed curve has a value other than 1, the read position in
+the source file is stretched based on the speed curve.  The source file
+is then read into a temporary defined by the track size, using the
+camera parameters to scale &amp; translate it.
+</p>
+<p>The next step is to apply a transition if one exists.  Then the effects
+are processed from top to bottom.  Then, if any masks are defined for
+the track, they are applied to the track temporary after the effects.
+</p>
+<p>The final step is the projector where fade, overlay mode, projector
+scaling &amp; translation are applied between the track temporary &amp; the
+output canvas.  If the track is muted, the projector step isn&rsquo;t
+performed.
+</p>
+<p>In an audio track, the panning is applied in the last step.
+</p>
 <p>When editing the camera and projector in the compositing window, the
 first track with <b>record</b> enabled is the track affected.  Even if
 the track is completely transparent, it&rsquo;s still the affected track.  If
@@ -6070,11 +6090,6 @@ possible masks per track.  Each mask is defined separately, although
 they each perform the same operation, whether it&rsquo;s addition or
 subtraction, or a path.
 </p>
-<br>
-<br>
-<div align="center"><A HREF="compositing_pipeline2.png"><IMG SRC="compositing_pipeline2_s.png"></A>
-</div><div align="center"><b>Compositing pipeline with masks</b>
-</div>
 <p>To define a mask, go into the Compositor window and enable the
 <img src="mask.png" alt="mask"> <b>mask</b> toggle.  
 </p>
