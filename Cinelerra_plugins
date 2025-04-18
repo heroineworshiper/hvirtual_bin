@@ -1,4 +1,4 @@
-8
+9
 "1080to540.plugin" "1080 to 540" 0 1 0 1 0 1 0 0 0 0
 "720to480.plugin" "720 to 480" 0 1 0 0 0 1 0 0 0 0
 "aging.plugin" "AgingTV" 0 1 0 1 0 1 0 0 0 0
@@ -70,7 +70,7 @@
 "motion2.plugin" "Motion 2 Point" 0 1 0 1 0 1 1 0 0 0
 "motionblur.plugin" "Motion Blur" 0 1 0 1 0 1 0 0 0 0
 "motionlookahead.plugin" "Super Stabilizer" 0 1 0 1 0 1 0 0 0 0
-"mpeg2enc.plugin" "/root/hvirtual/bin/mpeg2enc.plugin" 0 0 0 0 0 0 0 0 0 0
+"mpeg2enc.plugin" "/host/root/hvirtual/bin/mpeg2enc.plugin" 0 0 0 0 0 0 0 0 0 0
 "mute.plugin" "Mute" 1 0 0 0 0 1 0 0 1 0
 "normalize.plugin" "Normalize" 1 0 0 0 0 1 1 0 0 0
 "oil.plugin" "Oil painting" 0 1 0 1 0 1 0 0 0 0
