@@ -548,7 +548,7 @@ not strictly adhering to standard features has been the biggest source
 of contention.
 </p>
 <p>As with Broadcast 2000, most users oppose this program being distributed
-without full support, full patch debugging &amp; integration, adherance to
+without full support, full patch debugging &amp; integration, adherence to
 standard features, &amp; want it taken down.  Whether someone should be
 allowed to do their own thing is an ages old question.  Other projects
 got ahead of the support problem from the beginning by raising enough
@@ -644,7 +644,7 @@ Next: <a href="#CONFIGURATION" accesskey="n" rel="next">CONFIGURATION</a>, Previ
 
 
 <p>The Cinelerra package contains Cinelerra and most of the libraries
-needed to run it.  We try to include all the dependancies because of
+needed to run it.  We try to include all the dependencies because of
 the difficulty in tracking down the right versions.  Also included are
 some utilities for handling files.  The following are the general
 contents of all Cinelerra packages.
@@ -825,7 +825,7 @@ Next: <a href="#CREATING-A-NEW-PROJECT" accesskey="n" rel="next">CREATING A NEW 
 
 <p>Because of the variety of uses, Cinelerra cannot be run optimally
 without some intimate configuration for your specific needs. Very few
-parameters are adjustible at compile time.  Runtime configuration is
+parameters are adjustable at compile time.  Runtime configuration is
 the only option for most configuration because of the multitude of
 parameters.
 </p>
@@ -1186,7 +1186,7 @@ sizes up to the maximum texture size, which is usually larger than
 </p>
 <p>Today, the rendering as well as the playback can be done in OpenGL.  It
 relies on PBuffers and shaders to do video rendering.  The graphics
-driver must support OpenGL 2 and Cinelerra needs to be explicitely
+driver must support OpenGL 2 and Cinelerra needs to be explicitly
 compiled with OpenGL 2 support.  This requires compiling it on a system
 with the OpenGL 2 headers.
 </p>
@@ -1636,7 +1636,8 @@ compression has to be JPEG.
 </p>
 <p>Keychain cams generally only support MJPG 1 field.
 </p>
-<p>For video4linux2, the frames to buffer in device normally needs to be 4.
+<p>For video4linux2, the frames to buffer in device normally needs to be 4
+to get the full framerate.  If it&rsquo;s 2, it&rsquo;ll only get 1/2 the framerate.
 </p>
 </li><li> <b>SCREENCAPTURE</b>
 
@@ -1681,7 +1682,7 @@ realtime behavior.
 </li><li> 
 <b>SIZE OF CAPTURED FRAME</b>
 
-<p>This is the size of the frames recorded.  It is independant of the
+<p>This is the size of the frames recorded.  It is independent of the
 project frame size because most video devices only record a fixed frame
 size.  If the frame size given here isn&rsquo;t supported by the device it
 might crash Cinelerra.
@@ -1832,7 +1833,7 @@ SECONDS TO PREROLL RENDERS
 <p>Some effects need a certain amount of time to settle in.  This sets a
 number of seconds to render without writing to disk before the selected
 region is rendered.  When using the renderfarm you&rsquo;ll sometimes need to
-preroll to get seemless transitions between the jobs.  Every job in a
+preroll to get seamless transitions between the jobs.  Every job in a
 renderfarm is prerolled by this value.  This does not affect background
 rendering, however.  Background rendering uses a different preroll
 value.
@@ -1842,7 +1843,7 @@ FORCE SINGLE PROCESSOR USE
 
 <p>Cinelerra tries to use all processors on the system by default but
 sometimes you&rsquo;ll only want to use one processor, like in a renderfarm
-client.  This forces only one processer to be used.  The operating
+client.  This forces only one processor to be used.  The operating
 system, however, usually uses the second processor anyway for disk
 access so this option is really a 1.25 processor mode.  The value of
 this parameter is used in renderfarm clients.
@@ -1877,7 +1878,7 @@ Next: <a href="#RENDERFARM" accesskey="n" rel="next">RENDERFARM</a>, Up: <a href
 <a name="BACKGROUND-RENDERING-1"></a>
 <h4 class="subsection">4.6.1 BACKGROUND RENDERING</h4>
 
-<p>Background rendering was originally concieved to allow HDTV effects to
+<p>Background rendering was originally conceived to allow HDTV effects to
 be displayed in realtime.  Background rendering causes temporary output
 to constantly be rendered while the timeline is being modified.  The
 temporary output is played during playack whenever possible.  It&rsquo;s very
@@ -2077,12 +2078,12 @@ DELETE ALL INDEXES
 <p>When you change the index size or you want to clean out excessive index
 files, this deletes all the index files.
 </p>
-</li><li> TIME STRECH SCRUBBING
+</li><li> TIME STRETCH SCRUBBING
 
 <p>Scrubbing of audio with the transport controls (See <a href="#USING-THE-TRANSPORT-CONTROLS">USING THE TRANSPORT CONTROLS</a>) can either use tape style pitch stretching or time
 stretching with constant pitch.  The time stretching mode is more
 intelligible but pitch stretching is the traditional sound a tape deck
-would have made.  Time strech scrubbing does not have all the options or
+would have made.  Time stretch scrubbing does not have all the options or
 use a fast fourier transform like the Time Stretch effect (See <a href="#TIME-STRETCHING-AUDIO">TIME STRETCHING AUDIO</a>).
 </p>
 </li><li> FRAMES PER FOOT
@@ -3705,7 +3706,7 @@ Next: <a href="#NAVIGATING-THE-VIEWER-AND-COMPOSITOR" accesskey="n" rel="next">N
 
 <p>The program window contains many features for navigation and displays
 the timeline as it is structured in memory: tracks stacked vertically
-and extending across time horizontall.  The horizontal scroll bar
+and extending across time horizontal.  The horizontal scroll bar
 allows you to scan across time.  The vertical scroll bar allows you to
 scan across tracks.
 </p>
@@ -4542,7 +4543,7 @@ Next: <a href="#TWO-SCREEN-EDITING" accesskey="n" rel="next">TWO SCREEN EDITING<
 
 <p>Tracks in Cinelerra either contain audio or video.  There is no special
 designation for tracks other than the type of media they contain.  When
-you create a new project, it contains a certain mumber of default
+you create a new project, it contains a certain number of default
 tracks.  You can still add or delete tracks from a number of menus. 
 The <b>Tracks</b> menu contains a number of options for dealing with
 multiple tracks simultaneously.  Each track itself has a popup menu
@@ -4863,7 +4864,7 @@ without changing the relative start and stop positions.
 </p>
 <p>One option for simplifying this is to open a second copy of Cinelerra,
 cutting and pasting to transport media between the two copies.  This
-way two highlighed regions can exist simultanously.
+way two highlighted regions can exist simultaneously.
 </p>
 <p>Another option is to set in/out points for the source region of the
 source waveform and set labels for the destination region of the
@@ -5303,7 +5304,7 @@ Next: <a href="#EDITING-REALTIME-EFFECTS" accesskey="n" rel="next">EDITING REALT
 <h4 class="subsection">10.1.1 REALTIME EFFECT TYPES</h4>
 
 <p>The two other effect types supported by the Attach Effect dialog are
-recycled effects.  In order to use a recycled effect, three requiremenets
+recycled effects.  In order to use a recycled effect, three requiremeents
 must be met:
 </p>
 <ul>
@@ -5777,7 +5778,7 @@ Next: <a href="#ASPECT-RATIO" accesskey="n" rel="next">ASPECT RATIO</a>, Previou
 <h3 class="section">11.2 COLOR MODEL</h3>
 
 <p>Color model is very important for video playback because video has the
-disadvantage of being very slow.  Although it isn&rsquo;t noticable, audio
+disadvantage of being very slow.  Although it isn&rsquo;t noticeable, audio
 intermediates contain much more information than the audio on disk and
 the audio which is played.  Audio always uses the highest bandwidth
 intermediate because it&rsquo;s fast.
@@ -6278,7 +6279,7 @@ Previous: <a href="#OVERLAY-MODES" accesskey="p" rel="prev">OVERLAY MODES</a>, U
 <h3 class="section">12.5 TRACK AND OUTPUT SIZES</h3>
 
 <p>The size of the temporary and the size of the output in our compositing
-pipeline are independant and variable.  This fits into everything
+pipeline are independent and variable.  This fits into everything
 covered so far.  The camera&rsquo;s viewport is the temporary size.  Effects
 are processed in the temporary and are affected by the temporary size. 
 Projectors are rendered to the output and are affected by the output
@@ -6455,7 +6456,7 @@ variability.  This is done by 2 tools: the automation fit button
 </p>
 <p>The automation fit button scales and offsets the vertical range so the
 selected curves fit in the timeline.  The selected curves are defined by
-the armed tracks, the visible keyframe types, &amp; the highlighed region. 
+the armed tracks, the visible keyframe types, &amp; the highlighted region. 
 If a region of the timeline is highlighted by the cursor, only that
 region is scaled.  If a region is not highlighted, the entire project is
 scaled.  In/out points don&rsquo;t affect the zoomed region.  <b>Alt-f</b> also
@@ -6576,7 +6577,7 @@ timeline is playing back during a tweek, several automatic keyframes
 will be generated as you change the parameter.
 </p>
 <p>When automatic keyframe mode is disabled, adjusting a parameter adjusts
-the keyframe immediately preceeding the insertion point.  If two fade
+the keyframe immediately preceding the insertion point.  If two fade
 keyframes exist and the insertion point is between them, changing the
 fader changes the first keyframe.
 </p>
@@ -6733,7 +6734,7 @@ Next: <a href="#KEYFRAME-SPANNING" accesskey="n" rel="next">KEYFRAME SPANNING</a
 <p><b>THE KEYFRAME MENU</b>
 </p>
 <p>Keyframes can be shifted around and moved between tracks on the timeline
-using the same cut and paste metaphore as editing media.  The
+using the same cut and paste metaphor as editing media.  The
 <b>keyframe</b> menu performs clipboard operations on multiple keyframes at
 the same time, as defined by what tracks are armed &amp; what data types are
 visible.  Only the keyframes selected in the <b>view</b> menu are affected
@@ -6765,7 +6766,7 @@ keyframe reflected until all the non-default keyframes are removed.
 </p>
 <p>Finally, there is a convenient way to delete keyframes besides
 selecting a region and calling <b>keyframes-&gt;clear keyframes</b>. 
-Merely click-drag a keyframe before its preceeding keyframe or after
+Merely click-drag a keyframe before its preceding keyframe or after
 its following keyframe on the track.
 </p>
 <p><b>KEYFRAME CONTEXT MENU</b>
@@ -7645,7 +7646,7 @@ Next: <a href="#LOCKING-UP-WHEN-LOADING-FILES" accesskey="n" rel="next">LOCKING 
 
 
 <p>Sometimes there will be two edits really close together.  The point
-selected for dragging may be next to the indended edit on an edit too
+selected for dragging may be next to the intended edit on an edit too
 small to see at the current zoom level.  Zoom in horizontally.
 </p>
 
@@ -7858,7 +7859,7 @@ Next: <a href="#MAKING-VIDEO-LOOK-LIKE-FILM" accesskey="n" rel="next">MAKING VID
 
 <p>Interlacing is done on most video sources because it costs too much to
 build progressive scanning cameras and progressive scanning CRT&rsquo;s. 
-Many a consumer has been dissapointed to spend 5 paychecks on a
+Many a consumer has been disappointed to spend 5 paychecks on a
 camcorder and discover what horrible jagged images it produces on a
 computer monitor.
 </p>
@@ -8398,7 +8399,7 @@ Next: <a href="#BACKGROUND" accesskey="n" rel="next">BACKGROUND</a>, Up: <a href
 <h3 class="section">18.1 1080 TO 480</h3>
 
 
-<p>Most TV broadcasts are recieved with a 1920x1080 resolution but
+<p>Most TV broadcasts are received with a 1920x1080 resolution but
 originate from a 720x480 source at the studio.  It&rsquo;s a waste of space
 to compress the entire 1920x1080 if the only resolvable details are
 720x480.  Unfortunately resizing 1920x1080 video to 720x480 isn&rsquo;t as
@@ -8709,7 +8710,7 @@ range is the user specified value.
 </p>
 <p>The compressor has a graph which correlates every input sound level to
 an output level.  The horizontal direction is the input sound level in
-dB.  The vertical direction is the ouptut sound level in dB.  The user
+dB.  The vertical direction is the output sound level in dB.  The user
 specifies output sound levels by creating points on the graph.  Click in
 the graph to create a point.  If 2 points exist, drag one point across
 another point to delete it.  The most recent point selected has its
@@ -8954,7 +8955,7 @@ Next: <a href="#FREEZE-FRAME" accesskey="n" rel="next">FREEZE FRAME</a>, Previou
 <h3 class="section">18.11 FIELDS TO FRAMES</h3>
 
 <p>This effects reads frames at twice the project framerate, combining 2
-input frames into a single interlaced output frame.  Effects preceeding
+input frames into a single interlaced output frame.  Effects preceding
 <b>fields to frames</b> process frames at twice the project frame rate. 
 Each input frame is called a field.
 </p>
@@ -9021,7 +9022,7 @@ Next: <a href="#INVERSE-TELECINE" accesskey="n" rel="next">INVERSE TELECINE</a>,
 <h3 class="section">18.13 HISTOGRAM</h3>
 
 
-<p>This shows the number of occurances of each color on a histogram plot.
+<p>This shows the number of occurrences of each color on a histogram plot.
 </p>
 <p>It is always performed in floating point RGB regardless of
 the project colorspace.  The histogram has two sets of transfer
@@ -9581,7 +9582,7 @@ vector.  The absolute motion vector for each frame replaces the
 absolute motion vector for the previous frame.  Settling speed has no
 effect on it since it doesn&rsquo;t contain any previous motion vectors. 
 Playback can start anywhere on the timeline since there is no
-dependance on previous results.
+dependence on previous results.
 
 </li><li> 
 <b>Track previous frame:</b> Causes only the motion between the previous
@@ -9966,7 +9967,7 @@ length of output video by the inverse of the scale factor.  If the
 scale factor is greater than 1, the output will end before the end of
 the sequence on the timeline.  If it&rsquo;s less than 1, the output will end
 after the end of the sequence on the timeline.  The ReframeRT effect
-must be lengthened to the necessary length to accomodate the scale
+must be lengthened to the necessary length to accommodate the scale
 factor.  Change the length of the effect by clicking on the endpoint of
 the effect and dragging.
 </p>
@@ -10073,7 +10074,7 @@ you to set keyframes.  This allows may possibilities.
 </p>
 <p>Every <b>enabled</b> keyframe is treated as the start of a new reversed
 region and the end of a previous reversed region.  Several <b>enabled</b>
-keyframes in succession yield several regions reversed independant of
+keyframes in succession yield several regions reversed independent of
 each other.  An <b>enabled</b> keyframe followed by a <b>disabled</b>
 keyframe yields one reversed region followed by a forward region.
 </p>
@@ -10178,7 +10179,7 @@ average can increase the dynamic range of lousy cameras.
 divisor.  A number of frames are accumulated in the accumulation buffer
 and divided by the divisor to get the average.
 </p>
-<p>Because the time average can consume enourmous amounts of memory, it is
+<p>Because the time average can consume enormous amounts of memory, it is
 best applied by first disabling playback for the track, dropping the
 time average in it, configuring time average for the desired number of
 frames, and re-enabling playback for the track.
@@ -10300,7 +10301,7 @@ be justified while at the same time letting you push it within the
 title safe region.
 </p>
 <p>The <b>motion type</b> scrolls the text in any of the four directions. 
-When using this, the text may dissappear.  Move the insertion point
+When using this, the text may disappear.  Move the insertion point
 along the timeline until the text is far enough along the animation to
 reappear.  The text scrolls on and scrolls off.
 </p>
@@ -10584,9 +10585,9 @@ include <b>pluginaclient.h</b> and video plugins include
 </p>
 <p>Cinelerra instantiates all plugins at least twice when they are used in
 a movie.  One instance is the GUI.  The other instance is the rendering
-processor.  User input, through a complicated sequence, is propogated
+processor.  User input, through a complicated sequence, is propagated
 from the GUI instance to the rendering instance.  If the renderer wants
-to alter the GUI, it propogates data back to the GUI instance.  
+to alter the GUI, it propagates data back to the GUI instance.  
 </p>
 <p>All plugins define at least three objects:
 </p>
@@ -10794,7 +10795,7 @@ Next: <a href="#THE-USER-INTERFACE-OBJECT" accesskey="n" rel="next">THE USER INT
 <p>The configuration object is critical for GUI updates, signal
 processing, and default settings in realtime plugins.  Be aware it is
 not used in nonrealtime plugins.  The configuration object inherits
-from nothing and has no dependancies.  It&rsquo;s merely a class containing
+from nothing and has no dependencies.  It&rsquo;s merely a class containing
 three functions and variables specific to the plugin&rsquo;s parameters.
 </p>
 <p>Usually the configuration object starts with the name of the plugin
@@ -10833,7 +10834,7 @@ required functions and the configuration variables.
 <p>Now you must define the three functions.  <b>Equivalent</b> is called by
 LOAD_CONFIGURATION_MACRO to determine if the local configuration
 parameters are identical to the configuration parameters in the
-arguement.  If equivalent returns 0, the LOAD_CONFIGURATION_MACRO 
+argument.  If equivalent returns 0, the LOAD_CONFIGURATION_MACRO 
 causes the GUI to redraw.  If equivalent returns 1, the
 LOAD_CONFIGURATION_MACRO doesn&rsquo;t redraw the GUI.
 </p>
@@ -10977,7 +10978,7 @@ create_objects calls
 <p>Every widget in the GUI needs to detect when its value changes.  In
 GuiCast the <b>handle_event</b> method is called whenever the value
 changes.  In <b>handle_event</b>, the widget then needs to call
-<b>plugin-&gt;send_configure_change()</b> to propogate the change to any
+<b>plugin-&gt;send_configure_change()</b> to propagate the change to any
 copies of the plugin which are processing data.
 </p>
 
@@ -11062,7 +11063,7 @@ supplied to process_buffer if you don&rsquo;t need a temporary.
 </p>
 <p>It also needs a set of position arguments to determine when you want to
 read the data from.  The start position, rate, and len passed to a read
-function need not be the same as the values recieved by the
+function need not be the same as the values received by the
 process_buffer function.  This way plugins can read data at a different
 rate than they output data.
 </p>
@@ -11379,7 +11380,7 @@ PLUGIN_DESTRUCTOR_MACRO to initialize the processing object.  You&rsquo;ll
 also need a BC_Hash object and a Thread object for these macros.
 </p>
 <p>Since the GUI is optional, overwrite a function called <b>uses_gui()</b>
-to signifiy whether or not the transition has a GUI.  Return 1 if it
+to signify whether or not the transition has a GUI.  Return 1 if it
 does and 0 if it doesn&rsquo;t.
 </p>
 <p>Transitions need a <b>load_defaults</b> and <b>save_defaults</b> function so
@@ -11592,7 +11593,7 @@ Previous: <a href="#SYSTEM-QUERIES" accesskey="p" rel="prev">SYSTEM QUERIES</a>,
 <p>There are two rates for media a realtime plugin has to be aware of: the
 project rate and the requested rate.  Functions are provided for
 getting the project and requested rate.  In addition, doing time
-dependant effects requires using several functions which tell where you
+dependent effects requires using several functions which tell where you
 are in the effect.
 </p>
 <ul>
@@ -11982,7 +11983,7 @@ attached with calls to <b>next_effect_is</b> and <b>prev_effect_is</b>.
 These take the name of the processor plugin as a string argument and
 return 1 if the next or previous plugin is the processor plugin.  If
 either returns 1, the fall through plugin must still call <b>read_frame</b> to
-propogate the data but return after that.
+propagate the data but return after that.
 </p>
 <p>The processor plugin must call <b>next_effect_is</b> and
 <b>prev_effect_is</b> to determine if it&rsquo;s aggregated with a fall through
