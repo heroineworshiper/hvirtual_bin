@@ -84,7 +84,7 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#EDITING" accesskey="8">EDITING</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Moving the media in time.
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#USING-EFFECTS" accesskey="9">USING EFFECTS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Altering the media.
+<tr><td align="left" valign="top">&bull; <a href="#GENERAL-EFFECT-USAGE" accesskey="9">GENERAL EFFECT USAGE</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to process media.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#SETTING-PROJECT-ATTRIBUTES">SETTING PROJECT ATTRIBUTES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Changing the way the media is displayed.
 </td></tr>
@@ -275,7 +275,7 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
       <li><a name="toc-Shuffle-Edits" href="#Shuffle-Edits">9.14.4 Shuffle Edits</a></li>
     </ul></li>
   </ul></li>
-  <li><a name="toc-USING-EFFECTS-1" href="#USING-EFFECTS">10 USING EFFECTS</a>
+  <li><a name="toc-GENERAL-EFFECT-USAGE-1" href="#GENERAL-EFFECT-USAGE">10 GENERAL EFFECT USAGE</a>
   <ul class="no-bullet">
     <li><a name="toc-REALTIME-EFFECTS-1" href="#REALTIME-EFFECTS">10.1 REALTIME EFFECTS</a>
     <ul class="no-bullet">
@@ -387,17 +387,18 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <li><a name="toc-LUT-1" href="#LUT">18.21 LUT</a></li>
     <li><a name="toc-MOTION-EFFECTS-1" href="#MOTION-EFFECTS">18.22 MOTION EFFECTS</a>
     <ul class="no-bullet">
-      <li><a name="toc-MOTION-1" href="#MOTION">18.22.1 MOTION</a>
+      <li><a name="toc-BLOB-TRACKER-1" href="#BLOB-TRACKER">18.22.1 BLOB TRACKER</a></li>
+      <li><a name="toc-MOTION-1" href="#MOTION">18.22.2 MOTION</a>
       <ul class="no-bullet">
-        <li><a name="toc-SECRETS-OF-MOTION-TRACKING-1" href="#SECRETS-OF-MOTION-TRACKING">18.22.1.1 SECRETS OF MOTION TRACKING</a></li>
-        <li><a name="toc-2-PASS-MOTION-TRACKING-1" href="#g_t2-PASS-MOTION-TRACKING">18.22.1.2 2 PASS MOTION TRACKING</a></li>
-        <li><a name="toc-USING-BLUR-TO-IMPROVE-MOTION-TRACKING-1" href="#USING-BLUR-TO-IMPROVE-MOTION-TRACKING">18.22.1.3 USING BLUR TO IMPROVE MOTION TRACKING</a></li>
-        <li><a name="toc-USING-HISTOGRAM-TO-IMPROVE-MOTION-TRACKING-1" href="#USING-HISTOGRAM-TO-IMPROVE-MOTION-TRACKING">18.22.1.4 USING HISTOGRAM TO IMPROVE MOTION TRACKING</a></li>
-        <li><a name="toc-INTERPOLATING-MOTION-BETWEEN-FRAMES-1" href="#INTERPOLATING-MOTION-BETWEEN-FRAMES">18.22.1.5 INTERPOLATING MOTION BETWEEN FRAMES</a></li>
-        <li><a name="toc-FILLING-IN-THE-BLACK-AREAS-1" href="#FILLING-IN-THE-BLACK-AREAS">18.22.1.6 FILLING IN THE BLACK AREAS</a></li>
+        <li><a name="toc-SECRETS-OF-MOTION-TRACKING-1" href="#SECRETS-OF-MOTION-TRACKING">18.22.2.1 SECRETS OF MOTION TRACKING</a></li>
+        <li><a name="toc-2-PASS-MOTION-TRACKING-1" href="#g_t2-PASS-MOTION-TRACKING">18.22.2.2 2 PASS MOTION TRACKING</a></li>
+        <li><a name="toc-USING-BLUR-TO-IMPROVE-MOTION-TRACKING-1" href="#USING-BLUR-TO-IMPROVE-MOTION-TRACKING">18.22.2.3 USING BLUR TO IMPROVE MOTION TRACKING</a></li>
+        <li><a name="toc-USING-HISTOGRAM-TO-IMPROVE-MOTION-TRACKING-1" href="#USING-HISTOGRAM-TO-IMPROVE-MOTION-TRACKING">18.22.2.4 USING HISTOGRAM TO IMPROVE MOTION TRACKING</a></li>
+        <li><a name="toc-INTERPOLATING-MOTION-BETWEEN-FRAMES-1" href="#INTERPOLATING-MOTION-BETWEEN-FRAMES">18.22.2.5 INTERPOLATING MOTION BETWEEN FRAMES</a></li>
+        <li><a name="toc-FILLING-IN-THE-BLACK-AREAS-1" href="#FILLING-IN-THE-BLACK-AREAS">18.22.2.6 FILLING IN THE BLACK AREAS</a></li>
       </ul></li>
-      <li><a name="toc-MOTION-2-POINT-1" href="#MOTION-2-POINT">18.22.2 MOTION 2 POINT</a></li>
-      <li><a name="toc-SUPER-STABILIZER-1" href="#SUPER-STABILIZER">18.22.3 SUPER STABILIZER</a></li>
+      <li><a name="toc-MOTION-2-POINT-1" href="#MOTION-2-POINT">18.22.3 MOTION 2 POINT</a></li>
+      <li><a name="toc-SUPER-STABILIZER-1" href="#SUPER-STABILIZER">18.22.4 SUPER STABILIZER</a></li>
     </ul></li>
     <li><a name="toc-REFRAMERT-1" href="#REFRAMERT">18.23 REFRAMERT</a></li>
     <li><a name="toc-REFRAME-1" href="#REFRAME">18.24 REFRAME</a></li>
@@ -4216,7 +4217,7 @@ in full framerates.
 <a name="EDITING"></a>
 <div class="header">
 <p>
-Next: <a href="#USING-EFFECTS" accesskey="n" rel="next">USING EFFECTS</a>, Previous: <a href="#NAVIGATING-THE-PROJECT" accesskey="p" rel="prev">NAVIGATING THE PROJECT</a>, Up: <a href="#Top" accesskey="u" rel="up">TOP</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#GENERAL-EFFECT-USAGE" accesskey="n" rel="next">GENERAL EFFECT USAGE</a>, Previous: <a href="#NAVIGATING-THE-PROJECT" accesskey="p" rel="prev">NAVIGATING THE PROJECT</a>, Up: <a href="#Top" accesskey="u" rel="up">TOP</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="EDITING-1"></a>
 <h2 class="chapter">9 EDITING</h2>
@@ -5175,14 +5176,17 @@ would like reversed and then go to Edit -&gt; Shuffle Edits.
 
 
 <hr>
-<a name="USING-EFFECTS"></a>
+<a name="GENERAL-EFFECT-USAGE"></a>
 <div class="header">
 <p>
 Next: <a href="#SETTING-PROJECT-ATTRIBUTES" accesskey="n" rel="next">SETTING PROJECT ATTRIBUTES</a>, Previous: <a href="#EDITING" accesskey="p" rel="prev">EDITING</a>, Up: <a href="#Top" accesskey="u" rel="up">TOP</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
-<a name="USING-EFFECTS-1"></a>
-<h2 class="chapter">10 USING EFFECTS</h2>
+<a name="GENERAL-EFFECT-USAGE-1"></a>
+<h2 class="chapter">10 GENERAL EFFECT USAGE</h2>
 
+<p>This section is for general usage of the effects.  For notes on each
+effect, go to See <a href="#EFFECTS-NOTES">EFFECTS NOTES</a>.
+</p>
 <p>It would be sufficient to perform all changes to the timeline using
 editing operations, but this isn&rsquo;t very extensible.  Certain timeline
 changes should produce a different effect in the output without
@@ -5214,7 +5218,7 @@ applied using the same procedure.
 <a name="REALTIME-EFFECTS"></a>
 <div class="header">
 <p>
-Next: <a href="#RENDERED-EFFECTS" accesskey="n" rel="next">RENDERED EFFECTS</a>, Up: <a href="#USING-EFFECTS" accesskey="u" rel="up">USING EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#RENDERED-EFFECTS" accesskey="n" rel="next">RENDERED EFFECTS</a>, Up: <a href="#GENERAL-EFFECT-USAGE" accesskey="u" rel="up">GENERAL EFFECT USAGE</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="REALTIME-EFFECTS-1"></a>
 <h3 class="section">10.1 REALTIME EFFECTS</h3>
@@ -5472,7 +5476,7 @@ a shared effect.
 <a name="RENDERED-EFFECTS"></a>
 <div class="header">
 <p>
-Next: <a href="#TRANSITIONS" accesskey="n" rel="next">TRANSITIONS</a>, Previous: <a href="#REALTIME-EFFECTS" accesskey="p" rel="prev">REALTIME EFFECTS</a>, Up: <a href="#USING-EFFECTS" accesskey="u" rel="up">USING EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#TRANSITIONS" accesskey="n" rel="next">TRANSITIONS</a>, Previous: <a href="#REALTIME-EFFECTS" accesskey="p" rel="prev">REALTIME EFFECTS</a>, Up: <a href="#GENERAL-EFFECT-USAGE" accesskey="u" rel="up">GENERAL EFFECT USAGE</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="RENDERED-EFFECTS-1"></a>
 <h3 class="section">10.2 RENDERED EFFECTS</h3>
@@ -5559,7 +5563,7 @@ accepting the settings, the effect is processed.
 <a name="TRANSITIONS"></a>
 <div class="header">
 <p>
-Next: <a href="#LADSPA-EFFECTS" accesskey="n" rel="next">LADSPA EFFECTS</a>, Previous: <a href="#RENDERED-EFFECTS" accesskey="p" rel="prev">RENDERED EFFECTS</a>, Up: <a href="#USING-EFFECTS" accesskey="u" rel="up">USING EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#LADSPA-EFFECTS" accesskey="n" rel="next">LADSPA EFFECTS</a>, Previous: <a href="#RENDERED-EFFECTS" accesskey="p" rel="prev">RENDERED EFFECTS</a>, Up: <a href="#GENERAL-EFFECT-USAGE" accesskey="u" rel="up">GENERAL EFFECT USAGE</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TRANSITIONS-1"></a>
 <h3 class="section">10.3 TRANSITIONS</h3>
@@ -5624,7 +5628,7 @@ disturbance.
 <a name="LADSPA-EFFECTS"></a>
 <div class="header">
 <p>
-Next: <a href="#EFFECT-PRESETS" accesskey="n" rel="next">EFFECT PRESETS</a>, Previous: <a href="#TRANSITIONS" accesskey="p" rel="prev">TRANSITIONS</a>, Up: <a href="#USING-EFFECTS" accesskey="u" rel="up">USING EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#EFFECT-PRESETS" accesskey="n" rel="next">EFFECT PRESETS</a>, Previous: <a href="#TRANSITIONS" accesskey="p" rel="prev">TRANSITIONS</a>, Up: <a href="#GENERAL-EFFECT-USAGE" accesskey="u" rel="up">GENERAL EFFECT USAGE</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="LADSPA-EFFECTS-1"></a>
 <h3 class="section">10.4 LADSPA EFFECTS</h3>
@@ -5653,7 +5657,7 @@ them in the <b>/usr/lib/cinelerra</b> directory.
 <a name="EFFECT-PRESETS"></a>
 <div class="header">
 <p>
-Previous: <a href="#LADSPA-EFFECTS" accesskey="p" rel="prev">LADSPA EFFECTS</a>, Up: <a href="#USING-EFFECTS" accesskey="u" rel="up">USING EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Previous: <a href="#LADSPA-EFFECTS" accesskey="p" rel="prev">LADSPA EFFECTS</a>, Up: <a href="#GENERAL-EFFECT-USAGE" accesskey="u" rel="up">GENERAL EFFECT USAGE</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="EFFECT-PRESETS-1"></a>
 <h3 class="section">10.5 EFFECT PRESETS</h3>
@@ -5680,7 +5684,7 @@ the highlighted preset to be loaded.
 <a name="SETTING-PROJECT-ATTRIBUTES"></a>
 <div class="header">
 <p>
-Next: <a href="#COMPOSITING" accesskey="n" rel="next">COMPOSITING</a>, Previous: <a href="#USING-EFFECTS" accesskey="p" rel="prev">USING EFFECTS</a>, Up: <a href="#Top" accesskey="u" rel="up">TOP</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#COMPOSITING" accesskey="n" rel="next">COMPOSITING</a>, Previous: <a href="#GENERAL-EFFECT-USAGE" accesskey="p" rel="prev">GENERAL EFFECT USAGE</a>, Up: <a href="#Top" accesskey="u" rel="up">TOP</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="SETTING-PROJECT-ATTRIBUTES-1"></a>
 <h2 class="chapter">11 SETTING PROJECT ATTRIBUTES</h2>
@@ -8849,6 +8853,9 @@ frequency bands.  The higher it is, the more precise the filter but the
 more it has to read ahead.  Higher steepness requires a higher window
 size to truly be realized.
 </p>
+
+
+
 <hr>
 <a name="DECIMATE"></a>
 <div class="header">
@@ -9437,22 +9444,72 @@ Next: <a href="#REFRAMERT" accesskey="n" rel="next">REFRAMERT</a>, Previous: <a 
 <h3 class="section">18.22 MOTION EFFECTS</h3>
 
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#MOTION" accesskey="1">MOTION</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Motion tracking with rotation.
+<tr><td align="left" valign="top">&bull; <a href="#BLOB-TRACKER" accesskey="1">BLOB TRACKER</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Stabilization using blob detection
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#MOTION-2-POINT" accesskey="2">MOTION 2 POINT</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Motion and rotation tracking from translation only.
+<tr><td align="left" valign="top">&bull; <a href="#MOTION" accesskey="2">MOTION</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Motion tracking with rotation.
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#SUPER-STABILIZER" accesskey="3">SUPER STABILIZER</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Basic stabilization
+<tr><td align="left" valign="top">&bull; <a href="#MOTION-2-POINT" accesskey="3">MOTION 2 POINT</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Motion and rotation tracking from translation only.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#SUPER-STABILIZER" accesskey="4">SUPER STABILIZER</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Basic stabilization
 </td></tr>
 </table>
+
+
+<hr>
+<a name="BLOB-TRACKER"></a>
+<div class="header">
+<p>
+Next: <a href="#MOTION" accesskey="n" rel="next">MOTION</a>, Up: <a href="#MOTION-EFFECTS" accesskey="u" rel="up">MOTION EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="BLOB-TRACKER-1"></a>
+<h4 class="subsection">18.22.1 BLOB TRACKER</h4>
+
+<p>This effect stabilizes video by centering on the left edge of a matching
+blob.  Blob tracker is designed to be used with a chroma key or
+threshold effect.  It&rsquo;s most effective for stabilizing flying things or
+things which can be easily keyed.
+</p>
+<div align="center"><A HREF="blob.png"><IMG SRC="blob_s.png"></A>
+</div>
+<p>The chroma key or threshold sets matching areas to 0 alpha or black.  If
+the color model has alpha, blob tracker takes the 0 alpha as blobs.  If
+the color model has no alpha, blob tracker takes black areas as blobs. 
+Threshold doesn&rsquo;t zero out the alpha, so it has to be used with a 3
+channel color model.  It further selects 1 winner from all the blobs. 
+It shifts the bottom track based on the blob detected in the top track.
+</p>
+<p>The <b>ALGORITHM</b> option selects the type of blob.  If it is <b>Largest</b>
+it goes for the largest blob.  If it is <b>Brightest</b> it goes for the
+brightest blob of any size.  The brightness value is always taken from
+the <b>target layer</b>.  The blob outlines are always taken from the
+<b>blob layer</b>.
+</p>
+<p>The minimum blob size it detects is determined by the <b>Min blob size</b>
+option.  This is the square root of the total number of pixels in the
+blob.  <b>Detected size</b> shows the square root of the largest blob size
+detected in the current frame, to aid in setting the limit.
+</p>
+<p><b>Blob layer</b> &amp; <b>Target layer</b> determine what input is used for blob
+detection, brightness detection, &amp; stabilization.
+</p>
+<p><b>Draw guides</b> draws the outline of the winning blob.
+</p>
+<p><b>Stabilize</b> shifts the target layer to center the winning blob.
+</p>
+<div align="center"><A HREF="blob2.png"><IMG SRC="blob2_s.png"></A>
+</div>
+<p>In this case, it has stabilized on the brightest blob, outlining it.
+</p>
+
 
 <hr>
 <a name="MOTION"></a>
 <div class="header">
 <p>
-Next: <a href="#MOTION-2-POINT" accesskey="n" rel="next">MOTION 2 POINT</a>, Up: <a href="#MOTION-EFFECTS" accesskey="u" rel="up">MOTION EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#MOTION-2-POINT" accesskey="n" rel="next">MOTION 2 POINT</a>, Previous: <a href="#BLOB-TRACKER" accesskey="p" rel="prev">BLOB TRACKER</a>, Up: <a href="#MOTION-EFFECTS" accesskey="u" rel="up">MOTION EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="MOTION-1"></a>
-<h4 class="subsection">18.22.1 MOTION</h4>
+<h4 class="subsection">18.22.2 MOTION</h4>
 
 <p>The motion tracker is almost a complete application in itself.  The
 motion tracker tracks two types of motion: translation and rotation. 
@@ -9659,7 +9716,7 @@ subpixels by changing the action setting.
 Next: <a href="#g_t2-PASS-MOTION-TRACKING" accesskey="n" rel="next">2 PASS MOTION TRACKING</a>, Up: <a href="#MOTION" accesskey="u" rel="up">MOTION</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="SECRETS-OF-MOTION-TRACKING-1"></a>
-<h4 class="subsubsection">18.22.1.1 SECRETS OF MOTION TRACKING</h4>
+<h4 class="subsubsection">18.22.2.1 SECRETS OF MOTION TRACKING</h4>
 
 <p>Since it is a very slow effect, there is a method to applying the
 motion tracker to get the most out of it.  First disable playback for
@@ -9705,7 +9762,7 @@ depends on calculating an absolute motion vector starting on frame 0.
 Next: <a href="#USING-BLUR-TO-IMPROVE-MOTION-TRACKING" accesskey="n" rel="next">USING BLUR TO IMPROVE MOTION TRACKING</a>, Previous: <a href="#SECRETS-OF-MOTION-TRACKING" accesskey="p" rel="prev">SECRETS OF MOTION TRACKING</a>, Up: <a href="#MOTION" accesskey="u" rel="up">MOTION</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="g_t2-PASS-MOTION-TRACKING-1"></a>
-<h4 class="subsubsection">18.22.1.2 2 PASS MOTION TRACKING</h4>
+<h4 class="subsubsection">18.22.2.2 2 PASS MOTION TRACKING</h4>
 
 <p>The method described above is 2 pass motion tracking.  One pass is used
 just to calculate the motion vectors.  A second pass is used to apply
@@ -9736,7 +9793,7 @@ acceptable.
 Next: <a href="#USING-HISTOGRAM-TO-IMPROVE-MOTION-TRACKING" accesskey="n" rel="next">USING HISTOGRAM TO IMPROVE MOTION TRACKING</a>, Previous: <a href="#g_t2-PASS-MOTION-TRACKING" accesskey="p" rel="prev">2 PASS MOTION TRACKING</a>, Up: <a href="#MOTION" accesskey="u" rel="up">MOTION</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="USING-BLUR-TO-IMPROVE-MOTION-TRACKING-1"></a>
-<h4 class="subsubsection">18.22.1.3 USING BLUR TO IMPROVE MOTION TRACKING</h4>
+<h4 class="subsubsection">18.22.2.3 USING BLUR TO IMPROVE MOTION TRACKING</h4>
 
 <p>With extremely noisy or interlaced footage, applying a blur effect
 before the motion tracking can improve accuracy.  Either save the
@@ -9751,7 +9808,7 @@ motion vectors in a <b>tracking pass</b> and disable the blur for the
 Next: <a href="#INTERPOLATING-MOTION-BETWEEN-FRAMES" accesskey="n" rel="next">INTERPOLATING MOTION BETWEEN FRAMES</a>, Previous: <a href="#USING-BLUR-TO-IMPROVE-MOTION-TRACKING" accesskey="p" rel="prev">USING BLUR TO IMPROVE MOTION TRACKING</a>, Up: <a href="#MOTION" accesskey="u" rel="up">MOTION</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="USING-HISTOGRAM-TO-IMPROVE-MOTION-TRACKING-1"></a>
-<h4 class="subsubsection">18.22.1.4 USING HISTOGRAM TO IMPROVE MOTION TRACKING</h4>
+<h4 class="subsubsection">18.22.2.4 USING HISTOGRAM TO IMPROVE MOTION TRACKING</h4>
 
 <p>A histogram is almost always applied before motion tracking to clamp
 out noise in the darker pixels.  Either save the motion vectors in a
@@ -9768,7 +9825,7 @@ apply the histogram just to the <b>master layer</b>.
 Next: <a href="#FILLING-IN-THE-BLACK-AREAS" accesskey="n" rel="next">FILLING IN THE BLACK AREAS</a>, Previous: <a href="#USING-HISTOGRAM-TO-IMPROVE-MOTION-TRACKING" accesskey="p" rel="prev">USING HISTOGRAM TO IMPROVE MOTION TRACKING</a>, Up: <a href="#MOTION" accesskey="u" rel="up">MOTION</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="INTERPOLATING-MOTION-BETWEEN-FRAMES-1"></a>
-<h4 class="subsubsection">18.22.1.5 INTERPOLATING MOTION BETWEEN FRAMES</h4>
+<h4 class="subsubsection">18.22.2.5 INTERPOLATING MOTION BETWEEN FRAMES</h4>
 
 <p>The motion tracker can simulate higher frame rates than the media frame
 rate by interpolating the motion.  Interpolation is enabled with the
@@ -9810,7 +9867,7 @@ small, so the movement is smooth.  3 works well.
 Previous: <a href="#INTERPOLATING-MOTION-BETWEEN-FRAMES" accesskey="p" rel="prev">INTERPOLATING MOTION BETWEEN FRAMES</a>, Up: <a href="#MOTION" accesskey="u" rel="up">MOTION</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="FILLING-IN-THE-BLACK-AREAS-1"></a>
-<h4 class="subsubsection">18.22.1.6 FILLING IN THE BLACK AREAS</h4>
+<h4 class="subsubsection">18.22.2.6 FILLING IN THE BLACK AREAS</h4>
 
 <p>Stabilization always creates black borders in the track resolution.  One
 solution is to shrink the project resolution so the borders are always
@@ -9849,7 +9906,7 @@ previous data so the previous data shows through and fills them in.
 Next: <a href="#SUPER-STABILIZER" accesskey="n" rel="next">SUPER STABILIZER</a>, Previous: <a href="#MOTION" accesskey="p" rel="prev">MOTION</a>, Up: <a href="#MOTION-EFFECTS" accesskey="u" rel="up">MOTION EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="MOTION-2-POINT-1"></a>
-<h4 class="subsection">18.22.2 MOTION 2 POINT</h4>
+<h4 class="subsection">18.22.3 MOTION 2 POINT</h4>
 
 
 <p>The 2 point motion tracker is the same as using 2 of the translation
@@ -9894,7 +9951,7 @@ to compare when they&rsquo;re rotated.
 Previous: <a href="#MOTION-2-POINT" accesskey="p" rel="prev">MOTION 2 POINT</a>, Up: <a href="#MOTION-EFFECTS" accesskey="u" rel="up">MOTION EFFECTS</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="SUPER-STABILIZER-1"></a>
-<h4 class="subsection">18.22.3 SUPER STABILIZER</h4>
+<h4 class="subsection">18.22.4 SUPER STABILIZER</h4>
 
 <p>New techniques specifically for stabilizing video emerged.  The previous
 motion effects were quite large so a new effect was created just for
@@ -9943,6 +10000,9 @@ the footage but the longer it takes to get started until it&rsquo;s unusable.
 </p>
 <p><b>Draw vectors</b> Draws the search block to allow configuration.
 </p>
+
+
+
 
 
 
