@@ -1,4 +1,4 @@
-9
+10
 "1080to540.plugin" "1080 to 540" 0 1 0 1 0 1 0 0 0 0
 "720to480.plugin" "720 to 480" 0 1 0 0 0 1 0 0 0 0
 "aging.plugin" "AgingTV" 0 1 0 1 0 1 0 0 0 0
@@ -6,6 +6,7 @@
 "background.plugin" "Background" 0 1 0 1 0 1 0 0 0 0
 "bandslide.plugin" "BandSlide" 0 1 0 0 0 1 0 0 1 0
 "bandwipe.plugin" "BandWipe" 0 1 0 0 0 1 0 0 1 0
+"blobtracker.plugin" "Blob Tracker" 0 1 0 1 0 1 1 0 0 0
 "blur.plugin" "Blur" 0 1 0 1 0 1 0 0 0 0
 "brightness.plugin" "Brightness/Contrast" 0 1 0 1 0 1 0 0 0 0
 "brighttheme.plugin" "Bright" 0 0 1 0 0 1 0 0 0 0
