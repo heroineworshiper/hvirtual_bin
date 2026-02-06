@@ -8699,21 +8699,19 @@ Next: <a href="#MULTIBAND-COMPRESSOR" accesskey="n" rel="next">MULTIBAND COMPRES
 <a name="COMPRESSOR-1"></a>
 <h3 class="section">18.6 COMPRESSOR</h3>
 
-<p>Contrary to computer science experience, the audio compressor does not
-reduce the amount of data required to store the audio.  The audio
-compressor reduces the dynamic range of the audio.  In Cinelerra the
-compressor actually performs the function of an expander and
-compressor.
+<p>The audio compressor reduces or expands the dynamic range of the audio. 
+In Cinelerra the compressor actually performs the function of an
+expander and compressor.
 </p>
 <p>The compressor works by calculating the maximum sound level within a
-certain time period of the current position.  The maximum sound level
-is taken as the input sound level.  For every input sound level there
-is an output sound level specified by the user.  The gain at the
-current position is adjusted so the maximum sound level in the time
-range is the user specified value.
+certain time period of the current position.  The maximum sound level is
+taken as the trigger value.  For every trigger value there is an output
+sound level specified by the user.  The gain at the current position is
+adjusted so the maximum sound level in the time range is the user
+specified output value.
 </p>
-<p>The compressor has a graph which correlates every input sound level to
-an output level.  The horizontal direction is the input sound level in
+<p>The compressor has a graph which correlates every trigger sound level to
+an output level.  The horizontal direction is the trigger sound level in
 dB.  The vertical direction is the output sound level in dB.  The user
 specifies output sound levels by creating points on the graph.  Click in
 the graph to create a point.  If 2 points exist, drag one point across
@@ -8792,10 +8790,11 @@ several tracks and playing with the trigger value, you can make a sine
 wave on one track follow the amplitude of a drum on another track for
 example.
 </p>
-<p><b>Smooth only:</b> For visualizing what the compressor is doing to the
-soundlevel, this option causes it to replace the soundwave with just
-the current peak value.  It makes it very easy to see how <b>reaction
-secs</b> affects the detected peak values.
+<p><b>Envelope:</b> This replaces the output waveform with just the current
+trigger value.  It allows visualizing what the compressor is doing to
+the soundlevel.  It makes it very easy to see how <b>reaction secs</b>
+affects the detected peak values.  The envelope output can also be used
+as a control value in another effect.
 </p>
 
 <p><b>IN:</b> This meter shows the current value of the trigger during playback.  
@@ -8814,13 +8813,13 @@ Next: <a href="#DECIMATE" accesskey="n" rel="next">DECIMATE</a>, Previous: <a hr
 <a name="MULTIBAND-COMPRESSOR-1"></a>
 <h3 class="section">18.7 MULTIBAND COMPRESSOR</h3>
 
-<p>This adds more features to the compressor for selecting frequency
-bands.  There are 3 bands, each with its own sound level graph.  Use the
-context menu in the graph to copy curves from 1 band to another or a
-text editor.
+<p>This adds more features to the compressor for individually compressing
+different frequency bands.  There are 3 bands, each with its own sound
+level graph.  Use the context menu in the graph to copy curves from 1
+band to another or a text editor.
 </p>
-<p>The same attack, release, trigger type, trigger, smooth only, window
-size apply to all 3 bands.
+<p>The same attack, release, trigger type, trigger, envelope, window size
+apply to all 3 bands.
 </p>
 <p><b>CURRENT BAND</b> Select the current band to show in the graph.
 </p>
@@ -9500,7 +9499,9 @@ detection, brightness detection, &amp; stabilization.
 </div>
 <p>In this case, it has stabilized on the brightest blob, outlining it.
 </p>
-
+<p>If the result is too shaky, make the keying more selective &amp; reduce the
+minimum blob size to shrink the hit size.
+</p>
 
 <hr>
 <a name="MOTION"></a>

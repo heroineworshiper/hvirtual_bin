@@ -100,7 +100,7 @@
 "sharpen.plugin" "Sharpen" 0 1 0 1 0 1 0 0 0 0
 "shiftinterlace.plugin" "ShiftInterlace" 0 1 0 1 0 1 0 0 0 0
 "slide.plugin" "Slide" 0 1 0 0 0 1 0 0 1 0
-"spectrogram.plugin" "Spectrogram" 1 0 0 1 0 1 0 0 0 0
+"spectrogram.plugin" "Spectrogram" 1 0 0 1 0 1 1 0 0 0
 "spherecam.plugin" "Sphere Cam" 0 1 0 1 0 1 0 0 0 0
 "spheretranslate.plugin" "Sphere Translate" 0 1 0 1 0 1 0 0 0 0
 "suv.plugin" "S.U.V." 0 0 1 0 0 1 0 0 0 0
