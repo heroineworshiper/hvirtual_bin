@@ -56,9 +56,9 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
 <a name="SEC_Top"></a>
 
 <div align="center">SECRETS OF CINELERRA
-</div><div align="center">Version 10
+</div><div align="center">Version 10.1
 </div><div align="center">by Adam Williams
-</div><div align="center">Copyright &copy; 2011-2025
+</div><div align="center">Copyright &copy; 2011-2026
 </div><div align="center">Sections from https://cinelerra-gg.org/download/CinelerraGG_Manual/Contents.html
 </div>
 
@@ -307,7 +307,7 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <li><a name="toc-DEFAULT-KEYFRAMES-1" href="#DEFAULT-KEYFRAMES">13.2 DEFAULT KEYFRAMES</a></li>
     <li><a name="toc-CURVE-KEYFRAMES-1" href="#CURVE-KEYFRAMES">13.3 CURVE KEYFRAMES</a></li>
     <li><a name="toc-NAVIGATING-CURVE-KEYFRAMES-1" href="#NAVIGATING-CURVE-KEYFRAMES">13.4 NAVIGATING CURVE KEYFRAMES</a></li>
-    <li><a name="toc-SELECTING-BEZIER-_0026-LINEAR-MODE-1" href="#SELECTING-BEZIER-_0026-LINEAR-MODE">13.5 SELECTING BEZIER &amp; LINEAR MODE</a></li>
+    <li><a name="toc-SELECTING-A-CURVE-TYPE-1" href="#SELECTING-A-CURVE-TYPE">13.5 SELECTING A CURVE TYPE</a></li>
     <li><a name="toc-SNAPPING-TO-NEIGHBOR-KEYFRAMES-1" href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES">13.6 SNAPPING TO NEIGHBOR KEYFRAMES</a></li>
     <li><a name="toc-MUTE-KEYFRAMES-1" href="#MUTE-KEYFRAMES">13.7 MUTE KEYFRAMES</a></li>
     <li><a name="toc-AUTOMATIC-KEYFRAMES-1" href="#AUTOMATIC-KEYFRAMES">13.8 AUTOMATIC KEYFRAMES</a></li>
@@ -3729,8 +3729,12 @@ main tools for positioning the timeline.
 
 
 <p>Changing the <b>sample zoom</b> causes the amount of time visible to
-change.  <b>If your mouse has a wheel and it works in X11 go over
-the tumblers and use the wheel to zoom in and out.</b>
+change.  <b>If your mouse has a wheel and it works in X11 go over the
+tumblers and use the wheel to zoom in and out.</b>  The sample zoom is in
+units of samples per pixel.  It does this so different windows of
+different sizes can easily show the same zoom level.  Past attempts to
+show the width of the window in time units were more difficult to
+navigate.
 </p>
 <p>The <b>amplitude</b> only affects audio.  It determines how big the
 waveform is if the waveform is drawn.
@@ -3802,9 +3806,9 @@ Next: <a href="#THE-IN_002fOUT-POINTS" accesskey="n" rel="next">THE IN/OUT POINT
 
 <p>By default you&rsquo;ll see a flashing insertion point in the program window
 the first time you boot it up.  This is where new media is pasted onto
-the timeline.  It&rsquo;s also the starting point of all playback
-operations.  When rendering, it defines the region of the timeline to
-be rendered.
+the timeline.  It&rsquo;s also the starting point of all playback operations. 
+When rendering, it defines the start of the region of the timeline to be
+rendered.
 </p>
 <p>The insertion point is normally moved by clicking inside the timebar. 
 Any region of the timebar not obscured by labels and in/out points is a
@@ -3814,7 +3818,17 @@ hotspot for repositioning the insertion point.
 <img src="main_timebar.png" alt="main_timebar">
 <p><b>The main timebar</b>
 </p>
-<p>The insertion point also can be moved by clicking in the timeline
+<p>When repositioning the insertion point, the frame on the right side of
+the line is rendered.  When playing forward, the frame on the left side
+of the line is last frame rendered.  When playing backward, the frame on
+the right side of the line is the last frame rendered.  This makes audio
+editing more intuitive.
+</p>
+<p>For the rendered frame to always be on the left side of the insertion
+point, it would have to render frame -1 when the line was at position
+0.  Audio playback would start 1 frame early.
+</p>
+<p>The insertion point also can be repositioned by clicking in the timeline
 itself, but not always.  The insertion point has two modes of
 operation: 
 </p>
@@ -3927,14 +3941,39 @@ Previous: <a href="#THE-IN_002fOUT-POINTS" accesskey="p" rel="prev">THE IN/OUT P
 <a name="USING-LABELS-IN-THE-PROGRAM-WINDOW-1"></a>
 <h4 class="subsection">8.1.3 USING LABELS IN THE PROGRAM WINDOW</h4>
 
-<p>Labels are an easy way to set exact locations on the timeline you want
-to jump to.  When you position the insertion point somewhere and hit
-the <img src="label_button.png" alt="label_button"> <b>label button</b> a new label appears on the
-timeline.  
+<p>Playing through the timeline &amp; setting labels is the primary method of
+determining precise editing times in Cinelerra.  They&rsquo;re also used as
+the start times for rendering a list of files.
 </p>
+<p>The playhead can jump to any label.  When you position the insertion
+point somewhere and hit the <img src="label_button.png" alt="label_button"> <b>label button</b> a new
+label appears on the timeline.
+</p>
+<p>To aid in categorizing different points in time, labels can be a variety
+of colors selected in the <img src="label_color.png" alt="label_color"> color menu.  The colors
+have corresponding titles which can be set in <b>Settings-&gt;EDL
+settings</b>.  
+</p>
+<p>The text or color has no effect on the label functionality.  The 8
+possible colors are based on the Commodore 64 palette &amp; can&rsquo;t be
+changed.
+</p>
+<p>Change the color of a range of labels to the currently selected color by
+highlighting a region or setting in/out points, then going to
+<b>Edit-&gt;Change label color</b>.
+</p>
+<p>Clear all the labels in a region by going to <b>Edit-&gt;Clear labels</b>.
+</p>
+<p>It&rsquo;s often useful to label the start of every edit.  Then each edit can
+be rendered to a different file in the <b>File-&gt;Render</b> dialog by
+enabling <b>Create new file at each label</b>.  Automatically label every
+edit in the selected region by going to <b>Edit-&gt;Label all edits</b>.
+</p>
+
 <br>
-<img src="timebar_label.png" alt="timebar_label"> <p><b>Timebar with a label on it</b>
-</p>
+<div align="center"><img src="timebar_label.png" alt="timebar_label">
+</div><div align="center"><b>Timebar with labels in a variety of colors</b>
+</div>
 <p>No matter what the zoom settings are, clicking on the label positions
 the insertion point exactly where you set it.  Hitting the label button
 again when a label is selected deletes it.
@@ -3992,70 +4031,23 @@ Next: <a href="#NAVIGATING-THE-RESOURCES" accesskey="n" rel="next">NAVIGATING TH
 <h3 class="section">8.2 NAVIGATING THE VIEWER AND COMPOSITOR</h3>
 
 <p>The navigation features of the Viewer and Compositor behave very
-similarly.  Each has a timebar and slider below the video output.  The
-timebar and slider are critical for navigation.
+similarly.  Each has a timebar slider below the video output.  The
+timebar slider shows the labels in the timeline &amp; the insertion point. 
+Click in it to drag the insertion point or jump to a label.
 </p>
 <br>
 
-<img src="timebarslider.png" alt="timebarslider">
-
-<p>The timebar represents the entire time covered by the program.  When
-you define labels and in/out points it defines those, too.  Finally the
-timebar defines a region known as the <b>preview region</b>.
-</p>
-<p>The <b>preview region</b> is the region of the timeline which the
-slider effects.  The slider only covers the time covered by the preview
-region.  By using a preview region inside the entire program and using
-the slider inside the preview region you can quickly and precisely seek
-in the compositor and viewer.
-</p>
-<p>When you replace the current project with a file the preview region
-automatically resizes to cover the entire file.  When you append data
-or change the size of the current project, the preview region stays the
-same size and shrinks.  Therefore, you need to resize the preview
-region.
-</p>
-<p>Load a file and then slide around it using the compositor slider.  The
-insertion point in the main window follows the compositor.  Move the
-pointer over the compositor&rsquo;s timebar until it turns into a left resize
-pointer.  The click and drag right.  The preview region should have
-changed and the slider resized proportionally.
-</p>
-<p>Go to the right of the timebar until a right resize pointer appears. 
-Drag left so the preview region shrinks.
-</p>
-<p>Go to the center of the preview region in the timebar and drag it
-around to convince yourself if can be moved.
+<div align="center"><img src="timebarslider.png" alt="timebarslider">
+</div>
+<p>A timebar with labels, in/out points, &amp; the current insertion point is
+shown.
 </p>
 
-<br>
 
-<img src="previewregion.png" alt="previewregion">
 
-<p><b>Preview region in compositor</b>
-</p>
-<p>If you go to the slider and slide it around with the preview region
-shrunk, you&rsquo;ll see the slider only affects the preview region.  The
-timebar and slider in the viewer window work exactly the same.
-</p>
-<p>Labels and in/out points are fully supported in the viewer and
-compositor.  The only difference between the viewer and compositor is
-the compositor reflects the state of the program while the viewer
-reflects the state of a clip but not the program.
-</p>
-<p>When you hit the <b>label button</b> in the compositor, the label
-appears both in the compositor timebar and the program timebar.
-</p>
-<p>When you select a label or in/out point in the compositor, the program
-window jumps to that position.
-</p>
-<br>
-<img src="viewer_labels.png" alt="viewer_labels"> <p><b>Labels and in/out points in the viewer</b>.
-</p>
-<p>In the viewer and compositor, labels and in/out points are displayed in
-the timebar.  Instead of displaying just a region of the program, the
-timebar displays the entire program here.
-</p>
+
+
+
 
 
 <p>Like the Program window, the Compositor has a zoom capability.  First,
@@ -6334,7 +6326,7 @@ the different types of keyframes is described here.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#NAVIGATING-CURVE-KEYFRAMES" accesskey="4">NAVIGATING CURVE KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#SELECTING-BEZIER-_0026-LINEAR-MODE" accesskey="5">SELECTING BEZIER &amp; LINEAR MODE</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Change curves from linear to curved
+<tr><td align="left" valign="top">&bull; <a href="#SELECTING-A-CURVE-TYPE" accesskey="5">SELECTING A CURVE TYPE</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Creating curves of different types
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES" accesskey="6">SNAPPING TO NEIGHBOR KEYFRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -6448,7 +6440,7 @@ between bezier &amp; linear in this editor.
 <a name="NAVIGATING-CURVE-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#SELECTING-BEZIER-_0026-LINEAR-MODE" accesskey="n" rel="next">SELECTING BEZIER &amp; LINEAR MODE</a>, Previous: <a href="#CURVE-KEYFRAMES" accesskey="p" rel="prev">CURVE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#SELECTING-A-CURVE-TYPE" accesskey="n" rel="next">SELECTING A CURVE TYPE</a>, Previous: <a href="#CURVE-KEYFRAMES" accesskey="p" rel="prev">CURVE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="NAVIGATING-CURVE-KEYFRAMES-1"></a>
 <h3 class="section">13.4 NAVIGATING CURVE KEYFRAMES</h3>
@@ -6472,16 +6464,21 @@ zoom from the keyboard.
 </p>
 
 <hr>
-<a name="SELECTING-BEZIER-_0026-LINEAR-MODE"></a>
+<a name="SELECTING-A-CURVE-TYPE"></a>
 <div class="header">
 <p>
 Next: <a href="#SNAPPING-TO-NEIGHBOR-KEYFRAMES" accesskey="n" rel="next">SNAPPING TO NEIGHBOR KEYFRAMES</a>, Previous: <a href="#NAVIGATING-CURVE-KEYFRAMES" accesskey="p" rel="prev">NAVIGATING CURVE KEYFRAMES</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
-<a name="SELECTING-BEZIER-_0026-LINEAR-MODE-1"></a>
-<h3 class="section">13.5 SELECTING BEZIER &amp; LINEAR MODE</h3>
+<a name="SELECTING-A-CURVE-TYPE-1"></a>
+<h3 class="section">13.5 SELECTING A CURVE TYPE</h3>
 
-<p>The curve keyframes have linear, locked bezier, &amp; unlocked bezier
-modes.  In linear mode, the keyframe looks like a square and the curves
+<p>The curve keyframes have constant, linear, locked bezier, &amp; unlocked
+bezier modes.  In constant mode, the value of the previous keyframe is
+constant until the next keyframe.  This way, you only need to define 1
+keyframe for a region to have the same value.  The pan keyframes only
+support linear interpolation.
+</p>
+<p>In linear mode, the keyframe looks like a square and the curves
 emanating from it are straight.  In bezier modes, the keyframe is
 rounded and has 2 control lines in addition to the rubber band curve
 lines.  In locked bezier mode, the control lines are mirrors &amp; the curve
@@ -6490,7 +6487,7 @@ mode, the control lines have different angles &amp; the curve bends when it
 passes through the keyframe.
 </p>
 <p>To select the mode for a single keyframe, right click on it to bring up
-the keyframe menu.  Select <b>linear, locked bezier, or unlocked
+the keyframe menu.  Select <b>constant, linear, locked bezier, or unlocked
 bezier</b>.
 </p>
 <p>To select the mode of multiple keyframes, highlight a region of the
@@ -6507,6 +6504,9 @@ output controls can only be moved vertically.
 <p>If the control lines aren&rsquo;t visible, <b>ctrl-drag</b> on the left or right
 of the keyframe.
 </p>
+<div align="center"><A HREF="constant.png"><IMG SRC="constant_s.png"></A>
+</div><div align="center">Constant keyframes
+</div>
 <div align="center"><A HREF="linear.png"><IMG SRC="linear_s.png"></A>
 </div><div align="center">Linear keyframes
 </div>
@@ -6522,7 +6522,7 @@ of the keyframe.
 <a name="SNAPPING-TO-NEIGHBOR-KEYFRAMES"></a>
 <div class="header">
 <p>
-Next: <a href="#MUTE-KEYFRAMES" accesskey="n" rel="next">MUTE KEYFRAMES</a>, Previous: <a href="#SELECTING-BEZIER-_0026-LINEAR-MODE" accesskey="p" rel="prev">SELECTING BEZIER &amp; LINEAR MODE</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#MUTE-KEYFRAMES" accesskey="n" rel="next">MUTE KEYFRAMES</a>, Previous: <a href="#SELECTING-A-CURVE-TYPE" accesskey="p" rel="prev">SELECTING A CURVE TYPE</a>, Up: <a href="#KEYFRAMES" accesskey="u" rel="up">KEYFRAMES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="SNAPPING-TO-NEIGHBOR-KEYFRAMES-1"></a>
 <h3 class="section">13.6 SNAPPING TO NEIGHBOR KEYFRAMES</h3>
