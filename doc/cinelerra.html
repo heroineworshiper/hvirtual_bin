@@ -222,13 +222,15 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
       <li><a name="toc-FILE-PREVIEWS-1" href="#FILE-PREVIEWS">7.2.4 FILE PREVIEWS</a></li>
     </ul></li>
     <li><a name="toc-LOADING-THE-BACKUP-1" href="#LOADING-THE-BACKUP">7.3 LOADING THE BACKUP</a></li>
-    <li><a name="toc-SAVING-FILES-1" href="#SAVING-FILES">7.4 SAVING FILES</a></li>
-    <li><a name="toc-RENDERING-FILES-1" href="#RENDERING-FILES">7.5 RENDERING FILES</a>
+    <li><a name="toc-SAVING-THE-PROJECT-1" href="#SAVING-THE-PROJECT">7.4 SAVING THE PROJECT</a></li>
+    <li><a name="toc-SAVING-A-CLIP-TO-A-FILE-1" href="#SAVING-A-CLIP-TO-A-FILE">7.5 SAVING A CLIP TO A FILE</a></li>
+    <li><a name="toc-SAVING-A-CUT-LIST-1" href="#SAVING-A-CUT-LIST">7.6 SAVING A CUT LIST</a></li>
+    <li><a name="toc-RENDERING-FILES-1" href="#RENDERING-FILES">7.7 RENDERING FILES</a>
     <ul class="no-bullet">
-      <li><a name="toc-SINGLE-FILE-RENDERING-1" href="#SINGLE-FILE-RENDERING">7.5.1 SINGLE FILE RENDERING</a></li>
-      <li><a name="toc-BATCH-RENDERING-1" href="#BATCH-RENDERING">7.5.2 BATCH RENDERING</a></li>
-      <li><a name="toc-THE-RENDER-FARM-1" href="#THE-RENDER-FARM">7.5.3 THE RENDER FARM</a></li>
-      <li><a name="toc-RENDERING-WITHOUT-A-GUI-1" href="#RENDERING-WITHOUT-A-GUI">7.5.4 RENDERING WITHOUT A GUI</a></li>
+      <li><a name="toc-SINGLE-FILE-RENDERING-1" href="#SINGLE-FILE-RENDERING">7.7.1 SINGLE FILE RENDERING</a></li>
+      <li><a name="toc-BATCH-RENDERING-1" href="#BATCH-RENDERING">7.7.2 BATCH RENDERING</a></li>
+      <li><a name="toc-THE-RENDER-FARM-1" href="#THE-RENDER-FARM">7.7.3 THE RENDER FARM</a></li>
+      <li><a name="toc-RENDERING-WITHOUT-A-GUI-1" href="#RENDERING-WITHOUT-A-GUI">7.7.4 RENDERING WITHOUT A GUI</a></li>
     </ul></li>
   </ul></li>
   <li><a name="toc-NAVIGATING-THE-PROJECT-1" href="#NAVIGATING-THE-PROJECT">8 NAVIGATING THE PROJECT</a>
@@ -406,15 +408,16 @@ Next: <a href="#ABOUT-CINELERRA" accesskey="n" rel="next">ABOUT CINELERRA</a>, U
     <li><a name="toc-REVERSE-VIDEO_002fAUDIO-1" href="#REVERSE-VIDEO_002fAUDIO">18.26 REVERSE VIDEO/AUDIO</a></li>
     <li><a name="toc-SWAP-FRAMES-1" href="#SWAP-FRAMES">18.27 SWAP FRAMES</a></li>
     <li><a name="toc-SWAP-FRAMES-2" href="#SWAP-CHANNELS">18.28 SWAP FRAMES</a></li>
-    <li><a name="toc-THRESHOLD-1" href="#THRESHOLD">18.29 THRESHOLD</a></li>
-    <li><a name="toc-TIME-AVERAGE-1" href="#TIME-AVERAGE">18.30 TIME AVERAGE</a></li>
-    <li><a name="toc-TIME-FRONT-1" href="#TIME-FRONT">18.31 TIME FRONT</a></li>
-    <li><a name="toc-TITLER-1" href="#TITLER">18.32 TITLER</a>
+    <li><a name="toc-SYNTHESIZER-1" href="#SYNTHESIZER">18.29 SYNTHESIZER</a></li>
+    <li><a name="toc-THRESHOLD-1" href="#THRESHOLD">18.30 THRESHOLD</a></li>
+    <li><a name="toc-TIME-AVERAGE-1" href="#TIME-AVERAGE">18.31 TIME AVERAGE</a></li>
+    <li><a name="toc-TIME-FRONT-1" href="#TIME-FRONT">18.32 TIME FRONT</a></li>
+    <li><a name="toc-TITLER-1" href="#TITLER">18.33 TITLER</a>
     <ul class="no-bullet">
-      <li><a name="toc-ADDING-FONTS-TO-THE-TITLER-1" href="#ADDING-FONTS-TO-THE-TITLER">18.32.1 ADDING FONTS TO THE TITLER</a></li>
-      <li><a name="toc-MAKING-TITLES-LOOK-GOOD-1" href="#MAKING-TITLES-LOOK-GOOD">18.32.2 MAKING TITLES LOOK GOOD</a></li>
+      <li><a name="toc-ADDING-FONTS-TO-THE-TITLER-1" href="#ADDING-FONTS-TO-THE-TITLER">18.33.1 ADDING FONTS TO THE TITLER</a></li>
+      <li><a name="toc-MAKING-TITLES-LOOK-GOOD-1" href="#MAKING-TITLES-LOOK-GOOD">18.33.2 MAKING TITLES LOOK GOOD</a></li>
     </ul></li>
-    <li><a name="toc-VIDEO-SCOPE-1" href="#VIDEO-SCOPE">18.33 VIDEO SCOPE</a></li>
+    <li><a name="toc-VIDEO-SCOPE-1" href="#VIDEO-SCOPE">18.34 VIDEO SCOPE</a></li>
   </ul></li>
   <li><a name="toc-PLUGIN-AUTHORING-1" href="#PLUGIN-AUTHORING">19 PLUGIN AUTHORING</a>
   <ul class="no-bullet">
@@ -2629,9 +2632,13 @@ Next: <a href="#NAVIGATING-THE-PROJECT" accesskey="n" rel="next">NAVIGATING THE 
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#LOADING-THE-BACKUP" accesskey="3">LOADING THE BACKUP</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Recovering the session from before a crash
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#SAVING-FILES" accesskey="4">SAVING FILES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Saving edit decision lists
+<tr><td align="left" valign="top">&bull; <a href="#SAVING-THE-PROJECT" accesskey="4">SAVING THE PROJECT</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Saving edit decision lists
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#RENDERING-FILES" accesskey="5">RENDERING FILES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Saving media files
+<tr><td align="left" valign="top">&bull; <a href="#SAVING-A-CLIP-TO-A-FILE" accesskey="5">SAVING A CLIP TO A FILE</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Save a region as a new EDL
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#SAVING-A-CUT-LIST" accesskey="6">SAVING A CUT LIST</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Save minimal information for an external program
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#RENDERING-FILES" accesskey="7">RENDERING FILES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Saving media files
 </td></tr>
 </table>
 
@@ -2686,10 +2693,14 @@ for these files with the <b>draw media</b> toggle to speed up operations.
 <img src="track_attributes.png" alt="track_attributes">
 <p><b>Track attributes</b>
 </p>
-<p>Supported file formats are currently:
+<p>Media is ingested through ffmpeg so your luck will vary.  Well supported
+file formats are currently:
 </p>
 <ul>
-<li> WAV
+<li> MKV
+</li><li> MOV
+</li><li> MP4
+</li><li> WAV
 </li><li> FLAC
 </li><li> PCM
 </li><li> AIFF
@@ -3278,7 +3289,7 @@ usually be printed on the command line.
 <a name="LOADING-THE-BACKUP"></a>
 <div class="header">
 <p>
-Next: <a href="#SAVING-FILES" accesskey="n" rel="next">SAVING FILES</a>, Previous: <a href="#LOADING-FILES" accesskey="p" rel="prev">LOADING FILES</a>, Up: <a href="#LOADING-AND-SAVING-FILES" accesskey="u" rel="up">LOADING AND SAVING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#SAVING-THE-PROJECT" accesskey="n" rel="next">SAVING THE PROJECT</a>, Previous: <a href="#LOADING-FILES" accesskey="p" rel="prev">LOADING FILES</a>, Up: <a href="#LOADING-AND-SAVING-FILES" accesskey="u" rel="up">LOADING AND SAVING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="LOADING-THE-BACKUP-1"></a>
 <h3 class="section">7.3 LOADING THE BACKUP</h3>
@@ -3293,19 +3304,21 @@ the backup.
 </p>
 
 <hr>
-<a name="SAVING-FILES"></a>
+<a name="SAVING-THE-PROJECT"></a>
 <div class="header">
 <p>
-Next: <a href="#RENDERING-FILES" accesskey="n" rel="next">RENDERING FILES</a>, Previous: <a href="#LOADING-THE-BACKUP" accesskey="p" rel="prev">LOADING THE BACKUP</a>, Up: <a href="#LOADING-AND-SAVING-FILES" accesskey="u" rel="up">LOADING AND SAVING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#SAVING-A-CLIP-TO-A-FILE" accesskey="n" rel="next">SAVING A CLIP TO A FILE</a>, Previous: <a href="#LOADING-THE-BACKUP" accesskey="p" rel="prev">LOADING THE BACKUP</a>, Up: <a href="#LOADING-AND-SAVING-FILES" accesskey="u" rel="up">LOADING AND SAVING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
-<a name="SAVING-FILES-1"></a>
-<h3 class="section">7.4 SAVING FILES</h3>
+<a name="SAVING-THE-PROJECT-1"></a>
+<h3 class="section">7.4 SAVING THE PROJECT</h3>
 
 <p>When Cinelerra saves a file it saves an edit decision list of the
-current project but doesn&rsquo;t save any media.  Go to <b>File-&gt;save
+current project but doesn&rsquo;t save any media.  
+</p>
+<p>The big save function which saves the entire project is <b>File-&gt;save
 as...</b>.  Select a file to overwrite or enter a new file.  Cinelerra
-automatically concatenates <b>.xml</b> to the filename if no
-<b>.xml</b> extension is given.
+automatically concatenates <b>.xml</b> to the filename if no <b>.xml</b>
+extension is given.
 </p>
 <p>The saved file contains all the project settings and locations of every
 edit but instead of media it contains pointers to the original media
@@ -3336,17 +3349,66 @@ output there&rsquo;s rendering.
 </p>
 
 
+<hr>
+<a name="SAVING-A-CLIP-TO-A-FILE"></a>
+<div class="header">
+<p>
+Next: <a href="#SAVING-A-CUT-LIST" accesskey="n" rel="next">SAVING A CUT LIST</a>, Previous: <a href="#SAVING-THE-PROJECT" accesskey="p" rel="prev">SAVING THE PROJECT</a>, Up: <a href="#LOADING-AND-SAVING-FILES" accesskey="u" rel="up">LOADING AND SAVING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="SAVING-A-CLIP-TO-A-FILE-1"></a>
+<h3 class="section">7.5 SAVING A CLIP TO A FILE</h3>
 
+<p>This performs the same operation as <b>File-&gt;save as...</b> but only the
+highlighted region or the in/out region is saved. This is most often
+used for saving regions to later load as nested EDLs.  If no region is
+selected, it saves the entire timeline.
+</p>
 
+<hr>
+<a name="SAVING-A-CUT-LIST"></a>
+<div class="header">
+<p>
+Next: <a href="#RENDERING-FILES" accesskey="n" rel="next">RENDERING FILES</a>, Previous: <a href="#SAVING-A-CLIP-TO-A-FILE" accesskey="p" rel="prev">SAVING A CLIP TO A FILE</a>, Up: <a href="#LOADING-AND-SAVING-FILES" accesskey="u" rel="up">LOADING AND SAVING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="SAVING-A-CUT-LIST-1"></a>
+<h3 class="section">7.6 SAVING A CUT LIST</h3>
+
+<p>This saves a list of edits to a file which is compatible with ffmpeg&rsquo;s
+concatenate function.  After saving a cut list, run
+</p>
+<p>ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4
+</p>
+<p>to create a lossless concatenation of all the edits.  This is useful for
+trimming down large amounts of archival footage.  It used to be possible
+for the render function to losslessly copy frames in the days of JPEG
+movies, but temporal compression made it impossible.  Ffmpeg has
+lossless copying of frames by rounding the starting points down to a
+keyframe.  The timing is less precise than rendering.
+</p>
+<p>The cut list is only based on the selected region or the in/out points,
+like the save selection function.  If no region is selected, it saves
+the entire EDL like the save function.
+</p>
+<p>The edits are only taken from the 1st playable track.  It can be audio
+or video.
+</p>
+<p>Areas of silence, effects processing, compositing are lost.  The audio
+synchronization is lost.  It&rsquo;s more useful for pure video or audio
+archives.  It might be possible to manually synchronize the audio by
+making ffmpeg output a single edit at a time, observing where it
+started.
+</p>
+<p>It does apply nested EDLs &amp; nudge settings.
+</p>
 
 <hr>
 <a name="RENDERING-FILES"></a>
 <div class="header">
 <p>
-Previous: <a href="#SAVING-FILES" accesskey="p" rel="prev">SAVING FILES</a>, Up: <a href="#LOADING-AND-SAVING-FILES" accesskey="u" rel="up">LOADING AND SAVING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Previous: <a href="#SAVING-A-CUT-LIST" accesskey="p" rel="prev">SAVING A CUT LIST</a>, Up: <a href="#LOADING-AND-SAVING-FILES" accesskey="u" rel="up">LOADING AND SAVING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="RENDERING-FILES-1"></a>
-<h3 class="section">7.5 RENDERING FILES</h3>
+<h3 class="section">7.7 RENDERING FILES</h3>
 
 <p>Rendering takes a section of the timeline, performs all the editing,
 effects and compositing, and stores it in a pure movie file.  You can
@@ -3388,7 +3450,7 @@ unsetting all in/out points, the entire track is rendered.
 Next: <a href="#BATCH-RENDERING" accesskey="n" rel="next">BATCH RENDERING</a>, Up: <a href="#RENDERING-FILES" accesskey="u" rel="up">RENDERING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="SINGLE-FILE-RENDERING-1"></a>
-<h4 class="subsection">7.5.1 SINGLE FILE RENDERING</h4>
+<h4 class="subsection">7.7.1 SINGLE FILE RENDERING</h4>
 
 <p>The fastest way to get media to disk is to use the single file
 rendering function.
@@ -3455,7 +3517,7 @@ the audio output is pasted into the audio tracks.
 Next: <a href="#THE-RENDER-FARM" accesskey="n" rel="next">THE RENDER FARM</a>, Previous: <a href="#SINGLE-FILE-RENDERING" accesskey="p" rel="prev">SINGLE FILE RENDERING</a>, Up: <a href="#RENDERING-FILES" accesskey="u" rel="up">RENDERING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="BATCH-RENDERING-1"></a>
-<h4 class="subsection">7.5.2 BATCH RENDERING</h4>
+<h4 class="subsection">7.7.2 BATCH RENDERING</h4>
 
 
 
@@ -3550,7 +3612,7 @@ rendered, hit <b>Cancel</b>.
 Next: <a href="#RENDERING-WITHOUT-A-GUI" accesskey="n" rel="next">RENDERING WITHOUT A GUI</a>, Previous: <a href="#BATCH-RENDERING" accesskey="p" rel="prev">BATCH RENDERING</a>, Up: <a href="#RENDERING-FILES" accesskey="u" rel="up">RENDERING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="THE-RENDER-FARM-1"></a>
-<h4 class="subsection">7.5.3 THE RENDER FARM</h4>
+<h4 class="subsection">7.7.3 THE RENDER FARM</h4>
 
 <p>When bicubic interpolation and HDTV was first done on Cinelerra, the
 time needed to produce the simplest output became unbearable even on
@@ -3630,7 +3692,7 @@ could have rendered it faster.
 Previous: <a href="#THE-RENDER-FARM" accesskey="p" rel="prev">THE RENDER FARM</a>, Up: <a href="#RENDERING-FILES" accesskey="u" rel="up">RENDERING FILES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="RENDERING-WITHOUT-A-GUI-1"></a>
-<h4 class="subsection">7.5.4 RENDERING WITHOUT A GUI</h4>
+<h4 class="subsection">7.7.4 RENDERING WITHOUT A GUI</h4>
 
 <p>Cinelerra can be run without a GUI.  The command line rendering facility
 consists of a way to load the current set of batch rendering jobs and
@@ -8263,6 +8325,9 @@ capitalist heard, started charging money for a ridulously simple program
 that converted scripts directly to movies.  It was such a simple
 program, we decided to add most of the functionality to Cinelerra.
 </p>
+<p>Years later, generative AI made it thoroughly obsolete so it was
+discontinued.
+</p>
 <p>The easiest way to make a movie is to copy <b>tests/text2movie</b> and
 <b>tests/text2movie.xml</b> as a starting point.  Load the
 <b>text2movie.xml</b> file to see the movie.
@@ -8377,6 +8442,8 @@ utilize fully by mere experimentation.
 <tr><td align="left" valign="top">&bull; <a href="#SWAP-FRAMES">SWAP FRAMES</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Fixing temporal field order
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#SWAP-CHANNELS">SWAP CHANNELS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Route color channels to different channels &amp; tracks
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#SYNTHESIZER">SYNTHESIZER</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Generate test tones
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#THRESHOLD">THRESHOLD</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to get monochrome out of a region of the image.
 </td></tr>
@@ -10168,7 +10235,7 @@ order, which is what <b>SWAP FRAMES</b> can correct.
 <a name="SWAP-CHANNELS"></a>
 <div class="header">
 <p>
-Next: <a href="#THRESHOLD" accesskey="n" rel="next">THRESHOLD</a>, Previous: <a href="#SWAP-FRAMES" accesskey="p" rel="prev">SWAP FRAMES</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#SYNTHESIZER" accesskey="n" rel="next">SYNTHESIZER</a>, Previous: <a href="#SWAP-FRAMES" accesskey="p" rel="prev">SWAP FRAMES</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="SWAP-FRAMES-2"></a>
 <h3 class="section">18.28 SWAP FRAMES</h3>
@@ -10188,18 +10255,44 @@ perform different processing on each output track.  The alpha in 2
 overlapping tracks will accumulate, so you must mute the lower tracks to
 avoid this.
 </p>
+<hr>
+<a name="SYNTHESIZER"></a>
+<div class="header">
+<p>
+Next: <a href="#THRESHOLD" accesskey="n" rel="next">THRESHOLD</a>, Previous: <a href="#SWAP-CHANNELS" accesskey="p" rel="prev">SWAP CHANNELS</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="SYNTHESIZER-1"></a>
+<h3 class="section">18.29 SYNTHESIZER</h3>
 
-
+<p>This is based on the synthesizer effect in the original Sound Sculptor
+for Mac.  It was extended with a piano GUI for inputting note frequencies.
+</p>
+<p>Click in the piano GUI to set the frequency to a note.  Click drag to
+quickly change the frequency.  This is only useful when playing back. 
+Type alphanumeric keys to enter notes from the keyboard. 
+</p>
+<p>Press SHIFT or CTRL to overlay multiple notes.  Multiple notes are only
+indicated on the piano GUI.
+</p>
+<p><b>momentary notes</b> If the timeline is playing back, this causes the
+frequency to be nonzero only if the mouse button is down on the piano
+GUI.  It doesn&rsquo;t work with the keyboard input or when not playing.  It&rsquo;s
+a simple way for the interface to play a some kind of music.
+</p>
+<p><b>sweep frequency</b> This interpolates the frequency between the
+keyframes.  It&rsquo;s used for testing audio gear.  When deselected, the
+frequency is fixed to the previous keyframe.
+</p>
 
 
 <hr>
 <a name="THRESHOLD"></a>
 <div class="header">
 <p>
-Next: <a href="#TIME-AVERAGE" accesskey="n" rel="next">TIME AVERAGE</a>, Previous: <a href="#SWAP-CHANNELS" accesskey="p" rel="prev">SWAP CHANNELS</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="#TIME-AVERAGE" accesskey="n" rel="next">TIME AVERAGE</a>, Previous: <a href="#SYNTHESIZER" accesskey="p" rel="prev">SYNTHESIZER</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="THRESHOLD-1"></a>
-<h3 class="section">18.29 THRESHOLD</h3>
+<h3 class="section">18.30 THRESHOLD</h3>
 
 <p>Threshold converts the image to pure luminance.  Then luminance values
 below and above the threshold range are converted to black and
@@ -10227,7 +10320,7 @@ displayed.
 Next: <a href="#TIME-FRONT" accesskey="n" rel="next">TIME FRONT</a>, Previous: <a href="#THRESHOLD" accesskey="p" rel="prev">THRESHOLD</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TIME-AVERAGE-1"></a>
-<h3 class="section">18.30 TIME AVERAGE</h3>
+<h3 class="section">18.31 TIME AVERAGE</h3>
 
 <p>Time average is one effect which has many uses besides creating nifty
 trail patterns of moving objects.  It&rsquo;s main use is reducing noise in
@@ -10305,7 +10398,7 @@ darker than the background.
 Next: <a href="#TITLER" accesskey="n" rel="next">TITLER</a>, Previous: <a href="#TIME-AVERAGE" accesskey="p" rel="prev">TIME AVERAGE</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TIME-FRONT-1"></a>
-<h3 class="section">18.31 TIME FRONT</h3>
+<h3 class="section">18.32 TIME FRONT</h3>
 
 <p>This takes each pixel from different frames in a history buffer.  The
 selection of what frame in the history goes to each pixel is determined
@@ -10346,7 +10439,7 @@ taken from the history buffer for each pixel.
 Next: <a href="#VIDEO-SCOPE" accesskey="n" rel="next">VIDEO SCOPE</a>, Previous: <a href="#TIME-FRONT" accesskey="p" rel="prev">TIME FRONT</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="TITLER-1"></a>
-<h3 class="section">18.32 TITLER</h3>
+<h3 class="section">18.33 TITLER</h3>
 
 <p>While it is possible to add text to movies by importing still images
 from The Gimp and compositing them, the Titler allows you to add text
@@ -10415,7 +10508,7 @@ video instead of on top of it.
 Next: <a href="#MAKING-TITLES-LOOK-GOOD" accesskey="n" rel="next">MAKING TITLES LOOK GOOD</a>, Up: <a href="#TITLER" accesskey="u" rel="up">TITLER</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="ADDING-FONTS-TO-THE-TITLER-1"></a>
-<h4 class="subsection">18.32.1 ADDING FONTS TO THE TITLER</h4>
+<h4 class="subsection">18.33.1 ADDING FONTS TO THE TITLER</h4>
 
 <p>Cinelerra uses libfreetype for drawing titles.  It has a few
 limitations: it can&rsquo;t automatically use the fonts installed in the X
@@ -10442,7 +10535,7 @@ converted to TTF.  It&rsquo;s not the biggest limitation of the titler.
 Previous: <a href="#ADDING-FONTS-TO-THE-TITLER" accesskey="p" rel="prev">ADDING FONTS TO THE TITLER</a>, Up: <a href="#TITLER" accesskey="u" rel="up">TITLER</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="MAKING-TITLES-LOOK-GOOD-1"></a>
-<h4 class="subsection">18.32.2 MAKING TITLES LOOK GOOD</h4>
+<h4 class="subsection">18.33.2 MAKING TITLES LOOK GOOD</h4>
 
 <p>No-one else is going to tell you this, but to make good looking titles,
 ignore most of the features of the titler.  The best settings are:
@@ -10486,7 +10579,7 @@ story, they would be reading a book instead of watching video.
 Previous: <a href="#TITLER" accesskey="p" rel="prev">TITLER</a>, Up: <a href="#EFFECTS-NOTES" accesskey="u" rel="up">EFFECTS NOTES</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <a name="VIDEO-SCOPE-1"></a>
-<h3 class="section">18.33 VIDEO SCOPE</h3>
+<h3 class="section">18.34 VIDEO SCOPE</h3>
 
 <p>The video scope plots two views of the image.  One view plots the
 intensity of each pixel against horizontal position.  They call this
